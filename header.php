@@ -35,7 +35,7 @@
                 <nav class="navbar navbar-expand-xl navbar-theme chakra-petch-font py-lg-0">
                     <?php if (get_theme_mod('darbudnew_wp_theme_logo')) : ?>
                         <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name')); ?>" class="navbar-brand align-items-center top-logo flex-column d-block d-lg-none">
-                            <img src="<?php echo esc_url(str_replace('http://', 'https://', get_theme_mod('darbudnew_wp_theme_logo'))); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>">
+                            <img src="<?php echo esc_url(str_replace('https://', 'http://', get_theme_mod('darbudnew_wp_theme_logo'))); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>">
                         </a>
                     <?php endif; ?>
                     <button class="navbar-toggler rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
