@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package darbud-wp-theme
+ * @package darbudnew-wp-theme
  */
 ?>
 
@@ -43,7 +43,7 @@
                 <div class="d-flex flex-column" style="background: #f6f6f6;">
                     <div class="row justify-content-center">
                         <div class="col-3 col-lg-2 text-center">
-                            <img src="https://darbud.pl/wp-content/uploads/2025/06/flowers-200.png" class="img-fluid mb-2 mt-3  mx-auto">
+                            <img src="https://darbudnew.pl/wp-content/uploads/2025/06/flowers-200.png" class="img-fluid mb-2 mt-3  mx-auto">
                         </div>
                     </div>
                     <div class="col-lg-12 bg-white position-relative">
