@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package darbud-wp-theme
+ * @package darbudnew-wp-theme
  */
 ?>
 <!DOCTYPE html>
@@ -34,10 +34,10 @@
             <div class="row justify-content-center">
                 <div class="col-lg-5">
                     <div class="row justify-content-center">
-                        <?php if (get_theme_mod('darbud_wp_theme_logo')) : ?>
+                        <?php if (get_theme_mod('darbudnew_wp_theme_logo')) : ?>
                             <div class="col-lg-4">
                                 <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name')); ?>" class="d-none d-lg-block">
-                                    <img src="<?php echo esc_url(str_replace('http://', 'https://', get_theme_mod('darbud_wp_theme_logo'))); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="img-fluid">
+                                    <img src="<?php echo esc_url(str_replace('http://', 'https://', get_theme_mod('darbudnew_wp_theme_logo'))); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="img-fluid">
                                 </a>
                             </div>
                         <?php endif; ?>
@@ -49,9 +49,9 @@
         <div class="top-header-menu">
             <div class="container px-xl-4">
                 <nav class="navbar navbar-expand-xl navbar-theme chakra-petch-font py-lg-0">
-                    <?php if (get_theme_mod('darbud_wp_theme_logo')) : ?>
+                    <?php if (get_theme_mod('darbudnew_wp_theme_logo')) : ?>
                         <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name')); ?>" class="navbar-brand align-items-center top-logo flex-column d-block d-lg-none">
-                            <img src="<?php echo esc_url(str_replace('http://', 'https://', get_theme_mod('darbud_wp_theme_logo'))); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>">
+                            <img src="<?php echo esc_url(str_replace('http://', 'https://', get_theme_mod('darbudnew_wp_theme_logo'))); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>">
                         </a>
                     <?php endif; ?>
                     <button class="navbar-toggler rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">

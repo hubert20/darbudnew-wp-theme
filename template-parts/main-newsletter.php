@@ -4,7 +4,7 @@
         <h2 class="text-center mb-3 mb-lg-4 standard-title-4 text-white lobster-font">
             <span class="d-inline-block icon-text px-4">Newsletter</span>
             <div class="text-center">
-                <img src="https://darbud.pl/wp-content/uploads/2025/06/flowers-200.png" class="flowers-heading-1" alt="">
+                <img src="https://darbudnew.pl/wp-content/uploads/2025/06/flowers-200.png" class="flowers-heading-1" alt="">
             </div>
         </h2>
         <p class="text-center text-white mb-3 mb-lg-4">
