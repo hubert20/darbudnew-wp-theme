@@ -121,47 +121,11 @@
         border: 1px solid #eee;
         background: #fff;
         transition: .5s all;
-        // &:after {
-        //     content: '';
-        //     height: 100%;
-        //     width: 100%;
-        //     background-image: linear-gradient(to top, $pink, transparent, transparent);
-        //     z-index: 0;
-        //     position: absolute;
-        //     transition: all 0.35s cubic-bezier(0, 0, 0.2, 1);
-        //     transform: translateY(100%);
-        //     left: 0;
-        // }
-
-        // &:hover:after {
-        //     transform: translateY(0);
-        // }
-
-        // &:before {
-        //     content: '';
-        //     width: 90%;
-        //     height: 90%;
-        //     z-index: 99;
-        //     position: absolute;
-        //     top: 0;
-        //     bottom: 0;
-        //     left: 0;
-        //     right: 0;
-        //     margin: auto;
-        //     border: 1px solid $pink;
-        //     transition: all .5s;
-        // }
         &:hover {
             border-color: $pink;
         }
 
         &--title {
-            // position: absolute;
-            // z-index: 9;
-            // bottom: 65px;
-            // width: 100%;
-            // font-weight: 600;
-            // filter: drop-shadow(2px 2px 0px white);
             font-size: 20px;
             letter-spacing: 2px;
         }
@@ -311,58 +275,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-}
-
-.page-template #mlb2-23898214.ml-form-embedContainer .ml-form-embedWrapper.embedForm {
-    max-width: 100% !important;
-    width: 100%;
-}
-
-.specjal-rose-gray {
-    position: absolute;
-    height: 200px;
-    opacity: .2;
-    top: 100px;
-
-    &--left {
-        left: -100px;
-    }
-
-    &--right {
-        right: -100px;
-    }
-}
-
-//fireflay
-.into_firefly div {
-    opacity: 0.9 !important;
-    box-shadow: 0 0 10px 1px #ffb54a;
-}
-
-@include media-breakpoint-up(lg) {
-    .into_firefly {
-        width: 85%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        margin: auto;
-        left: 0;
-        right: 0;
-
-        canvas {
-            filter: blur(1px);
-        }
-    }
-}
-
-//Main courses
-.main-kursy {
-    background-image: url('https://mariolahairstylist.pl/wp-content/uploads/2025/08/bg-floral.jpg');
-    background-position: center top;
-    background-repeat: no-repeat;
+    height: 100vh;
     background-size: cover;
-
-    &--title {
-        border-bottom: 1px solid #efefef;
-    }
 }
