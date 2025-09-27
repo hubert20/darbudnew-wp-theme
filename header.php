@@ -29,22 +29,6 @@
                 <?php dynamic_sidebar('top-toolbar'); ?>
             <?php endif; ?>
         </div>
-        <!-- Top center Logo -->
-        <div class="top-logo text-center py-4 container-fluid d-none d-lg-block">
-            <div class="row justify-content-center">
-                <div class="col-lg-5">
-                    <div class="row justify-content-center">
-                        <?php if (get_theme_mod('darbudnew_wp_theme_logo')) : ?>
-                            <div class="col-lg-4">
-                                <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name')); ?>" class="d-none d-lg-block">
-                                    <img src="<?php echo esc_url(str_replace('http://', 'https://', get_theme_mod('darbudnew_wp_theme_logo'))); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="img-fluid">
-                                </a>
-                            </div>
-                        <?php endif; ?>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- Top header -->
         <div class="top-header-menu">
             <div class="container px-xl-4">
