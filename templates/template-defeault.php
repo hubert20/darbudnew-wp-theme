@@ -16,7 +16,7 @@ $banner_img_mobile = get_field('banner_shop_mobile', 16);
 <div class="container py-4 py-lg-5">
     <?php
     while (have_posts()) : the_post();
-        the_content(__('Continue reading <span class="meta-nav">&rarr;</span>', 'mariolahairstylist-wp-theme'));
+        the_content(__('Continue reading <span class="meta-nav">&rarr;</span>', 'darbud-wp-theme'));
     endwhile;
     ?>
 </div>

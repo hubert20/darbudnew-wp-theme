@@ -4,7 +4,7 @@
         <span class="d-block icon-text icon-text--white text-magenta lobster-font mb-2"></span>
         <span class="d-block icon-text icon-text--white standard-title-5 mb-2">Szkolenia i Poradniki</span>
         <div class="text-center">
-            <img src="https://mariolahairstylist.pl/wp-content/uploads/2025/06/flowers-200.png" class="flowers-heading-1" alt="">
+            <img src="https://darbud.pl/wp-content/uploads/2025/06/flowers-200.png" class="flowers-heading-1" alt="">
         </div>
     </h2>
     <div class="swiper swiper-main-products">

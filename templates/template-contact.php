@@ -29,7 +29,7 @@ $bg_header_image = get_field('background_image');
     <div class="container">
         <?php
         while (have_posts()) : the_post();
-            the_content(__('Continue reading <span class="meta-nav">&rarr;</span>', 'mariolahairstylist-wp-theme'));
+            the_content(__('Continue reading <span class="meta-nav">&rarr;</span>', 'darbud-wp-theme'));
         endwhile;
         ?>
     </div>
