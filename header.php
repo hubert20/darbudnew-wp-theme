@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package mariolahairstylist-wp-theme
+ * @package darbud-wp-theme
  */
 ?>
 <!DOCTYPE html>
@@ -19,19 +19,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <?php wp_head(); ?>
-    <!-- MailerLite Universal -->
-    <script>
-        (function(w, d, e, u, f, l, n) {
-            w[f] = w[f] || function() {
-                    (w[f].q = w[f].q || [])
-                    .push(arguments);
-                }, l = d.createElement(e), l.async = 1, l.src = u,
-                n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
-        })
-        (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
-        ml('account', '1456878');
-    </script>
-    <!-- End MailerLite Universal -->
 </head>
 
 <body <?php body_class(); ?>>
@@ -47,17 +34,10 @@
             <div class="row justify-content-center">
                 <div class="col-lg-5">
                     <div class="row justify-content-center">
-                        <?php if (get_theme_mod('mariolahairstylist_wp_theme_logo')) : ?>
+                        <?php if (get_theme_mod('darbud_wp_theme_logo')) : ?>
                             <div class="col-lg-4">
                                 <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name')); ?>" class="d-none d-lg-block">
-                                    <img src="<?php echo esc_url(str_replace('http://', 'https://', get_theme_mod('mariolahairstylist_wp_theme_logo'))); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="img-fluid">
-                                </a>
-                            </div>
-                        <?php else : ?>
-                            <div class="col-lg-6">
-                                <a href="<?php echo esc_url(home_url('/')); ?>" title="" class="d-none d-lg-block">
-                                    <span class="standard-title-6 playfair-display-900 top-logo--pink text-pink-strong">Strefa Twojej urody</span>
-                                    <span class="standard-title-6 playfair-display-600 fst-italic text-dark top-logo--dark text-dark">Mariola Widlak</span>
+                                    <img src="<?php echo esc_url(str_replace('http://', 'https://', get_theme_mod('darbud_wp_theme_logo'))); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="img-fluid">
                                 </a>
                             </div>
                         <?php endif; ?>
@@ -69,9 +49,9 @@
         <div class="top-header-menu">
             <div class="container px-xl-4">
                 <nav class="navbar navbar-expand-xl navbar-theme chakra-petch-font py-lg-0">
-                    <?php if (get_theme_mod('mariolahairstylist_wp_theme_logo')) : ?>
+                    <?php if (get_theme_mod('darbud_wp_theme_logo')) : ?>
                         <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name')); ?>" class="navbar-brand align-items-center top-logo flex-column d-block d-lg-none">
-                            <img src="<?php echo esc_url(str_replace('http://', 'https://', get_theme_mod('mariolahairstylist_wp_theme_logo'))); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>">
+                            <img src="<?php echo esc_url(str_replace('http://', 'https://', get_theme_mod('darbud_wp_theme_logo'))); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>">
                         </a>
                     <?php endif; ?>
                     <button class="navbar-toggler rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
