@@ -1,0 +1,94 @@
+// Top header bg
+// Header defeault
+.header-image-defeault {
+    position: relative;
+    z-index: 0;
+    border-bottom: 6px solid $light-rose;
+    @include media-breakpoint-up(xl) {
+        min-height: 300px;
+    }
+
+    min-height: 250px;
+    background-size: cover;
+    background-position: center;
+
+    &:before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #121212;
+        opacity: .46;
+        mix-blend-mode: darken;
+        transition: background .3s, border-radius .3s, opacity .3s;
+        content: "";
+        z-index: -1;
+    }
+}
+
+
+
+// Color profil
+.color-profil {
+    &__item {
+        border: 1px solid rgba(0, 0, 0, .1);
+        box-shadow: 0 0 12px rgba(0, 0, 0, .1);
+    }
+}
+
+.tabs-details-nav {
+    .nav-item {
+        .nav-link {
+            position: relative;
+            border: 0;
+            font-size: 24px;
+            color: #fff;
+
+            &.active {
+                background-color: transparent;
+                color: $yellow;
+                border: 0;
+
+                &:after {
+                    content: '';
+                    border-bottom: 4px solid $yellow;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    bottom: -1px;
+                    border-radius: 5px 5px 0 0;
+                }
+            }
+        }
+    }
+}
+
+//Gallery
+.gallery {
+    padding: 5px;
+    border: 1px solid $pink;
+}
+
+.gallery-button {
+
+    &__prev,
+    &__next {
+        width: 50px;
+        height: 50px;
+        border: 2px solid $pink;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(45deg);
+        cursor: pointer;
+        margin: 0px 20px 0 20px;
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+        border-radius: 6px;
+        &::after {
+            font-size: 16px;
+            color: $pink;
+            transform: rotate(-45deg);
+        }
+    }
+}

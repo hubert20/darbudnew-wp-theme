@@ -1,0 +1,136 @@
+// ------------------------------------ //
+// #Colors
+// ------------------------------------ //
+
+$light-beige: #f1dccb;
+$light-rose: #fbd0ca;
+$bronze: #6b4038;
+
+// Definiowanie nazw jako stringów
+$names: (
+    "light-beige",
+    "light-rose",
+    "bronze",
+);
+
+// Mapowanie nazw na kolory
+$colors: (
+    "light-beige": $light-beige,
+    "light-rose": $light-rose,
+    "bronze": $bronze,
+);
+
+@each $name in $names {
+    .bg-#{$name} {
+        background-color: map-get($colors, $name);
+    }
+
+    .text-#{$name} {
+        color: map-get($colors, $name);
+    }
+
+    .btn-#{$name} {
+        @extend .btn;
+        background: map-get($colors, $name);
+        color: #6b4038 !important;
+        transition: all .5s;
+        border: 1px solid #a67a71 !important;
+
+        &:hover,
+        &:focus {
+            color: map-get($colors, $name) !important;
+            background: #fff;
+            border: 1px solid map-get($colors, $name);
+        }
+    }
+}
+
+//Custom Btn
+.btn-style {
+    position: relative;
+
+    &--border {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        border: 1px solid $pink;
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        transition: all .3s ease;
+    }
+
+    &--border-white {
+        border-color: white;
+    }
+
+    &--first {
+        -webkit-transform: translate(-2px, -2px);
+        -moz-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    &--second {
+        -webkit-transform: translate(2px, 2px);
+        -moz-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+    }
+
+    &:hover .btn-style--first {
+        -webkit-transform: translate(-3px, -3px);
+        -moz-transform: translate(-3px, -3px);
+        transform: translate(-3px, -3px)
+    }
+
+    &:hover .btn-style--second {
+        -webkit-transform: translate(3px, 3px);
+        -moz-transform: translate(3px, 3px);
+        transform: translate(3px, 3px)
+    }
+
+    &--large {
+        padding: 15px 56px;
+    }
+
+    &--small {
+        font-size: 13px;
+        padding: 14px 15px;
+    }
+
+    &--outline {
+        color: $pink;
+        background-color: transparent;
+    }
+
+    &--outline-white {
+        color: white;
+    }
+
+}
+
+@keyframes growOut {
+    0% {
+        transform: scale(0)
+    }
+
+    80% {
+        transform: scale(1.1)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+
+.bg-pink-mark {
+    background: $pink;
+    box-shadow: 5px 0 0 $pink, -5px 0 0 $pink;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: split;
+    box-decoration-break: split;
+    display: inline;
+}

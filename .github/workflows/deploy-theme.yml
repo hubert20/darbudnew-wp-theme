@@ -1,0 +1,56 @@
+name: FTP Deploy Theme (darbud)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+concurrency:
+  group: ftp-deploy-darbud
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 🧰 Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🔨 Build (production)
+        run: npm run build:prod
+
+      - name: 📤 FTP Deploy (FTPS explicit)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}        # np. hosting2378359.online.pro
+          username: ${{ secrets.FTP_USERNAME }}    # login FTP
+          password: ${{ secrets.FTP_PASSWORD }}    # hasło FTP
+          protocol: ftps
+          port: 21
+          security: explicit
+          passive: true
+          timeout: 180000
+          server-dir: /darbud/wp-content/themes/darbud-wp-theme/
+          local-dir: ./
+          exclude: |
+            **/.git*
+            **/.github/**
+            **/node_modules/**
+            **/src/**
+            **/.env*
+            **/*.map
+            package.json
+            package-lock.json
+            postcss.config.js
+            prettier.config.js
+            webpack.config.js
+            README.md

@@ -1,0 +1,369 @@
+// Main hero
+.top-hero {
+    @include media-breakpoint-up(lg) {
+        min-height: 70vh;
+    }
+}
+
+//Form
+.form-box {
+    background-image: url('https://www.elektro-serwis.eu/wp-content/uploads/2024/09/car-mechanic-work-small.jpg');
+    background-position: center;
+    position: relative;
+    z-index: 0;
+
+    &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .7);
+        opacity: .8;
+        z-index: -1;
+    }
+
+    .wpcf7-form-control.form-control {
+        border-radius: 0;
+        color: #fff;
+        background: #171717;
+        border: 1px solid #626262;
+    }
+
+    .wpcf7-list-item-label {
+        font-size: 12px;
+        display: inline-block;
+        line-height: 1.3;
+    }
+
+    .wpcf7-not-valid-tip {
+        color: $orange;
+        font-size: 13px;
+        font-weight: normal;
+        display: block;
+    }
+
+    .wpcf7-submit {
+        border: none;
+        background-color: $orange;
+        color: #fff !important;
+        padding: 0.475rem 0.75rem;
+        border-radius: 0;
+    }
+
+    .wpcf7 form.invalid .wpcf7-response-output,
+    .wpcf7 form.sent .wpcf7-response-output,
+    .wpcf7 form.unaccepted .wpcf7-response-output,
+    .wpcf7 form.payment-required .wpcf7-response-output {
+        text-align: center;
+        color: #fff;
+    }
+}
+
+// Boxes jobs scroll animations
+.counter-number {
+    color: $yellow;
+
+    &--box {
+        position: relative;
+        z-index: 0;
+    }
+
+    &--plus {
+        &:after {
+            content: "+";
+            display: inline-block;
+            font-size: 45px;
+        }
+    }
+
+    &--icon {
+        height: 85px !important;
+        position: absolute;
+        right: 50px;
+        z-index: -1;
+        opacity: .3;
+    }
+}
+
+.counter-main-box {
+    &--titles {
+        font-size: 18px;
+    }
+
+    &__item {
+        border: 1px solid rgba(255, 255, 255, .2);
+        background: rgba(0, 0, 0, .3);
+    }
+}
+
+.form-control::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #333;
+    opacity: 1;
+    /* Firefox */
+}
+
+.form-control:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #333;
+}
+
+.form-control::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #333;
+}
+
+// Swiper main products slider 
+.main-products-slider {
+    &__item {
+        position: relative;
+        border: 1px solid #eee;
+        background: #fff;
+        transition: .5s all;
+        // &:after {
+        //     content: '';
+        //     height: 100%;
+        //     width: 100%;
+        //     background-image: linear-gradient(to top, $pink, transparent, transparent);
+        //     z-index: 0;
+        //     position: absolute;
+        //     transition: all 0.35s cubic-bezier(0, 0, 0.2, 1);
+        //     transform: translateY(100%);
+        //     left: 0;
+        // }
+
+        // &:hover:after {
+        //     transform: translateY(0);
+        // }
+
+        // &:before {
+        //     content: '';
+        //     width: 90%;
+        //     height: 90%;
+        //     z-index: 99;
+        //     position: absolute;
+        //     top: 0;
+        //     bottom: 0;
+        //     left: 0;
+        //     right: 0;
+        //     margin: auto;
+        //     border: 1px solid $pink;
+        //     transition: all .5s;
+        // }
+        &:hover {
+            border-color: $pink;
+        }
+
+        &--title {
+            // position: absolute;
+            // z-index: 9;
+            // bottom: 65px;
+            // width: 100%;
+            // font-weight: 600;
+            // filter: drop-shadow(2px 2px 0px white);
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+
+        &--subtitle {
+            display: block;
+            font-size: 17px;
+            letter-spacing: 1px;
+        }
+
+        &--statictitle {
+            position: absolute;
+            top: 60px;
+            width: 100%;
+        }
+
+        &--btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 0;
+            opacity: 0;
+            transform: translateX(-50%) translateY(-50%);
+            transition: all 0.35s cubic-bezier(0, 0, 0.2, 1);
+            width: 65%;
+        }
+
+        &:hover {
+            &>span {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+//Swiper arrows
+.swiper-main-products {
+
+    &__prev,
+    &__next {
+        width: 50px;
+        height: 50px;
+        border: 2px solid $light-beige;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(45deg);
+        background-color: white;
+        cursor: pointer;
+        margin: 30px 30px 0 30px;
+        position: relative;
+        z-index: 10;
+        border-radius: 6px;
+
+        &::after {
+            font-size: 16px;
+            color: $light-beige;
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+
+
+// Form 
+.form-banner {
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    &__bg-form {
+        background-color: rgba(0, 0, 0, .6);
+    }
+}
+
+@keyframes slideFadeDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.swiper-slide-active .slide-text {
+    animation: slideFadeDown 0.8s ease-out forwards;
+}
+
+//News
+.main-news {
+    .swiper-slide {
+        height: auto;
+
+        &:nth-child(even) .main-news__item-cnt {
+            background: #efefef;
+        }
+    }
+
+    &__item-date {
+        color: #999;
+    }
+
+    &__item-title-post {
+        font-size: 18px;
+    }
+
+    &__item-cnt {
+        background: $pink;
+    }
+}
+
+.swiper-main-news {
+
+    &__prev,
+    &__next {
+        width: 50px;
+        height: 50px;
+        border: 2px solid #c5c5c5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(45deg);
+        cursor: pointer;
+        margin: 30px 30px 0 30px;
+        position: relative;
+        z-index: 10;
+        border-radius: 6px;
+
+        &::after {
+            font-size: 16px;
+            color: #c5c5c5;
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+// Hero image with content
+.hero_wrap {
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.page-template #mlb2-23898214.ml-form-embedContainer .ml-form-embedWrapper.embedForm {
+    max-width: 100% !important;
+    width: 100%;
+}
+
+.specjal-rose-gray {
+    position: absolute;
+    height: 200px;
+    opacity: .2;
+    top: 100px;
+
+    &--left {
+        left: -100px;
+    }
+
+    &--right {
+        right: -100px;
+    }
+}
+
+//fireflay
+.into_firefly div {
+    opacity: 0.9 !important;
+    box-shadow: 0 0 10px 1px #ffb54a;
+}
+
+@include media-breakpoint-up(lg) {
+    .into_firefly {
+        width: 85%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        margin: auto;
+        left: 0;
+        right: 0;
+
+        canvas {
+            filter: blur(1px);
+        }
+    }
+}
+
+//Main courses
+.main-kursy {
+    background-image: url('https://mariolahairstylist.pl/wp-content/uploads/2025/08/bg-floral.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &--title {
+        border-bottom: 1px solid #efefef;
+    }
+}

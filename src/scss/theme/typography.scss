@@ -1,0 +1,160 @@
+// ------------------------------------ //
+// #Typography rules
+// ------------------------------------ //
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+$montserrat-weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+$playfair-weights: 400, 500, 600, 700, 800, 900;
+
+$font-primary: "Montserrat", sans-serif;
+$font-secondary: "Playfair Display", serif;
+
+@each $weight in $montserrat-weights {
+  .montserrat-#{$weight} {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: $weight;
+    font-style: normal;
+  }
+}
+
+@each $weight in $playfair-weights {
+  .playfair-display-#{$weight} {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: $weight;
+    font-style: normal;
+  }
+}
+
+
+html,
+body {
+  background: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+@for $i from 11 through 16 {
+  .lh-#{$i} {
+    line-height: #{($i / 10)};
+  }
+}
+
+//Heading h1-h6 with Playfair font
+//Title big 105px-50px
+//h1 80px-40px
+@media (min-width: 360px) {
+  .standard-title-big {
+    font-size: calc(3.125rem + ((1vw - 3.6px) * 1.9231));
+    min-height: 0vw;
+  }
+}
+
+@media (min-width: 1920px) {
+  .standard-title-big {
+    font-size: 80px;
+  }
+}
+
+@media (min-width: 360px) {
+  .standard-title-1 {
+    font-size: calc(2.5rem + ((1vw - 3.6px) * 2.5641));
+    min-height: 0vw;
+  }
+}
+@media (min-width: 1920px) {
+  .standard-title-1 {
+    font-size: 80px;
+  }
+}
+
+
+// h2 70px - 42px
+@media (min-width: 360px) {
+  .standard-title-2 {
+    font-size: calc(2.625rem + ((1vw - 3.6px) * 1.7949));
+    min-height: 0vw;
+  }
+}
+
+@media (min-width: 1920px) {
+  .standard-title-2 {
+    font-size: 70px;
+  }
+}
+
+//h3 60px-34px
+@media (min-width: 360px) {
+  .standard-title-3 {
+    font-size: calc(2.125rem + ((1vw - 3.6px) * 1.6667));
+    min-height: 0vw;
+  }
+}
+
+@media (min-width: 1920px) {
+  .standard-title-3 {
+    font-size: 60px;
+  }
+}
+
+//h4 50px-28px
+@media (min-width: 360px) {
+  .standard-title-4 {
+    font-size: calc(1.75rem + ((1vw - 3.6px) * 1.4103));
+    min-height: 0vw;
+  }
+}
+
+@media (min-width: 1920px) {
+  .standard-title-4 {
+    font-size: 50px;
+  }
+}
+
+//h5 40px-26px
+@media (min-width: 360px) {
+  .standard-title-5 {
+    font-size: calc(1.625rem + ((1vw - 3.6px) * 0.8974));
+    min-height: 0vw;
+  }
+}
+
+@media (min-width: 1920px) {
+  .standard-title-5 {
+    font-size: 40px;
+  }
+}
+
+//h6 30px - 22px
+@media (min-width: 360px) {
+  .standard-title-6 {
+    font-size: calc(1.4375rem + ((1vw - 3.6px) * 0.4487));
+    min-height: 0vw;
+  }
+}
+
+@media (min-width: 1920px) {
+  .standard-title-6 {
+    font-size: 30px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+.ls-1 {
+  letter-spacing: 1px;
+}
+
+.ls-2 {
+  letter-spacing: 2px;
+}
