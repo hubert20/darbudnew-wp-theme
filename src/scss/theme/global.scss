@@ -469,14 +469,14 @@
 
 //breadcrumbs
 .breadcrumbs {
-    color: $light-rose;
+    color:$green;
 
     a {
         color: #fff;
     }
 
     .breadcrumb_last {
-        color: $light-rose;
+        color:$green;
     }
 }
 
@@ -572,7 +572,6 @@
     background-color: rgba(0, 0, 0, .5);
 }
 
-
 .fa-play {
     &:before {
         content: "\f04b";
@@ -633,15 +632,4 @@
 
 .fs-20 {
     font-size: 18px;
-}
-
-.cat-blog {
-    .header-image-defeault {
-        background-image: url('');
-    }
-}
-
-// hide grecaptcha-badge
-.grecaptcha-badge {
-    visibility: hidden;
 }
