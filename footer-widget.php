@@ -3,10 +3,9 @@
     <div class="container-fluid py-4 py-lg-5">
         <div class="row justify-content-center">
             <div class="col-8 col-lg-3 text-center">
-                <img src="" class="img-fluid mb-4 mb-lg-5 mx-auto">
+                <img src="http://darbud.com.pl/wp-content/uploads/2025/09/darbud-white.png" class="img-fluid mb-4 mb-lg-5 mx-auto">
             </div>
         </div>
-        <div class="footer-widgets__logo mb-4 mb-lg-5"></div>
         <div class="row justify-content-center">
             <div class="col-lg-4 pe-lg-5 mb-4 mb-lg-0">
                 <?php if (is_active_sidebar('social-bottom')) : ?>
@@ -18,7 +17,7 @@
                     <?php dynamic_sidebar('menu-about'); ?>
                 <?php endif; ?>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 footer-widgets__bottom-desc mb-4 mb-lg-0">
                 <?php if (is_active_sidebar('menu-services')) : ?>
                     <?php dynamic_sidebar('menu-services'); ?>
                 <?php endif; ?>
