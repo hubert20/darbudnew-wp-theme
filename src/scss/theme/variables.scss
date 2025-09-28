@@ -29,9 +29,9 @@ $colors: (
     .btn-#{$name} {
         @extend .btn;
         background: map-get($colors, $name);
-        color: #6b4038 !important;
+        color: #fff !important;
         transition: all .5s;
-        border: 1px solid #a67a71 !important;
+        border: 1px solid $green !important;
 
         &:hover,
         &:focus {
@@ -120,7 +120,6 @@ $colors: (
         transform: scale(1)
     }
 }
-
 
 .bg-green-mark {
     background: $green;
