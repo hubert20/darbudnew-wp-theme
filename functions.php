@@ -226,6 +226,22 @@ function wp_darbudnew_widgets_init()
     'before_widget' => '<div>',
     'after_widget' => '</div>',
   ));
+    register_sidebar(array(
+    'name'          => esc_html__('Social bottom', 'darbudnew-wp-theme'),
+    'id'            => 'social-bottom',
+    'description'   => esc_html__('Add widgets here.', 'darbudnew-wp-theme'),
+    'before_widget' => '<div id="%1$s" class=" widget %2$s">',
+    'after_widget'  => '</div>',
+  ));
+    register_sidebar(array(
+    'name'          => esc_html__('Bottom menu about', 'darbudnew-wp-theme'),
+    'id'            => 'menu-about',
+    'description'   => esc_html__('Add widgets here.', 'darbudnew-wp-theme'),
+    'before_widget' => '<div id="%1$s" class="bottom-nav-menu widget %2$s">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h5 class="bottom-nav-menu__title mb-2 mb-lg-3 font-weight-bold">',
+    'after_title'   => '</h5>',
+  ));
   register_sidebar(array(
     'name'          => esc_html__('Bottom menu services', 'darbudnew-wp-theme'),
     'id'            => 'menu-services',
@@ -236,31 +252,6 @@ function wp_darbudnew_widgets_init()
     'after_title'   => '</h5>',
   ));
   register_sidebar(array(
-    'name'          => esc_html__('Bottom menu about', 'darbudnew-wp-theme'),
-    'id'            => 'menu-about',
-    'description'   => esc_html__('Add widgets here.', 'darbudnew-wp-theme'),
-    'before_widget' => '<div id="%1$s" class="bottom-nav-menu widget %2$s">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h5 class="bottom-nav-menu__title mb-2 mb-lg-3 font-weight-bold">',
-    'after_title'   => '</h5>',
-  ));
-  register_sidebar(array(
-    'name'          => esc_html__('Footer start', 'darbudnew-wp-theme'),
-    'id'            => 'footer-start',
-    'description'   => esc_html__('Add widgets here.', 'darbudnew-wp-theme'),
-    'before_widget' => '<div id="%1$s" class=" widget %2$s">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h5 class="bottom-nav-menu__title mb-2 mb-lg-3 font-weight-bold">',
-    'after_title'   => '</h5>',
-  ));
-  register_sidebar(array(
-    'name'          => esc_html__('Filter cats', 'darbudnew-wp-theme'),
-    'id'            => 'filter-cats',
-    'description'   => esc_html__('Add widgets here.', 'darbudnew-wp-theme'),
-    'before_widget' => '<div>',
-    'after_widget' => '</div>',
-  ));
-  register_sidebar(array(
     'name'          => esc_html__('Float btn', 'darbudnew-wp-theme'),
     'id'            => 'float-btn',
     'description'   => esc_html__('Add widgets here.', 'darbudnew-wp-theme'),
@@ -268,8 +259,8 @@ function wp_darbudnew_widgets_init()
     'after_widget' => '</div>',
   ));
   register_sidebar(array(
-    'name'          => esc_html__('Left sidebar', 'darbudnew-wp-theme'),
-    'id'            => 'left-sidebar',
+    'name'          => esc_html__('Newsletter', 'darbudnew-wp-theme'),
+    'id'            => 'newsletter',
     'description'   => esc_html__('Add widgets here.', 'darbudnew-wp-theme'),
     'before_widget' => '<div id="%1$s" class=" widget %2$s">',
     'after_widget'  => '</div>',
