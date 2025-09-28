@@ -2,22 +2,19 @@
 // #Colors
 // ------------------------------------ //
 
-$light-beige: #f1dccb;
-$light-rose: #fbd0ca;
-$bronze: #6b4038;
+$green: #599f4f;
+$green-light: #0dcc00;
 
 // Definiowanie nazw jako stringów
 $names: (
-    "light-beige",
-    "light-rose",
-    "bronze",
+    "green",
+    "green-light",
 );
 
 // Mapowanie nazw na kolory
 $colors: (
-    "light-beige": $light-beige,
-    "light-rose": $light-rose,
-    "bronze": $bronze,
+    "green": $green,
+    "green-light": $green-light,
 );
 
 @each $name in $names {
@@ -125,9 +122,9 @@ $colors: (
 }
 
 
-.bg-pink-mark {
-    background: $pink;
-    box-shadow: 5px 0 0 $pink, -5px 0 0 $pink;
+.bg-green-mark {
+    background: $green;
+    box-shadow: 5px 0 0 $green, -5px 0 0 $pink;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
     -webkit-box-decoration-break: split;
