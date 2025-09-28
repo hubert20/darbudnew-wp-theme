@@ -2,9 +2,9 @@
 <section class="main-products-slider position-relative p-4 py-lg-5 overflow-hidden" id="main-products-offer-slider">
     <h2 class="text-center mb-4 mb-lg-5 playfair-display-400">
         <span class="d-block icon-text icon-text--white text-magenta lobster-font mb-2"></span>
-        <span class="d-block icon-text icon-text--white standard-title-5 mb-2">Szkolenia i Poradniki</span>
+        <span class="d-block icon-text icon-text--white standard-title-5 mb-2"></span>
         <div class="text-center">
-            <img src="https://darbudnew.pl/wp-content/uploads/2025/06/flowers-200.png" class="flowers-heading-1" alt="">
+            <img src="" class="flowers-heading-1" alt="">
         </div>
     </h2>
     <div class="swiper swiper-main-products">
