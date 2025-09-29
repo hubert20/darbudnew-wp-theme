@@ -23,6 +23,8 @@
             <div class="col-lg-2">
                 <?php if (is_active_sidebar('newsletter')) : ?>
                     <?php dynamic_sidebar('newsletter'); ?>
+                <?php else : ?>
+                    <div class="ml-embedded" data-form="OD79vF"></div>
                 <?php endif; ?>
             </div>
         </div>
