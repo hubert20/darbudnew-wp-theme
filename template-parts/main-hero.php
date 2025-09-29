@@ -3,7 +3,7 @@ $banner_cnt = get_field('banner_cnt');
 $banner_grafika = get_field('banner_grafika');
 ?>
 
-<div class="px-lg-5 pb-4 pb-lg-5 hero-main">
+<div class="px-lg-4 pb-4 pb-lg-5 hero-main">
     <div class="container-fluid text-center hero-main--wrap position-relative" style="background-image: url('<?php echo $banner_grafika; ?>')">
         <?php echo $banner_cnt; ?>
     </div>
