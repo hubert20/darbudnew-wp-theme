@@ -10,6 +10,9 @@ get_header();
 <!-- Main hero -->
 <?php get_template_part('template-parts/main-hero'); ?>
 
+<!-- Main offer slider -->
+<?php get_template_part('template-parts/main-offer-slider'); ?>
+
 
 <?php
 while (have_posts()) : the_post();

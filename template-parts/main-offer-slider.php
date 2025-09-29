@@ -1,4 +1,4 @@
-<!-- Slider with products -->
+<!-- Slider with offer -->
 <section class="main-products-slider position-relative p-4 py-lg-5 overflow-hidden" id="main-products-offer-slider">
     <h2 class="text-center mb-4 mb-lg-5 playfair-display-400">
         <span class="d-block icon-text icon-text--white text-magenta lobster-font mb-2"></span>
