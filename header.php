@@ -45,7 +45,7 @@
         <!-- Top header -->
         <div class="top-header-menu">
             <div class="container-fluid px-xl-4">
-                <nav class="navbar navbar-expand-xl navbar-theme chakra-petch-font py-lg-2">
+                <nav class="navbar navbar-expand-xl navbar-theme py-lg-2">
                     <?php if (get_theme_mod('darbudnew_wp_theme_logo')) : ?>
                         <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name')); ?>" class="navbar-brand align-items-center top-logo flex-column">
                             <img src="<?php echo esc_url(str_replace('https://', 'http://', get_theme_mod('darbudnew_wp_theme_logo'))); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>">
@@ -54,7 +54,7 @@
                     <button class="navbar-toggler rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse justify-content-md-center" id="main-menu">
+                    <div class="collapse navbar-collapse justify-content-md-end" id="main-menu">
                         <?php
                         wp_nav_menu(array(
                             'theme_location' => 'main-menu',
