@@ -35,7 +35,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <header id="top-header" class="fixed-lg-top" role="banner">
+    <header id="top-header" class="fixed-top" role="banner">
         <!-- Top Toolbar -->
         <div class="toolbar-area d-none d-lg-block px-xl-4">
             <?php if (is_active_sidebar('top-toolbar')) : ?>

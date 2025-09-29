@@ -15,7 +15,7 @@
 }
 
 .top-header-menu {
-    border-bottom: 3px double rgba(0, 0, 0, .1);
+    background-color: #191919;
 }
 
 .navbar-brand {
@@ -469,14 +469,14 @@
 
 //breadcrumbs
 .breadcrumbs {
-    color:$green;
+    color: $green;
 
     a {
         color: #fff;
     }
 
     .breadcrumb_last {
-        color:$green;
+        color: $green;
     }
 }
 
