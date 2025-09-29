@@ -1,6 +1,14 @@
 // Main hero
 .hero-main {
     background-color: #191919;
+
+    &--wrap {
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 700px;
+        background-size: cover;
+        border-radius: 20px;
+    }
 }
 
 // Boxes jobs scroll animations
@@ -181,14 +189,4 @@
             transform: rotate(-45deg);
         }
     }
-}
-
-// Hero image with content
-.hero_wrap {
-    overflow: hidden;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 100vh;
-    background-size: cover;
 }
