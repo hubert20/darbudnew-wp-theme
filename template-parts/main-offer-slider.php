@@ -19,6 +19,7 @@
         <div class="swiper-wrapper">
             <?php if (! empty($categories)) : ?>
                 <?php foreach ($categories as $category) : ?>
+                    <?php if ($category->slug === 'bez-kategorii') continue; ?>
                     <div class="swiper-slide">
                         <a class="d-block text-decoration-none"
                             href="<?php echo esc_url(get_category_link($category->term_id)); ?>">
