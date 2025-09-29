@@ -44,7 +44,7 @@
         </div>
         <!-- Top header -->
         <div class="top-header-menu">
-            <div class="container px-xl-4">
+            <div class="container-fluid px-xl-4">
                 <nav class="navbar navbar-expand-xl navbar-theme chakra-petch-font py-lg-0">
                     <?php if (get_theme_mod('darbudnew_wp_theme_logo')) : ?>
                         <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name')); ?>" class="navbar-brand align-items-center top-logo flex-column">
