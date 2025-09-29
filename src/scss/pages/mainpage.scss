@@ -1,8 +1,6 @@
 // Main hero
-.top-hero {
-    @include media-breakpoint-up(lg) {
-        min-height: 70vh;
-    }
+.main-hero {
+    background-color: #191919;
 }
 
 // Boxes jobs scroll animations
@@ -49,6 +47,7 @@
         border: 1px solid #eee;
         background: #fff;
         transition: .5s all;
+
         &:hover {
             border-color: $green;
         }
