@@ -2,37 +2,37 @@
 // #Typography rules
 // ------------------------------------ //
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
-$montserrat-weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
-$ubuntu-weights: 300, 400, 500, 700;
+$rajdhani-weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+// $ubuntu-weights: 300, 400, 500, 700;
 
-$font-primary: "Montserrat", sans-serif;
-$font-secondary: "Ubuntu", serif;
+$font-primary: "Rajdhani", sans-serif;
+// $font-secondary: "Ubuntu", serif;
 
-@each $weight in $montserrat-weights {
-  .montserrat-#{$weight} {
-    font-family: "Montserrat", sans-serif;
+@each $weight in $rajdhani-weights {
+  .rajdhani-#{$weight} {
+    font-family: "Rajdhani", sans-serif;
     font-optical-sizing: auto;
     font-weight: $weight;
     font-style: normal;
   }
 }
 
-@each $weight in $ubuntu-weights {
-  .ubuntu-#{$weight} {
-    font-family: "Ubuntu", serif;
-    font-optical-sizing: auto;
-    font-weight: $weight;
-    font-style: normal;
-  }
-}
+// @each $weight in $ubuntu-weights {
+//   .ubuntu-#{$weight} {
+//     font-family: "Ubuntu", serif;
+//     font-optical-sizing: auto;
+//     font-weight: $weight;
+//     font-style: normal;
+//   }
+// }
 
 
 html,
 body {
   background: white;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Rajdhani", sans-serif;
 }
 
 @for $i from 11 through 16 {
