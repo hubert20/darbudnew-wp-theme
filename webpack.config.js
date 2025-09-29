@@ -14,13 +14,27 @@ module.exports = (env, argv) => {
     output: {
       filename: "[name].bundle.js",
       path: path.resolve(__dirname, "dist"),
-      clean: true // czyści pliki przed nowym buildem
+      clean: true
     },
 
     devtool: isProduction ? false : "source-map",
 
     module: {
       rules: [
+        // NEW: handle plain CSS (from node_modules like Swiper/Bootstrap)
+        {
+          test: /\.css$/i,
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader: "css-loader",
+              options: {
+                sourceMap: !isProduction
+                // keep default url: true so asset urls work if present
+              }
+            }
+          ]
+        },
         {
           test: /\.scss$/,
           exclude: /node_modules/,
@@ -38,9 +52,7 @@ module.exports = (env, argv) => {
               options: {
                 sourceMap: !isProduction,
                 postcssOptions: {
-                  plugins: [
-                    require("autoprefixer")
-                  ]
+                  plugins: [require("autoprefixer")]
                 }
               }
             },
@@ -60,9 +72,7 @@ module.exports = (env, argv) => {
           exclude: /node_modules/,
           use: {
             loader: "babel-loader",
-            options: {
-              presets: ["@babel/preset-env"]
-            }
+            options: { presets: ["@babel/preset-env"] }
           }
         }
       ]

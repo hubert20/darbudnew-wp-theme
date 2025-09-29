@@ -7,42 +7,36 @@
             <img src="" class="flowers-heading-1" alt="">
         </div>
     </h2>
-    <div class="swiper swiper-main-products">
-        <div class="swiper-wrapper">
-            <?php
-            $categories = get_terms(array(
-                'taxonomy'   => 'product_cat',
-                'hide_empty' => true,
-            ));
 
-            if (!empty($categories) && !is_wp_error($categories)) : ?>
-                <?php foreach ($categories as $category) :
-                    $thumbnail_id = get_term_meta($category->term_id, 'thumbnail_id', true);
-                    $image_src = wp_get_attachment_image_src($thumbnail_id, 'medium_large');
-                    $image_url = wp_get_attachment_url($thumbnail_id);
-                    $category_link = get_term_link($category);
-                ?>
+    <?php
+    $categories = get_categories(array(
+        'taxonomy'   => 'category',
+        'hide_empty' => false,
+    ));
+    ?>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <?php if (! empty($categories)) : ?>
+                <?php foreach ($categories as $category) : ?>
                     <div class="swiper-slide">
-                        <a href="<?php echo esc_url($category_link); ?>" class="main-products-slider__item position-relative text-decoration-none d-block p-3" title="<?php echo esc_html($category->name); ?>">
-                            <span class="btn btn-double-border btn-style main-products-slider__item--btn text-dark py-3" style="border-radius: 3px;">
-                                <span class="btn-style-border--text fw-bold text-uppercase z-3">Zobacz produkty <i class="fa fa-angle-right"></i></span>
-                                <span class="btn-style--border btn-style--first bg-white"></span>
-                                <span class="btn-style--border btn-style--second bg-white"></span>
-                            </span>
-                            <?php if (!empty($image_src)) : ?>
-                                <img src="<?php echo esc_url($image_src[0]); ?>" class="img-fluid mb-3" alt="<?php echo esc_attr($category->name); ?>">
+                        <a class="d-block text-decoration-none"
+                            href="<?php echo esc_url(get_category_link($category->term_id)); ?>">
+                            <h6 class="mb-1"><?php echo esc_html($category->name); ?></h6>
+                            <?php if (! empty($category->description)) : ?>
+                                <p class="small text-body-secondary mb-0">
+                                    <?php echo esc_html($category->description); ?>
+                                </p>
                             <?php endif; ?>
-                            <h3 class="main-products-slider__item--title text-decoration-none d-block text-dark lobster-font text-center mb-0 fw-light">
-                                <?php echo esc_html($category->name); ?>
-                            </h3>
                         </a>
                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
     </div>
-    <div class="position-relative d-flex align-items-center justify-content-center">
-        <div class="swiper-main-products__prev swiper-button-prev"></div>
-        <div class="swiper-main-products__next swiper-button-next"></div>
-    </div>
+
 </section>
