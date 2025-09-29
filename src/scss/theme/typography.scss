@@ -2,13 +2,13 @@
 // #Typography rules
 // ------------------------------------ //
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 $montserrat-weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
-$playfair-weights: 400, 500, 600, 700, 800, 900;
+$ubuntu-weights: 300, 400, 500, 700;
 
 $font-primary: "Montserrat", sans-serif;
-$font-secondary: "Playfair Display", serif;
+$font-secondary: "Ubuntu", serif;
 
 @each $weight in $montserrat-weights {
   .montserrat-#{$weight} {
@@ -19,9 +19,9 @@ $font-secondary: "Playfair Display", serif;
   }
 }
 
-@each $weight in $playfair-weights {
-  .playfair-display-#{$weight} {
-    font-family: "Playfair Display", serif;
+@each $weight in $ubuntu-weights {
+  .ubuntu-#{$weight} {
+    font-family: "Ubuntu", serif;
     font-optical-sizing: auto;
     font-weight: $weight;
     font-style: normal;
@@ -41,7 +41,6 @@ body {
   }
 }
 
-//Heading h1-h6 with Playfair font
 //Title big 105px-50px
 //h1 80px-40px
 @media (min-width: 360px) {
