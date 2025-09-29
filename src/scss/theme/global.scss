@@ -54,11 +54,11 @@
                 z-index: 0;
 
                 @include media-breakpoint-up(xl) {
-                    font-size: 14px;
+                    font-size: 17px;
                     font-weight: 600;
                     position: relative;
                     padding: 1rem 0.7rem;
-                    // letter-spacing: 1px;
+                    letter-spacing: .5px;
 
                     &:not(.wpmenucart-contents) {
                         &::before {
@@ -84,7 +84,7 @@
                 text-align: center;
 
                 &:hover {
-                    color: #343434;
+                    color: #fff;
 
                     &:before {
                         width: 100%;
