@@ -22,14 +22,11 @@
         $to_exclude[] = (int) $term_en->term_id;
     }
 
-    // Fetch categories (change taxonomy if you need a custom one)
+    // Fetch categories
     $categories = get_categories(array(
         'taxonomy'   => 'category',
-        'hide_empty' => false,      // set to true if you want to hide empty categories
+        'hide_empty' => false,      // set to true jeśli chcesz ukryć puste kategorie
         'exclude'    => $to_exclude,
-        // 'parent'   => 0,          // uncomment to show only top-level categories
-        // 'orderby'  => 'name',
-        // 'order'    => 'ASC',
     ));
     ?>
 
@@ -39,22 +36,43 @@
                 <?php foreach ($categories as $category) : ?>
                     <div class="swiper-slide">
                         <a class="d-block text-decoration-none" href="<?php echo esc_url(get_category_link($category->term_id)); ?>">
+
                             <?php
-                            // Category thumbnail via term meta (e.g. from ACF or Woo/Custom)
-                            $thumb_id = get_term_meta($category->term_id, 'thumbnail_id', true);
-                            if ($thumb_id) {
-                                echo wp_get_attachment_image(
-                                    $thumb_id,
-                                    'medium',
-                                    false,
-                                    array(
-                                        'class'    => 'img-fluid w-100 d-block',
-                                        'loading'  => 'lazy',
-                                        'decoding' => 'async',
-                                        'sizes'    => '(min-width:1200px) 20vw, (min-width:992px) 25vw, (min-width:768px) 33vw, (min-width:576px) 50vw, 100vw',
-                                    )
-                                );
+                            // Najpierw spróbuj pobrać obrazek z pluginu "Obrazki kategorii"
+                            $cat_img_url = '';
+                            if (function_exists('z_taxonomy_image_url')) {
+                                $cat_img_url = z_taxonomy_image_url($category->term_id);
                             }
+
+                            if (!empty($cat_img_url)) :
+                            ?>
+                                <img
+                                    src="<?php echo esc_url($cat_img_url); ?>"
+                                    alt="<?php echo esc_attr($category->name); ?>"
+                                    class="img-fluid w-100 d-block"
+                                    loading="lazy"
+                                    decoding="async"
+                                    sizes="(min-width:1200px) 20vw, (min-width:992px) 25vw, (min-width:768px) 33vw, (min-width:576px) 50vw, 100vw"
+                                />
+                            <?php
+                            else :
+                                // fallback do thumbnail_id jeśli istnieje
+                                $thumb_id = get_term_meta($category->term_id, 'thumbnail_id', true);
+                                if ($thumb_id) {
+                                    echo wp_get_attachment_image(
+                                        $thumb_id,
+                                        'medium',
+                                        false,
+                                        array(
+                                            'class'    => 'img-fluid w-100 d-block',
+                                            'alt'      => $category->name,
+                                            'loading'  => 'lazy',
+                                            'decoding' => 'async',
+                                            'sizes'    => '(min-width:1200px) 20vw, (min-width:992px) 25vw, (min-width:768px) 33vw, (min-width:576px) 50vw, 100vw',
+                                        )
+                                    );
+                                }
+                            endif;
                             ?>
 
                             <?php if (! empty($category->name)) : ?>
