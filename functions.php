@@ -170,13 +170,16 @@ add_theme_support('post-thumbnails');
 
 // Then we'll add our custom images - 890px na 664px size
 add_image_size('news-width', 890, 664, true);
+ // Rozmiar dla kategorii: 302x275, twarde kadrowanie
+add_image_size('cat-width', 302, 275, true);
 
 // And then we'll add the custom size that spans the width of the blog to the Gutenberg image dropdown
 add_filter('image_size_names_choose', 'wpmudev_custom_image_sizes');
 function wpmudev_custom_image_sizes($sizes)
 {
   return array_merge($sizes, array(
-    'news-width' => __('News Width')
+    'news-width' => __('News Width'),
+    'cat-width' => __('Cat Width'),
   ));
 }
 

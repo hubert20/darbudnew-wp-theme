@@ -25,7 +25,7 @@
     // Fetch categories
     $categories = get_categories(array(
         'taxonomy'   => 'category',
-        'hide_empty' => false,      // set to true jeśli chcesz ukryć puste kategorie
+        'hide_empty' => false,
         'exclude'    => $to_exclude,
     ));
     ?>
@@ -38,30 +38,29 @@
                         <a class="d-block text-decoration-none" href="<?php echo esc_url(get_category_link($category->term_id)); ?>">
 
                             <?php
-                            // Najpierw spróbuj pobrać obrazek z pluginu "Obrazki kategorii"
-                            $cat_img_url = '';
-                            if (function_exists('z_taxonomy_image_url')) {
-                                $cat_img_url = z_taxonomy_image_url($category->term_id);
-                            }
+                            // 1) Obrazek z pluginu "Obrazki kategorii" - spróbuj pobrać ID z meta (najpewniejsze)
+                            $cat_plugin_img_id = get_term_meta($category->term_id, 'z_taxonomy_image_id', true);
 
-                            if (!empty($cat_img_url)) :
-                            ?>
-                                <img
-                                    src="<?php echo esc_url($cat_img_url); ?>"
-                                    alt="<?php echo esc_attr($category->name); ?>"
-                                    class="img-fluid w-100 d-block"
-                                    loading="lazy"
-                                    decoding="async"
-                                    sizes="(min-width:1200px) 20vw, (min-width:992px) 25vw, (min-width:768px) 33vw, (min-width:576px) 50vw, 100vw"
-                                />
-                            <?php
-                            else :
-                                // fallback do thumbnail_id jeśli istnieje
+                            if ($cat_plugin_img_id) {
+                                echo wp_get_attachment_image(
+                                    $cat_plugin_img_id,
+                                    'cat-width', // << tu wymuszamy 302x275
+                                    false,
+                                    array(
+                                        'class'    => 'img-fluid w-100 d-block',
+                                        'alt'      => $category->name,
+                                        'loading'  => 'lazy',
+                                        'decoding' => 'async',
+                                        'sizes'    => '(min-width:1200px) 20vw, (min-width:992px) 25vw, (min-width:768px) 33vw, (min-width:576px) 50vw, 100vw',
+                                    )
+                                );
+                            } else {
+                                // 2) Fallback do thumbnail_id (np. Woo/ACF)
                                 $thumb_id = get_term_meta($category->term_id, 'thumbnail_id', true);
                                 if ($thumb_id) {
                                     echo wp_get_attachment_image(
                                         $thumb_id,
-                                        'medium',
+                                        'cat-width', // << ten sam rozmiar
                                         false,
                                         array(
                                             'class'    => 'img-fluid w-100 d-block',
@@ -71,8 +70,13 @@
                                             'sizes'    => '(min-width:1200px) 20vw, (min-width:992px) 25vw, (min-width:768px) 33vw, (min-width:576px) 50vw, 100vw',
                                         )
                                     );
+                                } else {
+                                    // 3) (Opcjonalnie) Placeholder, jeśli żadne źródło nie ma obrazka
+                                    /*
+                                    echo '<img src="' . esc_url(get_template_directory_uri() . '/assets/img/placeholder-302x275.png') . '" alt="' . esc_attr($category->name) . '" class="img-fluid w-100 d-block" loading="lazy" decoding="async" />';
+                                    */
                                 }
-                            endif;
+                            }
                             ?>
 
                             <?php if (! empty($category->name)) : ?>
