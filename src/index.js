@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 document.addEventListener("DOMContentLoaded", () => {
     new Swiper(".swiper", {
         modules: [Navigation, Pagination],
-        loop: true,
+        loop: false,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
