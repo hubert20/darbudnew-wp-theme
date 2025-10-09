@@ -35,26 +35,19 @@
     </div>
 </div>
 
-<!-- Newsletter form Modal -->
-<div class="modal fade contactformModal offerformModal newsletterformModal" id="NewsletterformModal" tabindex="-1" aria-labelledby="NewsletterformModal" aria-hidden="true">
-    <div class="modal-dialog modal-md modal-dialog-centered">
+<!-- Offer form Modal -->
+<div class="modal fade" id="offerformModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-body p-0" id="modal-form">
-                <div class="d-flex flex-column" style="background: #f6f6f6;">
-                    <div class="row justify-content-center">
-                        <div class="col-3 col-lg-2 text-center">
-                            <img src="" class="img-fluid mb-2 mt-3  mx-auto">
-                        </div>
-                    </div>
-                    <div class="col-lg-12 bg-white position-relative">
-                        <!-- Newsletter mailer lite here -->
-                        <div class="ml-embedded" data-form="68LKIi"></div>
-                    </div>
-                    <!-- Close btn -->
-                    <button type="button" class="btn-close btn-close-mobile" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"></span>
-                    </button>
-                    <span class="round-close d-none d-lg-inline-block"></span>
+            <div class="modal-header bg-blue-dark d-flex py-1 justify-content-between">
+            <img src="/wp-content/uploads/2023/03/logo_white-1.png" alt="darbud.com.pl" class="img-fluid" style="height: 40px;">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-form">
+                <div class="modal-form-cnt" data-category-type="pomoc-organizacji">
+                    <?php echo apply_shortcodes('[contact-form-7 id="3524678" title="Formularz kontaktowy"]'); ?>
                 </div>
             </div>
         </div>

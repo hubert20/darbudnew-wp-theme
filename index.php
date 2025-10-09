@@ -1,12 +1,12 @@
 <?php
 // Sprawdź, czy motyw jest poprawnie załadowany
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 get_header(); // Załaduj nagłówek motywu
 
 // Treść strony
-if ( have_posts() ) {
-    while ( have_posts() ) {
+if (have_posts()) {
+    while (have_posts()) {
         the_post();
         the_content(); // Wyświetl treść wpisu/strony
     }
