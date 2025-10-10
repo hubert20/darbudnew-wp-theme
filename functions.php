@@ -315,3 +315,6 @@ add_filter('wpcf7_form_elements', function ($form) {
 
   return $form;
 });
+
+// Remove <p> in block Contact form 7
+add_filter('wpcf7_autop_or_not', '__return_false');
