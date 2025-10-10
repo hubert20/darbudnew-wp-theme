@@ -7,7 +7,7 @@ $formularz_cnt = get_field('formularz_cnt');
     <div class="container">
         <div class="row">
             <div class="col-lg-6 offset-lg-6">
-                <?php echo $formularz_cnt; ?>
+                <?php echo apply_shortcodes('[contact-form-7 id="3524678" title="Formularz kontaktowy"]'); ?>
             </div>
         </div>
     </div>
