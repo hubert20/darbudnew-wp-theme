@@ -11,43 +11,6 @@
     }
 }
 
-// Boxes jobs scroll animations
-.counter-number {
-    color: $yellow;
-
-    &--box {
-        position: relative;
-        z-index: 0;
-    }
-
-    &--plus {
-        &:after {
-            content: "+";
-            display: inline-block;
-            font-size: 45px;
-        }
-    }
-
-    &--icon {
-        height: 85px !important;
-        position: absolute;
-        right: 50px;
-        z-index: -1;
-        opacity: .3;
-    }
-}
-
-.counter-main-box {
-    &--titles {
-        font-size: 18px;
-    }
-
-    &__item {
-        border: 1px solid rgba(255, 255, 255, .2);
-        background: rgba(0, 0, 0, .3);
-    }
-}
-
 // Swiper main products slider 
 .main-products-slider {
     &__item {
@@ -190,3 +153,11 @@
         }
     }
 }
+
+// Main form section
+.main-form {
+    background-image: url('http://darbud.com.pl/wp-content/uploads/2025/10/bg-main-form-min.jpg');
+    background-size: cover;
+}
+
+

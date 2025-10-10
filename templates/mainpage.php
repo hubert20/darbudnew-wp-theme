@@ -13,6 +13,10 @@ get_header();
 <!-- Main offer slider -->
 <?php get_template_part('template-parts/main-offer-slider'); ?>
 
+<!-- Main form -->
+<?php get_template_part('template-parts/main-form'); ?>
+
+
 
 <?php
 while (have_posts()) : the_post();
