@@ -170,7 +170,7 @@ add_theme_support('post-thumbnails');
 
 // Then we'll add our custom images - 890px na 664px size
 add_image_size('news-width', 890, 664, true);
- // Rozmiar dla kategorii: 302x275, twarde kadrowanie
+// Rozmiar dla kategorii: 302x275, twarde kadrowanie
 add_image_size('cat-width', 302, 275, true);
 
 // And then we'll add the custom size that spans the width of the blog to the Gutenberg image dropdown
@@ -229,14 +229,14 @@ function wp_darbudnew_widgets_init()
     'before_widget' => '<div>',
     'after_widget' => '</div>',
   ));
-    register_sidebar(array(
+  register_sidebar(array(
     'name'          => esc_html__('Social bottom', 'darbudnew-wp-theme'),
     'id'            => 'social-bottom',
     'description'   => esc_html__('Add widgets here.', 'darbudnew-wp-theme'),
     'before_widget' => '<div id="%1$s" class=" widget %2$s">',
     'after_widget'  => '</div>',
   ));
-    register_sidebar(array(
+  register_sidebar(array(
     'name'          => esc_html__('Bottom menu about', 'darbudnew-wp-theme'),
     'id'            => 'menu-about',
     'description'   => esc_html__('Add widgets here.', 'darbudnew-wp-theme'),
@@ -287,4 +287,31 @@ function custom_remove_category_base_from_breadcrumbs($links)
 // Pozwól używać kategorii na stronach
 add_action('init', function () {
   register_taxonomy_for_object_type('category', 'page');
+});
+
+/**
+ * Przenieś automatycznie wstrzyknięty Cloudflare Turnstile
+ * na dół formularza CF7 (przed [submit]).
+ */
+add_filter('wpcf7_form_elements', function ($form) {
+  // 1) Znajdź DIV Turnstile (różne wtyczki generują podobny kontener)
+  if (!preg_match('/<div[^>]*class=["\']?[^"\']*cf[-_ ]?turnstile[^"\']*["\']?[^>]*>.*?<\/div>/is', $form, $m)) {
+    // nic nie znaleziono – zostaw jak jest
+    return $form;
+  }
+
+  $turnstile = $m[0];
+
+  // 2) Usuń go z obecnego miejsca
+  $form = str_replace($turnstile, '', $form);
+
+  // 3) Wstaw PRZED [submit]
+  if (preg_match('/(\[submit[^\]]*\])/i', $form)) {
+    $form = preg_replace('/(\[submit[^\]]*\])/i', $turnstile . "\n$1", $form, 1);
+  } else {
+    // awaryjnie – doklej na koniec formularza
+    $form .= "\n" . $turnstile;
+  }
+
+  return $form;
 });
