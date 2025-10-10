@@ -39,18 +39,14 @@
 <div class="modal fade" id="offerformModal" tabindex="-1" aria-labelledby="offerformModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-
             <div class="modal-header bg-primary py-2">
-                <img src="/wp-content/uploads/2023/03/logo_white-1.png" alt="darbud.com.pl" class="img-fluid" style="height: 40px;">
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-
             <div class="modal-body" id="modal-form">
-                <div class="modal-form-cnt" data-category-type="pomoc-organizacji">
+                <div class="modal-form-cnt">
                     <?php echo apply_shortcodes('[contact-form-7 id="3524678" title="Formularz kontaktowy"]'); ?>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
