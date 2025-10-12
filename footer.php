@@ -11,32 +11,7 @@
  */
 ?>
 
-
-<!-- Contact form Modal -->
-<div class="modal fade contactformModal" id="ContactformModal" tabindex="-1" aria-labelledby="ContactformModal" aria-hidden="true">
-    <div class="modal-dialog modal-md modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body p-0" id="modal-form">
-                <div class="d-flex justify-content-center">
-                    <div class="col-lg-12 offerformModal__left-bg bg-white position-relative">
-                        <div class="p-4">
-                            <?php echo apply_shortcodes('[contact-form-7 id="f5ee6a9" title="Zapytanie"]'); ?>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 d-none d-lg-flex offerformModal__right-bg"></div>
-                    <!-- Close btn -->
-                    <button type="button" class="btn-close btn-close-mobile" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"></span>
-                    </button>
-                    <span class="round-close d-none d-lg-inline-block"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Offer form Modal -->
-<div class="modal fade" id="offerformModal" tabindex="-1" aria-labelledby="offerformModalLabel" aria-hidden="true">
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header bg-primary py-2">
