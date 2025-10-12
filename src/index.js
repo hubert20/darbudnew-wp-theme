@@ -50,7 +50,7 @@ document.querySelectorAll('.video-btn').forEach(button => {
 // Add event listener for when the modal is opened
 document.getElementById('videoModal').addEventListener('shown.bs.modal', () => {
   // Update the video source with autoplay and other options
-  document.getElementById('video').src = videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0";
+  document.getElementById('video').src = videoSrc + "?modestbranding=1&rel=0&controls=1&showinfo=0&html5=1&autoplay=1";
 });
 
 // Add event listener for when the modal is closed
