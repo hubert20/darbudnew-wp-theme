@@ -501,7 +501,7 @@
         text-align: center;
         box-shadow: 0 12px 24px 0 rgba(254, 213, 16, .5);
         border-radius: 50%;
-        background: $green;
+        background: $red-oryginal;
         color: #fff;
         z-index: 1;
 
@@ -527,7 +527,7 @@
             height: 110%;
             width: 110%;
             line-height: 110px;
-            background: $green;
+            background: $red-oryginal;
             border-radius: 50%;
             z-index: -1;
             animation: pulse-border 1500ms ease-out infinite;

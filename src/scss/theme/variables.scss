@@ -4,17 +4,20 @@
 
 $green: #599f4f;
 $green-light: #0dcc00;
+$red-oryginal: #e3000f;
 
 // Definiowanie nazw jako stringów
 $names: (
     "green",
     "green-light",
+    "red-oryginal",
 );
 
 // Mapowanie nazw na kolory
 $colors: (
     "green": $green,
     "green-light": $green-light,
+    "red-oryginal": $red-oryginal,
 );
 
 @each $name in $names {
