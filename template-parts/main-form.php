@@ -5,7 +5,7 @@ $formularz_cnt = get_field('formularz_cnt');
 
 <section class="main-form py-4 py-lg-5" style="background-image: url('<?php echo $bg_main_form; ?>')">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center align-items-end">
             <div class="col-lg-4">
                 <div class="main-form--left-box position-relative">
                     <h2>Zbudujemy Twój szkieletowy dom</h2>
@@ -15,7 +15,7 @@ $formularz_cnt = get_field('formularz_cnt');
                     </button>
                 </div>
             </div>
-            <div class="col-lg-5 offset-lg-8">
+            <div class="col-lg-5">
                 <div class="p-4 bg-white contact-form-box">
                     <?php echo apply_shortcodes('[contact-form-7 id="3524678" title="Formularz kontaktowy"]'); ?>
                 </div>
