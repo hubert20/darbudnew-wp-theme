@@ -159,10 +159,17 @@
     background-color: #F9F9F9;
     background-position: top left;
     background-repeat: no-repeat;
+
+    &--left-box {
+        background-color: rgba(89, 159, 79, .5);
+        border-radius: 12px;
+    }
 }
+
 .wpcf7-turnstile {
     text-align: center;
 }
+
 .contact-form-box {
     border-radius: 12px;
 }

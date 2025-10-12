@@ -7,7 +7,7 @@ $formularz_cnt = get_field('formularz_cnt');
     <div class="container">
         <div class="row justify-content-center align-items-end">
             <div class="col-lg-4">
-                <div class="main-form--left-box position-relative">
+                <div class="main-form--left-box position-relative p-4">
                     <h2>Zbudujemy Twój szkieletowy dom</h2>
                     <p>Na Twoją kieszeń, bez stresu, gotowy do zamieszkania</p>
                     <button type="button" class="btn btn-primary video-btn" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/Qf97y9Zl7RI?si=jpcQgvQ8uiQxD87l" data-bs-target="#videoModal">
