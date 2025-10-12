@@ -10,9 +10,9 @@ $formularz_cnt = get_field('formularz_cnt');
                 <div class="main-form--left-box position-relative p-4">
                     <h2 class="standard-title-4 fw-bold lh-1 text-white mb-2">Zbudujemy Twój szkieletowy dom</h2>
                     <p class="standard-title-6 text-white">Na Twoją kieszeń, bez stresu, gotowy do zamieszkania</p>
-                    <button type="button" class="btn btn-primary video-btn" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/Qf97y9Zl7RI?si=jpcQgvQ8uiQxD87l" data-bs-target="#videoModal">
-                        Play Video 1 - autoplay
-                    </button>
+                    <a role="button" type="button" class="main-form--video-btn pulse-animation video-btn" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/Qf97y9Zl7RI?si=jpcQgvQ8uiQxD87l" data-bs-target="#videoModal">
+                        <span class="video-btn"><i class="fa fa-play"></i></span>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-5">
