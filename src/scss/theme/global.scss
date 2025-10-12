@@ -266,6 +266,7 @@
     background-color: #101010;
     position: relative;
     z-index: 0;
+
     &__logo {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
@@ -651,4 +652,23 @@
     color: #fff !important;
     padding: .475rem .75rem;
     border-radius: 0;
+}
+
+// Modal
+.videomodal {
+    .modal-dialog {
+        max-width: 800px;
+        margin: 30px auto;
+    }
+
+    .modal-body {
+        position: relative;
+        padding: 0px;
+    }
+
+    .btn-close {
+        position: absolute;
+        right: -30px;
+        top: 0;
+    }
 }

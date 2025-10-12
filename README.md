@@ -1,5 +1,5 @@
-# mariolahairstylist-wp-theme
-Mariola Widlak - mariolahairstylist.pl
+# darbudnew-wp-theme
+DARBUD - darbud.com.pl.pl
 
 <!-- npm run build:dev → dist/style.css + style.css.map
 
