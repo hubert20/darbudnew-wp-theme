@@ -54,7 +54,7 @@ document.getElementById('videoModal').addEventListener('shown.bs.modal', () => {
 });
 
 // Add event listener for when the modal is closed
-document.getElementById('myModal').addEventListener('hide.bs.modal', () => {
+document.getElementById('videoModal').addEventListener('hide.bs.modal', () => {
   // Stop the video by resetting the source
   document.getElementById('video').src = videoSrc;
 });
