@@ -1,10 +1,6 @@
 <section class="main-products-slider position-relative p-4 py-lg-5 overflow-hidden" id="main-products-offer-slider">
-    <h2 class="text-center mb-4 mb-lg-5 playfair-display-400">
-        <span class="d-block icon-text icon-text--white text-magenta lobster-font mb-2"></span>
-        <span class="d-block icon-text icon-text--white standard-title-5 mb-2"></span>
-        <div class="text-center">
-            <img src="" class="flowers-heading-1" alt="">
-        </div>
+    <h2 class="text-center mb-4 mb-lg-5 text-green rajdhani-600">
+        Domy mobilne i budownictwo energooszczędne szkieletowe
     </h2>
 
     <?php
