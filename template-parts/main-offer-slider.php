@@ -55,13 +55,13 @@
                                 );
                             } elseif (!empty($cat_img_url)) {
                                 // Jeśli mamy tylko URL — pokaż obraz bez wymuszonego rozmiaru
-                                echo '<img src="' . esc_url($cat_img_url) . '" alt="' . esc_attr($category->name) . '" class="img-fluid w-100 d-block" loading="lazy" decoding="async">';
+                                echo '<img src="' . esc_url($cat_img_url) . '" alt="' . esc_attr($category->name) . '" class="main-products--item-img img-fluid w-100 d-block" loading="lazy" decoding="async">';
                             }
                             // Jeśli nie ma żadnego obrazka — nic nie renderujemy, ale kategoria i tak zostaje pokazana (tytuł/opis poniżej)
                             ?>
 
                             <?php if (!empty($category->name)) : ?>
-                                <p class="mb-0 main-products--item-title"><?php echo esc_html($category->name); ?></p>
+                                <p class="mb-0 main-products--item-title bg-green p-3 p-lg-4 text-white standard-title-6 fw-bold"><?php echo esc_html($category->name); ?></p>
                             <?php endif; ?>
 
                             <?php if (!empty($category->description)) : ?>

@@ -12,56 +12,20 @@
 }
 
 // Swiper main products slider 
-.main-products-slider {
+.main-products {
     background-color: #0b1930;
     position: relative;
 
-    &__item {
+    &--item-title {
+        position: absolute;
+        width: 90%;
+        bottom: 0;
+        border-radius: 0 12px;
+    }
+
+    &--item-img {
         position: relative;
-        border: 1px solid #eee;
-        background: #fff;
-        transition: .5s all;
-
-        &:hover {
-            border-color: $green;
-        }
-
-        &--title {
-            font-size: 20px;
-            letter-spacing: 2px;
-        }
-
-        &--subtitle {
-            display: block;
-            font-size: 17px;
-            letter-spacing: 1px;
-        }
-
-        &--statictitle {
-            position: absolute;
-            top: 60px;
-            width: 100%;
-        }
-
-        &--btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            z-index: 0;
-            opacity: 0;
-            transform: translateX(-50%) translateY(-50%);
-            transition: all 0.35s cubic-bezier(0, 0, 0.2, 1);
-            width: 65%;
-        }
-
-        &:hover {
-            &>span {
-                opacity: 1;
-            }
-        }
+        border-radius: 12px;
     }
 
     &:after {
