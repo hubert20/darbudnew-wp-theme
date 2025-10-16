@@ -46,7 +46,7 @@
                                     'cat-width',
                                     false,
                                     [
-                                        'class'    => 'img-fluid w-100 d-block',
+                                        'class'    => 'img-fluid w-100 d-block main-products--item-img',
                                         'alt'      => $category->name,
                                         'loading'  => 'lazy',
                                         'decoding' => 'async',
