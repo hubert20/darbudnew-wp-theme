@@ -1,5 +1,5 @@
 <section class="main-products-slider main-products position-relative p-4 py-lg-5 overflow-hidden" id="main-products-offer-slider">
-    <h2 class="text-center mb-4 mb-lg-5 text-white rajdhani-600 standard-title-4">
+    <h2 class="text-center mb-4 mb-lg-5 text-green rajdhani-600 standard-title-4">
         Domy mobilne i budownictwo energooszczędne szkieletowe
     </h2>
 
@@ -61,7 +61,7 @@
                             ?>
 
                             <?php if (!empty($category->name)) : ?>
-                                <p class="mb-0 main-products--item-title p-3 p-lg-4 text-green standard-title-6 rajdhani-500"><?php echo esc_html($category->name); ?></p>
+                                <p class="mb-0 main-products--item-title p-3 p-lg-4 text-white standard-title-6 rajdhani-500"><?php echo esc_html($category->name); ?></p>
                             <?php endif; ?>
 
                             <?php if (!empty($category->description)) : ?>
