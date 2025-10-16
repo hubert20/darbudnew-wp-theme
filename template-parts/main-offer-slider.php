@@ -61,7 +61,7 @@
                             ?>
 
                             <?php if (!empty($category->name)) : ?>
-                                <p class="mb-0 main-products--item-title bg-green p-3 p-lg-4 text-white standard-title-6 fw-bold"><?php echo esc_html($category->name); ?></p>
+                                <p class="mb-0 main-products--item-title p-3 p-lg-4 text-white standard-title-6 rajdhani-500"><?php echo esc_html($category->name); ?></p>
                             <?php endif; ?>
 
                             <?php if (!empty($category->description)) : ?>
@@ -77,6 +77,6 @@
 
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
-        <div class="swiper-pagination"></div>
+        <!-- <div class="swiper-pagination"></div> -->
     </div>
 </section>
