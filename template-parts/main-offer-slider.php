@@ -1,4 +1,4 @@
-<section class="main-products-slider position-relative p-4 py-lg-5 overflow-hidden" id="main-products-offer-slider">
+<section class="main-products-slider main-products position-relative p-4 py-lg-5 overflow-hidden" id="main-products-offer-slider">
     <h2 class="text-center mb-4 mb-lg-5 text-white rajdhani-600">
         Domy mobilne i budownictwo energooszczędne szkieletowe
     </h2>
@@ -36,7 +36,7 @@
                     $cat_img_id = $cat_img_url ? attachment_url_to_postid($cat_img_url) : 0;
                     ?>
                     <div class="swiper-slide">
-                        <a class="d-block text-decoration-none" href="<?php echo esc_url(get_category_link($category->term_id)); ?>">
+                        <a class="main-products--item d-block text-decoration-none" href="<?php echo esc_url(get_category_link($category->term_id)); ?>">
 
                             <?php
                             // Jeśli mamy ID — wyrenderuj rozmiar 302x275 (cat-width)
@@ -61,11 +61,11 @@
                             ?>
 
                             <?php if (!empty($category->name)) : ?>
-                                <h6 class="mb-1"><?php echo esc_html($category->name); ?></h6>
+                                <p class="mb-0 main-products--item-title"><?php echo esc_html($category->name); ?></p>
                             <?php endif; ?>
 
                             <?php if (!empty($category->description)) : ?>
-                                <p class="small text-body-secondary mb-0">
+                                <p class="small text-body-secondary mb-0 main-products--item-desc">
                                     <?php echo esc_html($category->description); ?>
                                 </p>
                             <?php endif; ?>
