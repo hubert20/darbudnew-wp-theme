@@ -60,12 +60,12 @@
                                 }
                                 // Jeśli nie ma żadnego obrazka — nic nie renderujemy, ale kategoria i tak zostaje pokazana (tytuł/opis poniżej)
                                 ?>
-                                <div class="main-products--item-title">
+                                <div class="main-products--item-title p-3">
                                     <?php if (!empty($category->name)) : ?>
-                                        <p class="mb-0 p-3 p-lg-4 text-white standard-title-6 rajdhani-500"><?php echo esc_html($category->name); ?></p>
+                                        <p class="mb-0 text-white standard-title-6 rajdhani-500"><?php echo esc_html($category->name); ?></p>
                                     <?php endif; ?>
                                     <?php if (!empty($category->description)) : ?>
-                                        <p class="small text-body-secondary mb-0 main-products--item-desc">
+                                        <p class="small text-white mb-0 main-products--item-desc">
                                             <?php echo esc_html($category->description); ?>
                                         </p>
                                     <?php endif; ?>
