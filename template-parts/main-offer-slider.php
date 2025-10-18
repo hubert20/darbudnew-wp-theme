@@ -1,6 +1,6 @@
 <section class="main-products-slider main-products position-relative p-4 py-lg-5 overflow-hidden" id="main-products-offer-slider">
     <div class="container">
-        <h2 class="text-center mb-4 mb-lg-5 text-green rajdhani-600 standard-title-4">
+        <h2 class="mb-4 mb-lg-5 text-green rajdhani-600 standard-title-4">
             Domy mobilne i budownictwo energooszczędne szkieletowe
         </h2>
 
