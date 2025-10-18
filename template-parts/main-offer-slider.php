@@ -1,9 +1,14 @@
 <section class="main-products-slider main-products position-relative p-4 py-lg-5 overflow-hidden" id="main-products-offer-slider">
     <div class="container">
-        <h2 class="mb-4 mb-lg-5 text-green rajdhani-600 standard-title-4">
-            Domy mobilne i budownictwo energooszczędne szkieletowe
-        </h2>
-
+        <div class="slider-header">
+            <h2 class="mb-4 mb-lg-5 text-green rajdhani-600 standard-title-4">
+                Domy mobilne i budownictwo energooszczędne szkieletowe
+            </h2>
+            <div class="slider-nav">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
         <?php
         // Wyklucz "bez-kategorii" (PL) i "uncategorized" (EN)
         $exclude = [];
@@ -24,7 +29,7 @@
         ]);
         ?>
 
-        <div class="swiper">
+        <div class="swiper my-slider">
             <div class="swiper-wrapper">
                 <?php if (!empty($categories)) : ?>
                     <?php foreach ($categories as $category) : ?>

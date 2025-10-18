@@ -71,6 +71,58 @@
     }
 }
 
+.slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #4a8b39; // dopasowany do zielonego z nagłówka
+        margin: 0;
+    }
+
+    .slider-nav {
+        display: flex;
+        gap: 10px;
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            position: static; // kluczowe — wyłącza domyślne pozycjonowanie Swipera
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+
+            &::after {
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            &:hover {
+                background: #6ab04c;
+                color: #fff;
+                transform: scale(1.1);
+            }
+
+            &.swiper-button-disabled {
+                opacity: 0.4;
+                cursor: not-allowed;
+                transform: none;
+            }
+        }
+    }
+}
+
+
 @keyframes slideFadeDown {
     0% {
         opacity: 0;
