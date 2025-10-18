@@ -43,46 +43,11 @@
     }
 }
 
-
-//Swiper arrows
-.main-products-slider {
-
-    &__prev,
-    &__next {
-        width: 50px;
-        height: 50px;
-        border: 2px solid $green;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform: rotate(45deg);
-        background-color: white;
-        cursor: pointer;
-        margin: 30px 30px 0 30px;
-        position: relative;
-        z-index: 10;
-        border-radius: 6px;
-
-        &::after {
-            font-size: 16px;
-            color: $green;
-            transform: rotate(-45deg);
-        }
-    }
-}
-
 .slider-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-
-    h2 {
-        font-size: 2rem;
-        font-weight: 600;
-        color: #4a8b39; // dopasowany do zielonego z nagłówka
-        margin: 0;
-    }
 
     .slider-nav {
         display: flex;
@@ -90,7 +55,8 @@
 
         .swiper-button-prev,
         .swiper-button-next {
-            position: static; // kluczowe — wyłącza domyślne pozycjonowanie Swipera
+            position: static;
+            border: 2px solid $green;
             width: 40px;
             height: 40px;
             background: rgba(255, 255, 255, 0.9);
