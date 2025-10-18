@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
         breakpoints: {
             576: { slidesPerView: 2 }, // ≥576px
             768: { slidesPerView: 3 }, // ≥768px
-            992: { slidesPerView: 4 }, // ≥992px
-            1200: { slidesPerView: 4 }, // ≥1200px
+            992: { slidesPerView: 3 }, // ≥992px
+            1200: { slidesPerView: 3 }, // ≥1200px
         },
     });
 });
