@@ -5,8 +5,8 @@
                 Domy mobilne i budownictwo energooszczędne szkieletowe
             </h2>
             <div class="slider-nav">
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev main-products-slider__prev"></div>
+            <div class="swiper-button-next main-products-slider__next"></div>
             </div>
         </div>
         <?php
@@ -80,9 +80,6 @@
                     <?php endforeach; ?>
                 <?php endif; ?>
             </div>
-
-            <div class="swiper-button-prev main-products-slider__prev"></div>
-            <div class="swiper-button-next main-products-slider__next"></div>
             <!-- <div class="swiper-pagination"></div> -->
         </div>
     </div>
