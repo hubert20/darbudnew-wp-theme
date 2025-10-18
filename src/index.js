@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
         modules: [Navigation, Pagination],
         loop: false,
         navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: ".main-products-slider__next",
+            prevEl: ".main-products-slider__prev",
             addIcons: true, // nowość w 12.0.2
         },
         pagination: {
