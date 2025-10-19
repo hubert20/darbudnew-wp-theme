@@ -42,7 +42,7 @@
                         $cat_img_id = $cat_img_url ? attachment_url_to_postid($cat_img_url) : 0;
                         ?>
                         <div class="swiper-slide">
-                            <a class="main-products--item d-block text-decoration-none" href="<?php echo esc_url(get_category_link($category->term_id)); ?>">
+                            <a class="main-products--item d-flex flex-column text-decoration-none" href="<?php echo esc_url(get_category_link($category->term_id)); ?>">
 
                                 <?php
                                 // Jeśli mamy ID — wyrenderuj rozmiar 302x275 (cat-width)
@@ -65,7 +65,7 @@
                                 }
                                 // Jeśli nie ma żadnego obrazka — nic nie renderujemy, ale kategoria i tak zostaje pokazana (tytuł/opis poniżej)
                                 ?>
-                                <div class="main-products--item-title px-3 pt-3 pb-5">
+                                <div class="main-products--item-title px-3 pt-3 pb-5 flex-grow-1">
                                     <?php if (!empty($category->name)) : ?>
                                         <p class="mb-0 text-green text0uppercase standard-title-6 rajdhani-600"><?php echo esc_html($category->name); ?></p>
                                     <?php endif; ?>
@@ -81,7 +81,7 @@
                                         </svg>
                                     </span>
                                 </div>
-                            </a>
+                            </a> 
                         </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
