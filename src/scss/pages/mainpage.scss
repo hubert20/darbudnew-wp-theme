@@ -31,8 +31,7 @@
         width: 60px;
         height: 60px;
         background: #ff0000;
-        border-top-left-radius: 60px;
-        overflow: hidden;
+        clip-path: path('M0,0 L60,0 L60,60 Q30,60 0,30 Z');
         display: flex;
         justify-content: center;
         align-items: center;
