@@ -65,7 +65,7 @@
                                 }
                                 // Jeśli nie ma żadnego obrazka — nic nie renderujemy, ale kategoria i tak zostaje pokazana (tytuł/opis poniżej)
                                 ?>
-                                <div class="main-products--item-title p-3">
+                                <div class="main-products--item-title px-3 pt-3 pb-5">
                                     <?php if (!empty($category->name)) : ?>
                                         <p class="mb-0 text-green text0uppercase standard-title-6 rajdhani-600"><?php echo esc_html($category->name); ?></p>
                                     <?php endif; ?>
