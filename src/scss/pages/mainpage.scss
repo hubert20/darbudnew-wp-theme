@@ -27,6 +27,22 @@
         background-color: rgba(89, 159, 79, .9);
     }
 
+    &--item-arrow {
+        display: inline-block;
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        color: #fff;
+        background: #e3000f;
+        width: 50px;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+        font-size: 26px;
+        border-radius: 8px;
+        svg {}
+    }
+
     &--item-img {
         position: relative;
         border-radius: 12px;

@@ -166,10 +166,12 @@ add_theme_support('title-tag');
 *
 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 */
+
 add_theme_support('post-thumbnails');
 
 // Then we'll add our custom images - 890px na 664px size
 add_image_size('news-width', 890, 664, true);
+
 // Rozmiar dla kategorii: 302x275, twarde kadrowanie
 add_image_size('cat-width', 302, 275, true);
 
