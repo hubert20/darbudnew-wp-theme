@@ -42,7 +42,7 @@
                         $cat_img_id = $cat_img_url ? attachment_url_to_postid($cat_img_url) : 0;
                         ?>
                         <div class="swiper-slide">
-                            <a class="main-products--item d-flex flex-column text-decoration-none" href="<?php echo esc_url(get_category_link($category->term_id)); ?>">
+                            <a class="main-products--item d-flex flex-column text-decoration-none p-1" href="<?php echo esc_url(get_category_link($category->term_id)); ?>">
 
                                 <?php
                                 // Jeśli mamy ID — wyrenderuj rozmiar 302x275 (cat-width)

@@ -19,6 +19,10 @@
     background-position: center;
     background-attachment: fixed;
 
+    &--item {
+        border: 1px solid #efefef;
+    }
+
     &--item-title {
         background-color: #fbfbfb;
     }
