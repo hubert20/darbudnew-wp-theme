@@ -31,7 +31,8 @@
         width: 60px;
         height: 60px;
         background: #ff0000;
-        border-top-left-radius: 100%;
+        border-top-left-radius: 60px;
+        overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
