@@ -503,7 +503,7 @@
         color: #fff;
         z-index: 1;
         display: block;
-
+        position: relative;
         &:before {
             content: '';
             height: 150%;
