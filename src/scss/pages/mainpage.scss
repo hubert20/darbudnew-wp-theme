@@ -31,7 +31,9 @@
         width: 60px;
         height: 60px;
         background: #ff0000;
-        clip-path: path('M0,0 L60,0 L60,60 Q30,60 0,30 Z');
+        border-top-left-radius: 60px;
+        /* daje efekt łagodnego zewnętrznego zaokrąglenia */
+        clip-path: polygon(100% 0, 100% 100%, 0 100%);
         display: flex;
         justify-content: center;
         align-items: center;
