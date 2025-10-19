@@ -20,27 +20,27 @@
     background-attachment: fixed;
 
     &--item-title {
-        position: absolute;
-        width: 90%;
-        bottom: 0;
-        border-radius: 0 12px;
-        background-color: rgba(89, 159, 79, .9);
+        border-radius: 0 0 12px 12px;
+        background-color: #fbfbfb;
     }
 
-    &--item-arrow {
-        display: inline-block;
+    &--item-corner {
         position: absolute;
-        right: -10px;
-        top: -10px;
+        right: 0;
+        bottom: 0;
+        width: 60px;
+        height: 60px;
+        background: #ff0000;
+        border-top-left-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         color: #fff;
-        background: #e3000f;
-        width: 50px;
-        text-align: center;
-        height: 50px;
-        line-height: 50px;
-        font-size: 26px;
-        border-radius: 8px;
-        svg {}
+
+        .arrow-icon {
+            width: 14px;
+            height: auto;
+        }
     }
 
     &--item-img {
@@ -52,7 +52,7 @@
         background-color: #fff;
         content: '';
         width: 100%;
-        height: 153px;
+        height: 350px;
         position: absolute;
         bottom: 0;
         left: 0;
