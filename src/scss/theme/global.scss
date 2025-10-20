@@ -14,10 +14,6 @@
     }
 }
 
-.top-header-menu {
-    background-color: #191919;
-}
-
 .navbar-brand {
     &.top-logo {
         img {
@@ -49,7 +45,7 @@
     .navbar-nav {
         >li {
             >a {
-                color: #fff;
+                color: #343434;
                 text-transform: uppercase;
                 z-index: 0;
 
