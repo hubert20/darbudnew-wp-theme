@@ -1,13 +1,10 @@
 // Main hero
 .hero-main {
-    background-color: #191919;
-
     &--wrap {
         background-position: center;
         background-repeat: no-repeat;
         height: 700px;
         background-size: cover;
-        border-radius: 20px;
     }
 }
 
