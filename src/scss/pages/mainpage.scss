@@ -1,7 +1,7 @@
 // Main hero
 .hero-main {
     &--wrap {
-        background-position: center;
+        background-position: center bottom;
         background-repeat: no-repeat;
         height: 700px;
         background-size: cover;
@@ -13,7 +13,7 @@
     background-color: #f2f2f2;
     background-image: url('https://darbud.com.pl/wp-content/uploads/2025/10/darbu-dom-szkieletowy-min-1.jpg');
     background-size: cover;
-    background-position: center bottom;
+    background-position: center;
     background-attachment: fixed;
 
     &--item {
