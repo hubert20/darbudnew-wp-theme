@@ -1,3 +1,13 @@
+// Top header menu
+.top-header-menu {
+    &--container {
+        border: 1px solid #ccc;
+        border-left: none;
+        border-right: none;
+    }
+}
+
+
 @include media-breakpoint-down(md) {
     .navbar-collapse {
         max-height: calc(100vh - 60px);
@@ -500,6 +510,7 @@
         z-index: 1;
         display: block;
         position: relative;
+
         &:before {
             content: '';
             height: 150%;
