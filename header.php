@@ -43,7 +43,7 @@
             <?php endif; ?>
         </div>
         <!-- Top header -->
-        <div class="top-header-menu py-lg-2">
+        <div class="top-header-menu pb-lg-2">
             <div class="container top-header-menu--container position-relative">
                 <nav class="navbar navbar-expand-xl navbar-theme py-lg-0">
                     <?php if (get_theme_mod('darbudnew_wp_theme_logo')) : ?>
