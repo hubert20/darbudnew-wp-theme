@@ -1,3 +1,21 @@
+// Top contact info
+.contact-info {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .contact-info li {
+        line-height: 35px;
+        border-right: 1px solid rgba(255, 255, 255, .2);
+        font-size: 14px;
+        letter-spacing: .5px;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
 // Top header menu
 .top-header-menu {
     &--container {
