@@ -134,3 +134,30 @@ $colors: (
     display: inline;
 }
 
+// Btn custom
+.btn-wrapper {
+    &--green {
+        background-color: green;
+        padding: 7px 10px 5px 25px;
+        line-height: 30px;
+        color: #fff;
+        border-style: solid;
+        border-width: 1px 1px 1px 1px;
+        border-color: green;
+        border-radius: 50px 50px 50px 50px;
+        display: inline-block;
+        transition: all .4s ease;
+
+        i {
+            margin-left: 10px;
+            font-size: 16px;
+            background-color: #fff;
+            border-radius: 50px;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            display: inline-block;
+            color: #000;
+        }
+    }
+}
