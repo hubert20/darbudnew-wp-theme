@@ -4,20 +4,18 @@
         <div class="row justify-content-center align-items-center">
             <div class="col-lg-2 mb-4 mb-lg-0">
                 <img src="http://darbud.com.pl/wp-content/uploads/2025/09/darbud-white.png" class="img-fluid mx-auto">
-            </div>
-            <div class="col-lg-2 mb-4 mb-lg-0">
                 <?php if (is_active_sidebar('social-bottom')) : ?>
                     <?php dynamic_sidebar('social-bottom'); ?>
                 <?php endif; ?>
             </div>
             <div class="col-lg-2 footer-widgets__bottom-desc mb-4 mb-lg-0">
-                <?php if (is_active_sidebar('menu-about')) : ?>
-                    <?php dynamic_sidebar('menu-about'); ?>
+                <?php if (is_active_sidebar('menu-services')) : ?>
+                    <?php dynamic_sidebar('menu-services'); ?>
                 <?php endif; ?>
             </div>
             <div class="col-lg-2 footer-widgets__bottom-desc mb-4 mb-lg-0">
-                <?php if (is_active_sidebar('menu-services')) : ?>
-                    <?php dynamic_sidebar('menu-services'); ?>
+                <?php if (is_active_sidebar('menu-about')) : ?>
+                    <?php dynamic_sidebar('menu-about'); ?>
                 <?php endif; ?>
             </div>
             <div class="col-lg-2">
