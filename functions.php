@@ -244,7 +244,7 @@ function wp_darbudnew_widgets_init()
     'description'   => esc_html__('Add widgets here.', 'darbudnew-wp-theme'),
     'before_widget' => '<div id="%1$s" class="bottom-nav-menu widget %2$s">',
     'after_widget'  => '</div>',
-    'before_title'  => '<h5 class="bottom-nav-menu__title mb-2 mb-lg-3 font-weight-bold">',
+    'before_title'  => '<h5 class="bottom-nav-menu__title mb-3 mb-lg-4 text-green text-uppercase rajdhani-600">',
     'after_title'   => '</h5>',
   ));
   register_sidebar(array(
@@ -253,7 +253,7 @@ function wp_darbudnew_widgets_init()
     'description'   => esc_html__('Add widgets here.', 'darbudnew-wp-theme'),
     'before_widget' => '<div id="%1$s" class="bottom-nav-menu widget %2$s">',
     'after_widget'  => '</div>',
-    'before_title'  => '<h5 class="bottom-nav-menu__title mb-2 mb-lg-3 font-weight-bold">',
+    'before_title'  => '<h5 class="bottom-nav-menu__title mb-3 mb-lg-4 text-green text-uppercase rajdhani-600">',
     'after_title'   => '</h5>',
   ));
   register_sidebar(array(

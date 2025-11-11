@@ -1,7 +1,7 @@
 <!-- Nasi partnerzy -->
 <?php if (have_rows('partnerzy')) : ?>
     <section class="partners-slider-section container py-4 py-lg-5">
-        <div class="swiper partners-slider">
+        <div class="swiper partners-slider py-lg-4">
             <div class="swiper-wrapper">
                 <?php while (have_rows('partnerzy')) : the_row();
                     $logo = get_sub_field('partner_logo');
