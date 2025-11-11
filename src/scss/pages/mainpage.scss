@@ -269,3 +269,7 @@
         background: #000;
     }
 }
+
+.partners-slider .swiper-wrapper {
+  transition-timing-function: linear !important;
+}

@@ -33,24 +33,20 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
   }
+  
   // Slider partnerów
+  // 🔹 Slider partnerów
   if (document.querySelector('.partners-slider')) {
     new Swiper(".partners-slider", {
-      modules: [Navigation, Pagination],
       loop: true,
+      speed: 3000, // płynniejszy ruch (większa wartość = wolniej)
       autoplay: {
-        delay: 2500,
+        delay: 0, // brak przerwy między przesunięciami
         disableOnInteraction: false,
       },
-      navigation: {
-        nextEl: ".partners-slider__next",
-        prevEl: ".partners-slider__prev",
-      },
-      pagination: {
-        el: ".partners-slider__pagination",
-        clickable: true,
-      },
-      slidesPerView: 2,
+      allowTouchMove: false, // wyłącza przeciąganie myszką/palcem
+      freeMode: true, // płynny ciągły ruch
+      slidesPerView: 2, // wartość bazowa
       spaceBetween: 30,
       breakpoints: {
         576: { slidesPerView: 3 },
@@ -62,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Modal Video
-
   // Declare a variable to store the video source
   let videoSrc;
 
