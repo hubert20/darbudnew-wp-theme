@@ -33,29 +33,28 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
   }
-  
+
   // Slider partnerów
-  // 🔹 Slider partnerów
-  if (document.querySelector('.partners-slider')) {
-    new Swiper(".partners-slider", {
-      loop: true,
-      speed: 3000, // płynniejszy ruch (większa wartość = wolniej)
-      autoplay: {
-        delay: 0, // brak przerwy między przesunięciami
-        disableOnInteraction: false,
-      },
-      allowTouchMove: false, // wyłącza przeciąganie myszką/palcem
-      freeMode: true, // płynny ciągły ruch
-      slidesPerView: 2, // wartość bazowa
-      spaceBetween: 30,
-      breakpoints: {
-        576: { slidesPerView: 3 },
-        768: { slidesPerView: 4 },
-        992: { slidesPerView: 5 },
-        1200: { slidesPerView: 6 },
-      },
-    });
-  }
+if (document.querySelector('.partners-slider')) {
+  new Swiper(".partners-slider", {
+    loop: true,
+    freeMode: true,
+    allowTouchMove: false,
+    slidesPerView: 2,
+    spaceBetween: 30,
+    speed: 5000, // im wyższe, tym wolniej
+    autoplay: {
+      delay: 0, // ciągły ruch
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      576: { slidesPerView: 3 },
+      768: { slidesPerView: 4 },
+      992: { slidesPerView: 5 },
+      1200: { slidesPerView: 6 },
+    },
+  });
+}
 
   // Modal Video
   // Declare a variable to store the video source

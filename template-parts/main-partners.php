@@ -13,13 +13,6 @@
                     <?php endif; ?>
                 <?php endwhile; ?>
             </div>
-
-            <!-- Nawigacja -->
-            <div class="swiper-button-prev partners-slider__prev"></div>
-            <div class="swiper-button-next partners-slider__next"></div>
-
-            <!-- Paginacja -->
-            <div class="swiper-pagination partners-slider__pagination"></div>
         </div>
     </section>
 <?php endif; ?>
