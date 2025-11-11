@@ -35,27 +35,36 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Slider partnerów
-if (document.querySelector('.partners-slider')) {
-  new Swiper(".partners-slider", {
-    loop: true,
-    speed: 5000, // czas przesunięcia (im większy, tym wolniejszy ruch)
-    autoplay: {
-      delay: 1, // minimalne opóźnienie — działa zamiast 0
-      disableOnInteraction: false,
-      waitForTransition: false, // pozwala na ciągły ruch
-    },
-    slidesPerView: 2,
-    spaceBetween: 30,
-    breakpoints: {
-      576: { slidesPerView: 3 },
-      768: { slidesPerView: 4 },
-      992: { slidesPerView: 5 },
-      1200: { slidesPerView: 6 },
-    },
-  });
-}
-
-
+  if (document.querySelector('.partners-slider')) {
+    new Swiper(".partners-slider", {
+      loop: true,
+      speed: 6000, // im większa wartość, tym wolniej się przesuwa
+      autoplay: {
+        delay: 1, // w Swiper 11 musi być > 0
+        disableOnInteraction: false,
+      },
+      slidesPerView: 2,
+      spaceBetween: 30,
+      allowTouchMove: false,
+      grabCursor: false,
+      breakpoints: {
+        576: { slidesPerView: 3 },
+        768: { slidesPerView: 4 },
+        992: { slidesPerView: 5 },
+        1200: { slidesPerView: 6 },
+      },
+      on: {
+        init(swiper) {
+          // 🔹 Wymuszamy liniową animację i "ciągłość"
+          swiper.wrapperEl.style.transitionTimingFunction = 'linear';
+        },
+        setTranslate(swiper, translate) {
+          // 🔹 Wymuszamy płynne przesuwanie
+          swiper.wrapperEl.style.transitionTimingFunction = 'linear';
+        }
+      }
+    });
+  }
 
   // Modal Video
   // Declare a variable to store the video source
