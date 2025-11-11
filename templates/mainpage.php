@@ -16,6 +16,9 @@ get_header();
 <!-- Main form -->
 <?php get_template_part('template-parts/main-form'); ?>
 
+<!-- Main partners -->
+<?php get_template_part('template-parts/main-partners'); ?>
+
 <?php
 while (have_posts()) : the_post();
     the_content(__('Continue reading <span class="meta-nav">&rarr;</span>', 'darbudnew-wp-theme'));

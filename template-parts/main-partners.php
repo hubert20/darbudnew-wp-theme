@@ -1,6 +1,6 @@
 <!-- Nasi partnerzy -->
 <?php if (have_rows('partnerzy')) : ?>
-    <section class="partners-slider-section container my-5">
+    <section class="partners-slider-section container py-4 py-lg-5">
         <div class="swiper partners-slider">
             <div class="swiper-wrapper">
                 <?php while (have_rows('partnerzy')) : the_row();
