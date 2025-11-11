@@ -8,30 +8,55 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-document.addEventListener("DOMContentLoaded", () => {
-    new Swiper(".swiper", {
-        modules: [Navigation, Pagination],
-        loop: false,
-        navigation: {
-            nextEl: ".main-products-slider__next",
-            prevEl: ".main-products-slider__prev",
-            addIcons: true, // nowość w 12.0.2
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        slidesPerView: 1,
-        spaceBetween: 20,
-        breakpoints: {
-            576: { slidesPerView: 2 }, // ≥576px
-            768: { slidesPerView: 3 }, // ≥768px
-            992: { slidesPerView: 3 }, // ≥992px
-            1200: { slidesPerView: 3 }, // ≥1200px
-        },
-    });
+// Slider produktów
+new Swiper(".main-products-slider", {
+  modules: [Navigation, Pagination],
+  loop: false,
+  navigation: {
+    nextEl: ".main-products-slider__next",
+    prevEl: ".main-products-slider__prev",
+  },
+  pagination: {
+    el: ".main-products-slider__pagination",
+    clickable: true,
+  },
+  slidesPerView: 1,
+  spaceBetween: 20,
+  breakpoints: {
+    576: { slidesPerView: 2 },
+    768: { slidesPerView: 3 },
+    992: { slidesPerView: 3 },
+    1200: { slidesPerView: 3 },
+  },
 });
 
+// Slider partnerów
+if (document.querySelector('.partners-slider')) {
+  new Swiper(".partners-slider", {
+    modules: [Navigation, Pagination],
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".partners-slider__next",
+      prevEl: ".partners-slider__prev",
+    },
+    pagination: {
+      el: ".partners-slider__pagination",
+      clickable: true,
+    },
+    slidesPerView: 2,
+    spaceBetween: 30,
+    breakpoints: {
+      576: { slidesPerView: 3 },
+      768: { slidesPerView: 4 },
+      992: { slidesPerView: 5 },
+      1200: { slidesPerView: 6 },
+    },
+  });
+}
 
 // Modal Video
 

@@ -213,7 +213,6 @@
 }
 
 //Animation bg
-
 .section-animation-shape1-1 {
     position: absolute;
     top: 0px;
@@ -224,7 +223,7 @@
     background-repeat: repeat;
     overflow: hidden;
     background-image: url('https://darbud.com.pl/wp-content/uploads/2025/11/global-line-shape1.png');
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     background-position: center;
 }
@@ -236,5 +235,37 @@
 
     100% {
         background-position: top left 2000px;
+    }
+}
+
+// Main Partners slider swiper
+.partners-slider-section {
+    .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .partners-slider__img {
+        max-height: 80px;
+        width: auto;
+        transition: transform 0.3s ease;
+        filter: grayscale(100%);
+        opacity: 0.8;
+
+        &:hover {
+            transform: scale(1.05);
+            filter: grayscale(0);
+            opacity: 1;
+        }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: #000;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: #000;
     }
 }
