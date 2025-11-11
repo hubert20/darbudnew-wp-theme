@@ -3,6 +3,7 @@ import { Modal } from 'bootstrap';
 
 import Swiper from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -37,10 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Slider partnerów
   if (document.querySelector('.partners-slider')) {
     new Swiper(".partners-slider", {
+      modules: [Autoplay], // 🔥 MUSI BYĆ DODANE
       loop: true,
-      speed: 6000, // im większa wartość, tym wolniej się przesuwa
+      speed: 6000,
       autoplay: {
-        delay: 1, // w Swiper 11 musi być > 0
+        delay: 1, // Swiper 11 wymaga > 0
         disableOnInteraction: false,
       },
       slidesPerView: 2,
@@ -55,11 +57,9 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       on: {
         init(swiper) {
-          // 🔹 Wymuszamy liniową animację i "ciągłość"
           swiper.wrapperEl.style.transitionTimingFunction = 'linear';
         },
-        setTranslate(swiper, translate) {
-          // 🔹 Wymuszamy płynne przesuwanie
+        setTranslate(swiper) {
           swiper.wrapperEl.style.transitionTimingFunction = 'linear';
         }
       }
