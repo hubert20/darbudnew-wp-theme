@@ -11,8 +11,8 @@ import "swiper/css/pagination";
 document.addEventListener("DOMContentLoaded", () => {
 
   // Slider produktów
-  if (document.querySelector('.main-products-slider')) {
-    new Swiper(".main-products-slider", {
+  if (document.querySelector('.my-slider')) {
+    new Swiper(".my-slider", {
       modules: [Navigation, Pagination],
       loop: false,
       navigation: {
