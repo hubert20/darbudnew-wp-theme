@@ -9,27 +9,28 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 // Slider produktów
-new Swiper(".main-products-slider", {
-  modules: [Navigation, Pagination],
-  loop: false,
-  navigation: {
-    nextEl: ".main-products-slider__next",
-    prevEl: ".main-products-slider__prev",
-  },
-  pagination: {
-    el: ".main-products-slider__pagination",
-    clickable: true,
-  },
-  slidesPerView: 1,
-  spaceBetween: 20,
-  breakpoints: {
-    576: { slidesPerView: 2 },
-    768: { slidesPerView: 3 },
-    992: { slidesPerView: 3 },
-    1200: { slidesPerView: 3 },
-  },
-});
-
+if (document.querySelector('.main-products-slider')) {
+  new Swiper(".main-products-slider", {
+    modules: [Navigation, Pagination],
+    loop: false,
+    navigation: {
+      nextEl: ".main-products-slider__next",
+      prevEl: ".main-products-slider__prev",
+    },
+    pagination: {
+      el: ".main-products-slider__pagination",
+      clickable: true,
+    },
+    slidesPerView: 1,
+    spaceBetween: 20,
+    breakpoints: {
+      576: { slidesPerView: 2 },
+      768: { slidesPerView: 3 },
+      992: { slidesPerView: 3 },
+      1200: { slidesPerView: 3 },
+    },
+  });
+}
 // Slider partnerów
 if (document.querySelector('.partners-slider')) {
   new Swiper(".partners-slider", {
