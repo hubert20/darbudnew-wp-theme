@@ -2,7 +2,7 @@
 <section class="footer-widgets">
     <div class="container-fluid py-4 py-lg-5">
         <div class="row justify-content-evenly">
-            <div class="col-lg-2 mb-4 mb-lg-0">
+            <div class="col-lg-3 mb-4 mb-lg-0">
                 <?php if (is_active_sidebar('brand-bottom')) : ?>
                     <?php dynamic_sidebar('brand-bottom'); ?>
                 <?php endif; ?>
