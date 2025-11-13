@@ -232,6 +232,13 @@ function wp_darbudnew_widgets_init()
     'after_widget' => '</div>',
   ));
   register_sidebar(array(
+    'name'          => esc_html__('Brand bottom', 'darbudnew-wp-theme'),
+    'id'            => 'brand-bottom',
+    'description'   => esc_html__('Add widgets here.', 'darbudnew-wp-theme'),
+    'before_widget' => '<div id="%1$s" class=" widget %2$s">',
+    'after_widget'  => '</div>',
+  ));
+  register_sidebar(array(
     'name'          => esc_html__('Social bottom', 'darbudnew-wp-theme'),
     'id'            => 'social-bottom',
     'description'   => esc_html__('Add widgets here.', 'darbudnew-wp-theme'),

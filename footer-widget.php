@@ -4,6 +4,10 @@
         <div class="row justify-content-evenly">
             <div class="col-lg-2 mb-4 mb-lg-0">
                 <img src="http://darbud.com.pl/wp-content/uploads/2025/09/darbud-white.png" class="img-fluid mx-auto">
+                <img src="https://darbud.com.pl/wp-content/uploads/2025/11/darbud-filia.jpg" class="img-fluid mx-auto">
+                <?php if (is_active_sidebar('brand-bottom')) : ?>
+                    <?php dynamic_sidebar('brand-bottom'); ?>
+                <?php endif; ?>
                 <?php if (is_active_sidebar('social-bottom')) : ?>
                     <?php dynamic_sidebar('social-bottom'); ?>
                 <?php endif; ?>

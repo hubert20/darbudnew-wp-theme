@@ -13,6 +13,9 @@ get_header();
 <!-- Main offer slider -->
 <?php get_template_part('template-parts/main-offer-slider'); ?>
 
+<!-- Main technology -->
+<?php get_template_part('template-parts/main-technology'); ?>
+
 <!-- Main form -->
 <?php get_template_part('template-parts/main-form'); ?>
 
