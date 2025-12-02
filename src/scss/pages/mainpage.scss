@@ -300,6 +300,8 @@
     position: absolute;
     inset: 0;
     animation: rotate 10s linear infinite;
+    position: relative;
+    /* ← KLUCZ! */
 }
 
 .circle-technology--text span {
@@ -307,7 +309,7 @@
     left: 50%;
     top: 50%;
     transform-origin: 0 160px;
-    /* promień tekstu */
+    /* promień */
     font-size: 16px;
     color: #333;
     text-transform: uppercase;
