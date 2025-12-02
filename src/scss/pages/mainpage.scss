@@ -278,8 +278,10 @@
 // Technologia
 .circle-technology {
     position: relative;
-    width: 350px;
-    height: 350px;
+    width: 380px;
+    /* większy okrąg – mieści długi tekst */
+    height: 380px;
+    margin: 0 auto;
 }
 
 .circle-technology--logo {
@@ -294,25 +296,34 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 
 .circle-technology--text {
     position: absolute;
     inset: 0;
-    animation: rotate 10s linear infinite;
+    z-index: 1;
+    animation: rotateText 12s linear infinite;
 }
 
+/* NAJWAŻNIEJSZA CZĘŚĆ – WYMUSZAMY STYL NA SPANACH */
 .circle-technology--text span {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform-origin: 0 175px; /* NOWY PROMIEŃ */
-    font-size: 16px;
-    color: #333;
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform-origin: 0 185px !important;
+    /* promień tekstu */
+    display: block !important;
+    line-height: 1 !important;
+    letter-spacing: 0 !important;
+    font-size: 18px !important;
+    color: #333 !important;
     text-transform: uppercase;
+    white-space: pre !important;
+    /* spacje działają normalnie */
 }
 
-@keyframes rotate {
+@keyframes rotateText {
     to {
         transform: rotate(360deg);
     }

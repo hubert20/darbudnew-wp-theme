@@ -91,20 +91,26 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('video').src = videoSrc;
   });
   //Rotate circle technology
-  const el = document.querySelector(".circle-technology--text");
+  document.addEventListener("DOMContentLoaded", () => {
+    const el = document.querySelector(".circle-technology--text");
+    const text = el.dataset.text;
+    const chars = text.split("");
 
-  const text = el.dataset.text;
-  const chars = text.split("");
+    chars.forEach((char, i) => {
+      const span = document.createElement("span");
+      span.textContent = char;
 
-  chars.forEach((char, i) => {
-    const span = document.createElement("span");
-    span.textContent = char;
+      const angle = (360 / chars.length) * i;
 
-    const angle = (360 / chars.length) * i;
+      /* WYMUSZAMY transform pomimo motywu */
+      span.style.setProperty(
+        "transform",
+        `rotate(${angle}deg) translate(185px) rotate(-${angle}deg)`,
+        "important"
+      );
 
-    span.style.transform =
-      `rotate(${angle}deg) translate(175px) rotate(-${angle}deg)`;
-
-    el.appendChild(span);
+      el.appendChild(span);
+    });
   });
+
 });
