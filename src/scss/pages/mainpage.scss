@@ -304,6 +304,13 @@
         font-size: 16px;
         animation: textRotation 8s linear infinite;
 
+        p {
+            position: absolute;
+            inset: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
         span {
             position: absolute;
             left: 50%;
