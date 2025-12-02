@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('video').src = videoSrc;
   });
   //Rotate circle technology
-  const text = document.querySelector("..circle-technology--text");
+  const text = document.querySelector(".circle-technology--text");
   text.innerHTML = text.innerText
     .split("")
     .map(
