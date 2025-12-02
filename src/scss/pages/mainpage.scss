@@ -277,6 +277,14 @@
 
 // Technologia
 .circle-technology {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 100vmax;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     &--logo {
         position: absolute;
         width: 140px;
