@@ -278,14 +278,14 @@
 // Technologia
 .circle-technology {
     position: relative;
-    width: 330px;
-    height: 330px;
+    width: 350px;
+    height: 350px;
 }
 
 .circle-technology--logo {
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     background: #ddd;
     top: 50%;
@@ -300,16 +300,13 @@
     position: absolute;
     inset: 0;
     animation: rotate 10s linear infinite;
-    position: relative;
-    /* ← KLUCZ! */
 }
 
 .circle-technology--text span {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform-origin: 0 160px;
-    /* promień */
+    transform-origin: 0 175px; /* NOWY PROMIEŃ */
     font-size: 16px;
     color: #333;
     text-transform: uppercase;
