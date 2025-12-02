@@ -90,4 +90,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Stop the video by resetting the source
     document.getElementById('video').src = videoSrc;
   });
+  //Rotate circle technology
+  const text = document.querySelector("..circle-technology--text");
+  text.innerHTML = text.innerText
+    .split("")
+    .map(
+      (char, i) => `<span style="transform:rotate(${i * 10.3}deg)">${char}</span>`
+    )
+    .join("");
 });
