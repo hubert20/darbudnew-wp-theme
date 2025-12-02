@@ -91,20 +91,21 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('video').src = videoSrc;
   });
   //Rotate circle technology
-  const textEl = document.querySelector(".circle-technology--text p");
-  const text = textEl.innerText.trim();
-  const chars = text.split(""); // litery osobno, ale odstępy też działają
+  const el = document.querySelector(".circle-technology--text");
 
-  textEl.innerHTML = ""; // czyścimy
+  const text = el.dataset.text;
+  const chars = text.split("");
 
   chars.forEach((char, i) => {
     const span = document.createElement("span");
-    span.innerText = char;
+    span.textContent = char;
 
     const angle = (360 / chars.length) * i;
 
-    span.style.transform = `rotate(${angle}deg) translate(140px) rotate(-${angle}deg)`;
-    textEl.appendChild(span);
+    span.style.transform =
+      `rotate(${angle}deg) translate(120px) rotate(-${angle}deg)`;
+
+    el.appendChild(span);
   });
 
 });

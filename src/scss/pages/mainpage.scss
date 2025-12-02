@@ -278,50 +278,42 @@
 // Technologia
 .circle-technology {
     position: relative;
-    width: 200px;
-    height: 200px;
-    border-radius: 100vmax;
+    width: 260px;
+    height: 260px;
+}
+
+.circle-technology--logo {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #ddd;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     justify-content: center;
-
-    &--logo {
-        position: absolute;
-        width: 140px;
-        height: 140px;
-        border-radius: 100vmax;
-        background-color: #ddd;
-        padding: 12px;
-        display: flex;
-        align-items: center;
-    }
-
-    &--text {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        color: #000;
-        font-size: 16px;
-        animation: textRotation 8s linear infinite;
-
-        p {
-            position: absolute;
-            inset: 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        span {
-            position: absolute;
-            left: 50%;
-            font-size: 1.2em;
-            transform-origin: 0 140px;
-        }
-    }
 }
 
+.circle-technology--text {
+    position: absolute;
+    inset: 0;
+    animation: rotate 10s linear infinite;
+}
 
-@keyframes textRotation {
+.circle-technology--text span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: 0 120px;
+    /* promień tekstu */
+    font-size: 16px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+@keyframes rotate {
     to {
         transform: rotate(360deg);
     }
