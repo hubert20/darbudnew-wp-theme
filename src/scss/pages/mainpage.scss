@@ -312,15 +312,18 @@
     left: 50% !important;
     top: 50% !important;
     transform-origin: 0 185px !important;
-    /* promień tekstu */
     display: block !important;
+
+    /* 🔥 TO JEST KLUCZ DO POPRAWNEGO OKRĘGU */
     line-height: 1 !important;
-    letter-spacing: 0 !important;
+    height: auto !important;
     font-size: 18px !important;
-    color: #333 !important;
-    text-transform: uppercase;
+    font-weight: normal !important;
+    letter-spacing: 0 !important;
     white-space: pre !important;
-    /* spacje działają normalnie */
+
+    /* 🔥 To wymusza brak skoków wysokości */
+    font-family: Arial, sans-serif !important;
 }
 
 @keyframes rotateText {
