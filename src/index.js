@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const angle = (360 / chars.length) * i;
 
-    span.style.transform = `rotate(${angle}deg) translate(100px) rotate(-${angle}deg)`;
+    span.style.transform = `rotate(${angle}deg) translate(140px) rotate(-${angle}deg)`;
     textEl.appendChild(span);
   });
 
