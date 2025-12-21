@@ -18,7 +18,7 @@
     z-index: 0;
 
     &--item {
-        border: 1px solid #efefef;
+        border: 6px solid rgba(0, 0, 0, .1);
     }
 
     &--item-title {
@@ -277,59 +277,8 @@
     transition-timing-function: linear !important;
 }
 
-// Technologia
-.circle-technology {
-    position: relative;
-    width: 380px;
-    /* większy okrąg – mieści długi tekst */
-    height: 380px;
-    margin: 0 auto;
-}
-
-.circle-technology--logo {
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    background: #ddd;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-}
-
-.circle-technology--text {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    animation: rotateText 12s linear infinite;
-}
-
-/* NAJWAŻNIEJSZA CZĘŚĆ – WYMUSZAMY STYL NA SPANACH */
-.circle-technology--text span {
-    position: absolute !important;
-    left: 50% !important;
-    top: 50% !important;
-    transform-origin: 0 185px !important;
-    display: block !important;
-
-    /* 🔥 TO JEST KLUCZ DO POPRAWNEGO OKRĘGU */
-    line-height: 1 !important;
-    height: auto !important;
-    font-size: 18px !important;
-    font-weight: normal !important;
-    letter-spacing: 0 !important;
-    white-space: pre !important;
-
-    /* 🔥 To wymusza brak skoków wysokości */
-    font-family: Arial, sans-serif !important;
-}
-
-@keyframes rotateText {
-    to {
-        transform: rotate(360deg);
+.counter-box {
+    &--number {
+        position: absolute;
     }
 }
