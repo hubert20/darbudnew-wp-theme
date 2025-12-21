@@ -278,8 +278,12 @@
 }
 
 .counter-box {
+    max-width: 400px;
+
     &--number {
         position: absolute;
+        right: 1px;
+        top: 91px;
     }
 
     &--number-big {
