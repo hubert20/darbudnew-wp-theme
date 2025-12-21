@@ -90,24 +90,49 @@ document.addEventListener("DOMContentLoaded", () => {
     // Stop the video by resetting the source
     document.getElementById('video').src = videoSrc;
   });
-  //Rotate circle technology
-  const el = document.querySelector(".circle-technology--text");
-  const text = el.dataset.text;
-  const chars = text.split("");
 
-  chars.forEach((char, i) => {
-    const span = document.createElement("span");
-    span.textContent = char;
+  //Counter
+  const section = document.querySelector('.main-technology');
+  const counterEl = document.getElementById('experience-counter');
 
-    const angle = (360 / chars.length) * i;
+  if (!section || !counterEl) return;
 
-    /* WYMUSZAMY transform pomimo motywu */
-    span.style.setProperty(
-      "transform",
-      `rotate(${angle}deg) translate(185px) rotate(-${angle}deg)`,
-      "important"
-    );
+  const targetValue = parseInt(counterEl.textContent, 10);
+  let hasAnimated = false;
 
-    el.appendChild(span);
-  });
+  const animateCounter = () => {
+    let current = 0;
+    const duration = 1500; // ms
+    const stepTime = 30;
+    const increment = Math.ceil(targetValue / (duration / stepTime));
+
+    const timer = setInterval(() => {
+      current += increment;
+
+      if (current >= targetValue) {
+        counterEl.textContent = targetValue;
+        clearInterval(timer);
+      } else {
+        counterEl.textContent = current;
+      }
+    }, stepTime);
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !hasAnimated) {
+          hasAnimated = true;
+          animateCounter();
+          observer.disconnect();
+        }
+      });
+    },
+    {
+      threshold: 0.4 // ile sekcji ma być widoczne
+    }
+  );
+
+  observer.observe(section);
+
 });
