@@ -762,6 +762,21 @@
     }
 }
 
+// Kategorie w hero
+.house-hero-categories {
+    .badge {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        font-weight: 500;
+        background-color: $green !important;
+        color: #fff !important;
+        
+        &:hover {
+            background-color: darken($green, 15%) !important;
+        }
+    }
+}
+
 // Gallery Swiper
 .house-gallery-slider {
     border-radius: 8px;

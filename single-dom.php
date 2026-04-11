@@ -54,6 +54,20 @@ $hero_style = !empty($hero_bg) ? "background-image: url('" . esc_url($hero_bg) .
                 <?php echo esc_html(get_the_title()); ?>
             </span>
         </h1>
+        
+        <!-- Kategorie w hero -->
+        <?php
+        $categories = get_the_category();
+        if (!empty($categories)) : ?>
+        <div class="house-hero-categories text-center mb-2">
+            <?php foreach ($categories as $cat) : ?>
+                <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="badge bg-success text-white text-decoration-none mx-1">
+                    <?php echo esc_html($cat->name); ?>
+                </a>
+            <?php endforeach; ?>
+        </div>
+        <?php endif; ?>
+        
         <?php
         if (function_exists('yoast_breadcrumb')) {
             yoast_breadcrumb('<p id="breadcrumbs" class="mb-0 breadcrumbs text-center dosis-font fw-light">', '</p>');
@@ -121,22 +135,9 @@ $hero_style = !empty($hero_bg) ? "background-image: url('" . esc_url($hero_bg) .
             <!-- Prawa kolumna - Szczegóły -->
             <div class="col-lg-5">
                 <div class="house-details-card bg-light p-4 rounded">
-                    <h2 class="house-details__title playfair-petch-font standard-title-4 mb-2 text-dark">
+                    <h2 class="house-details__title playfair-petch-font standard-title-4 mb-4 text-dark">
                         <?php echo esc_html(get_the_title()); ?>
                     </h2>
-                    
-                    <!-- Kategorie -->
-                    <?php
-                    $categories = get_the_category();
-                    if (!empty($categories)) : ?>
-                    <div class="house-categories mb-4">
-                        <?php foreach ($categories as $cat) : ?>
-                            <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="badge bg-success text-white text-decoration-none me-1">
-                                <?php echo esc_html($cat->name); ?>
-                            </a>
-                        <?php endforeach; ?>
-                    </div>
-                    <?php endif; ?>
                     
                     <!-- Specyfikacja -->
                     <?php if ($dom_specyfikacja) : ?>
