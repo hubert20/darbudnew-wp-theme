@@ -1,0 +1,354 @@
+[
+    {
+        "key": "group_domy_mobilne",
+        "title": "Domy - Szczegóły",
+        "fields": [
+            {
+                "key": "field_galeria",
+                "label": "Galeria zdjęć",
+                "name": "dom_galeria",
+                "type": "gallery",
+                "instructions": "Dodaj zdjęcia domku. Pierwsze zdjęcie będzie głównym.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "medium",
+                "insert": "append",
+                "library": "all",
+                "min": "",
+                "max": "",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_specyfikacja",
+                "label": "Specyfikacja",
+                "name": "dom_specyfikacja",
+                "type": "group",
+                "instructions": "Podstawowe parametry domku",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_powierzchnia",
+                        "label": "Powierzchnia (m²)",
+                        "name": "powierzchnia",
+                        "type": "number",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "50",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "np. 35",
+                        "prepend": "",
+                        "append": "m²",
+                        "min": "",
+                        "max": "",
+                        "step": "0.1"
+                    },
+                    {
+                        "key": "field_pokoje",
+                        "label": "Liczba pokoi",
+                        "name": "pokoje",
+                        "type": "number",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "50",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "np. 2",
+                        "prepend": "",
+                        "append": "",
+                        "min": 1,
+                        "max": "",
+                        "step": 1
+                    },
+                    {
+                        "key": "field_rok_produkcji",
+                        "label": "Rok produkcji",
+                        "name": "rok_produkcji",
+                        "type": "number",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "50",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "np. 2024",
+                        "prepend": "",
+                        "append": "",
+                        "min": 2000,
+                        "max": "",
+                        "step": 1
+                    },
+                    {
+                        "key": "field_stan",
+                        "label": "Stan",
+                        "name": "stan",
+                        "type": "select",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "50",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "nowy": "Nowy",
+                            "uzywany": "Używany",
+                            "do_zakonczenia": "Do zakończenia"
+                        },
+                        "default_value": "nowy",
+                        "allow_null": 0,
+                        "multiple": 0,
+                        "ui": 0,
+                        "return_format": "value",
+                        "ajax": 0,
+                        "placeholder": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_wymiary",
+                "label": "Wymiary zewnętrzne",
+                "name": "dom_wymiary",
+                "type": "group",
+                "instructions": "Wymiary domku w metrach",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "sub_fields": [
+                    {
+                        "key": "field_szerokosc",
+                        "label": "Szerokość",
+                        "name": "szerokosc",
+                        "type": "number",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "50",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "np. 4",
+                        "prepend": "",
+                        "append": "m",
+                        "min": "",
+                        "max": "",
+                        "step": "0.1"
+                    },
+                    {
+                        "key": "field_dlugosc",
+                        "label": "Długość",
+                        "name": "dlugosc",
+                        "type": "number",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "50",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "np. 10",
+                        "prepend": "",
+                        "append": "m",
+                        "min": "",
+                        "max": "",
+                        "step": "0.1"
+                    }
+                ]
+            },
+            {
+                "key": "field_cena",
+                "label": "Cena",
+                "name": "dom_cena",
+                "type": "group",
+                "instructions": "Informacje o cenie",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_cena_wartosc",
+                        "label": "Cena (brutto)",
+                        "name": "cena",
+                        "type": "number",
+                        "instructions": "Zostaw puste jeśli cena jest do negocjacji",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "50",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "np. 150000",
+                        "prepend": "",
+                        "append": "zł",
+                        "min": 0,
+                        "max": "",
+                        "step": 1
+                    },
+                    {
+                        "key": "field_cena_od",
+                        "label": "Cena od",
+                        "name": "cena_od",
+                        "type": "number",
+                        "instructions": "Użyj jeśli chcesz pokazać \"od...\"",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "50",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "np. 120000",
+                        "prepend": "",
+                        "append": "zł",
+                        "min": 0,
+                        "max": "",
+                        "step": 1
+                    },
+                    {
+                        "key": "field_cena_info",
+                        "label": "Dodatkowe informacje o cenie",
+                        "name": "dodatkowe_info",
+                        "type": "text",
+                        "instructions": "np. \"Cena netto\" lub \"Do negocjacji\"",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_sklad_oferty",
+                "label": "W skład oferty wchodzi",
+                "name": "dom_sklad_oferty",
+                "type": "repeater",
+                "instructions": "Dodaj elementy wchodzące w skład oferty",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Dodaj element",
+                "sub_fields": [
+                    {
+                        "key": "field_element_ikona",
+                        "label": "Ikona (klasa Font Awesome)",
+                        "name": "ikona",
+                        "type": "text",
+                        "instructions": "np. fa-home, fa-bed, fa-bath. Zobacz: https://fontawesome.com/v4/icons/",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "40",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "fa-check",
+                        "placeholder": "fa-check",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_element_tekst",
+                        "label": "Element",
+                        "name": "element",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "60",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "np. Kuchnia zabudowana",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_category",
+                    "operator": "==",
+                    "value": "category:domy-mobilne"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "Pola dla domów mobilnych"
+    }
+]

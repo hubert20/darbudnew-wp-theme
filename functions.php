@@ -299,6 +299,56 @@ add_action('init', function () {
 });
 
 /**
+ * Usuń /category/ z URL dla kategorii
+ * Np. /category/domy-mobilne/ → /domy-mobilne/
+ */
+function remove_category_base_rewrite() {
+    global $wp_rewrite;
+    
+    // Usuń base "category" z permalinków kategorii
+    $wp_rewrite->category_base = '';
+    
+    // Dodaj custom rewrite dla kategorii
+    add_rewrite_rule(
+        'domy-mobilne/?$',
+        'index.php?category_name=domy-mobilne',
+        'top'
+    );
+    
+    add_rewrite_rule(
+        'domy-mobilne/page/([0-9]{1,})/?$',
+        'index.php?category_name=domy-mobilne&paged=$matches[1]',
+        'top'
+    );
+}
+add_action('init', 'remove_category_base_rewrite', 11);
+
+/**
+ * Automatyczne przekierowanie /category/domy-mobilne/ → /domy-mobilne/
+ */
+function redirect_category_to_clean_url() {
+    if (is_category() && strpos($_SERVER['REQUEST_URI'], '/category/') !== false) {
+        $category = get_queried_object();
+        $clean_url = home_url('/' . $category->slug . '/');
+        wp_redirect($clean_url, 301);
+        exit;
+    }
+}
+add_action('template_redirect', 'redirect_category_to_clean_url', 1);
+
+/**
+ * Napraw linki do kategorii (usunie /category/ z output)
+ */
+function custom_category_link($link, $term_id) {
+    $category = get_category($term_id);
+    if (!is_wp_error($category)) {
+        $link = home_url('/' . $category->slug . '/');
+    }
+    return $link;
+}
+add_filter('category_link', 'custom_category_link', 10, 2);
+
+/**
  * Przenieś automatycznie wstrzyknięty Cloudflare Turnstile
  * na dół formularza CF7 (przed [submit]).
  */
@@ -327,3 +377,61 @@ add_filter('wpcf7_form_elements', function ($form) {
 
 // Remove <p> in block Contact form 7
 add_filter('wpcf7_autop_or_not', '__return_false');
+
+/**
+ * Znajdź stronę na podstawie szablonu
+ * 
+ * @param string $template Nazwa pliku szablonu (np. 'template-domy-mobilne.php')
+ * @return int|null ID strony lub null jeśli nie znaleziono
+ */
+function get_page_by_template($template) {
+    $pages = get_pages([
+        'meta_key' => '_wp_page_template',
+        'meta_value' => $template
+    ]);
+    
+    return !empty($pages) ? $pages[0]->ID : null;
+}
+
+/**
+ * Dodanie custom post type dla domków (opcjonalnie)
+ * Jeśli wolisz używać kategorii w standardowych postach, możesz to usunąć
+ */
+function register_domy_post_type() {
+    $labels = [
+        'name' => 'Domy',
+        'singular_name' => 'Dom',
+        'add_new' => 'Dodaj nowy',
+        'add_new_item' => 'Dodaj nowy dom',
+        'edit_item' => 'Edytuj dom',
+        'new_item' => 'Nowy dom',
+        'view_item' => 'Zobacz dom',
+        'search_items' => 'Szukaj domów',
+        'not_found' => 'Nie znaleziono domów',
+        'not_found_in_trash' => 'Nie znaleziono domów w koszu',
+        'parent_item_colon' => '',
+        'menu_name' => 'Domy'
+    ];
+
+    $args = [
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_rest' => true,
+        'query_var' => true,
+        'rewrite' => ['slug' => 'domy'],
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-admin-home',
+        'supports' => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
+        'taxonomies' => ['category', 'post_tag']
+    ];
+
+    // Odkomentuj poniższą linię jeśli chcesz użyć custom post type zamiast kategorii
+    // register_post_type('dom', $args);
+}
+add_action('init', 'register_domy_post_type', 0);
