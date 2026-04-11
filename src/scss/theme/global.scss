@@ -1028,6 +1028,9 @@
 .category-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 8px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 
     &:hover {
         transform: translateY(-5px);
@@ -1074,17 +1077,19 @@
     &__btn {
         background: $green;
         color: #fff;
-        padding: 12px;
+        padding: 8px;
         border-radius: 50%;
         font-weight: 600;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+        line-height: 1.2;
+        text-align: center;
         transform: translateY(20px);
         transition: transform 0.3s ease, background 0.3s ease;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 44px;
-        height: 44px;
+        width: 70px;
+        height: 70px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         
         &:hover {
@@ -1094,6 +1099,9 @@
 
     &__content {
         border-radius: 0 0 8px 8px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
     }
 
     &__title {
@@ -1102,10 +1110,12 @@
 
     &__desc {
         line-height: 1.4;
+        flex: 1;
     }
 
     &__count {
         font-size: 0.85rem;
+        margin-top: auto;
     }
 }
 
