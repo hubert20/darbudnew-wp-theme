@@ -248,10 +248,10 @@ $hero_style = !empty($hero_bg) ? "background-image: url('" . esc_url($hero_bg) .
     </div>
 </section>
 
-<section class="py-4 py-lg-5 bg-black">
+<section class="py-4 py-lg-5 bg-bottom-form">
     <div class="container">
         <h2 class="subtitle playfair-petch-font text-center standard-title-4 fw-bolder mb-3 mb-lg-4 position-relative text-yellow">
-            <span class="d-inline-block icon-text icon-text--yellow px-4">Masz pytania o ten domek?</span>
+            <span class="text-white px-4">Masz pytania o ten domek?</span>
         </h2>
         <div class="row justify-content-center align-items-end">
             <div class="col-lg-5 ps-lg-0">
