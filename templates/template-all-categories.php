@@ -5,15 +5,21 @@ if (!defined('ABSPATH')) exit;
 
 get_header();
 
+// Pobierz tło z Customizera lub ACF
 $bg_header_image = get_field('background_image');
+if (empty($bg_header_image)) {
+    $bg_header_image = get_theme_mod('oferta_bg_image');
+}
+
+$hero_style = !empty($bg_header_image) ? "background-image: url('" . esc_url($bg_header_image) . "');" : "background-color: #333;";
 
 ?>
 <!-- Hero top -->
-<section class="d-flex flex-column align-items-center justify-content-center header-image-defeault" style="background-image: url('<?php echo $bg_header_image; ?>')">
+<section class="d-flex flex-column align-items-center justify-content-center header-image-defeault" style="<?php echo $hero_style; ?>">
     <div class="container">
         <h1 class="playfair-petch-font standard-title-3 fw-bold text-center text-white header-def-title ls-2">
             <span class="d-inline-block icon-text icon-text--white px-4">
-                <?php echo esc_html(get_the_title()); ?>
+                Domy mobilne i budownictwo energooszczędne szkieletowe
             </span>
         </h1>
         <?php

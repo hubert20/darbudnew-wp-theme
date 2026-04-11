@@ -493,6 +493,31 @@ function darbudnew_customize_register($wp_customize) {
         'settings' => 'single_house_default_bg',
     ]));
 
+    // Separator
+    $wp_customize->add_setting('separator_oferta', [
+        'default' => '',
+        'sanitize_callback' => 'wp_filter_nohtml_kses',
+    ]);
+    
+    $wp_customize->add_control('separator_oferta', [
+        'label' => __('--- Strona /oferta/ ---', 'darbudnew-wp-theme'),
+        'type' => 'hidden',
+        'section' => 'category_hero_settings',
+    ]);
+
+    // Tło dla strony /oferta/
+    $wp_customize->add_setting('oferta_bg_image', [
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ]);
+    
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'oferta_bg_image', [
+        'label' => __('Tło strony /oferta/', 'darbudnew-wp-theme'),
+        'description' => __('Zdjęcie w tle dla strony z listą wszystkich kategorii (darbud.com.pl/oferta/).', 'darbudnew-wp-theme'),
+        'section' => 'category_hero_settings',
+        'settings' => 'oferta_bg_image',
+    ]));
+
     // Pobierz wszystkie kategorie
     $categories = get_categories(['hide_empty' => false]);
     
