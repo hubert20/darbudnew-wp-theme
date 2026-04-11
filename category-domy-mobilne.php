@@ -121,7 +121,14 @@ $hero_style = !empty($bg_header_image) ? "background-image: url('" . esc_url($bg
             else :
             ?>
                 <div class="col-12 text-center py-5">
-                    <p class="text-muted">Brak dostępnych domków w tej kategorii.</p>
+                    <div class="no-offers-message p-5 bg-light rounded">
+                        <i class="fa fa-home text-muted mb-3" style="font-size: 4rem;"></i>
+                        <h3 class="standard-title-5 mb-3">Oferta w trakcie przygotowania</h3>
+                        <p class="text-muted mb-4">Aktualnie pracujemy nad nowymi pozycjami w tej kategorii.<br>Zapraszamy do kontaktu w sprawie dostępności.</p>
+                        <a href="/#offerformModal" data-bs-toggle="modal" data-bs-target="#offerformModal" class="btn btn--style-2">
+                            ZAPYTAJ O OFERTĘ <i class="fa fa-envelope ms-1"></i>
+                        </a>
+                    </div>
                 </div>
             <?php endif; ?>
         </div>

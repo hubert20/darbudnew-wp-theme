@@ -306,7 +306,7 @@ Author URI: http://www.tomedia.pl
 
 /* Dodaj wysokość i pozycjonowanie dla hero */
 .header-image-defeault {
-    min-height: 400px;
+    min-height: 360px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -336,4 +336,26 @@ Author URI: http://www.tomedia.pl
     .header-image-defeault {
         min-height: 250px;
     }
+}
+
+/* Białe strzałki na galerii */
+.house-gallery-slider .swiper-button-prev,
+.house-gallery-slider .swiper-button-next {
+    color: #fff !important;
+    background: rgba(0,0,0,0.5);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.house-gallery-slider .swiper-button-prev:hover,
+.house-gallery-slider .swiper-button-next:hover {
+    background: rgba(40,167,69,0.8);
+}
+
+.house-gallery-slider .swiper-button-prev::after,
+.house-gallery-slider .swiper-button-next::after {
+    font-size: 20px;
+    font-weight: bold;
 }

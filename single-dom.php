@@ -68,7 +68,7 @@ $hero_style = !empty($hero_bg) ? "background-image: url('" . esc_url($hero_bg) .
             <!-- Lewa kolumna - Galeria ze Swiperem -->
             <div class="col-lg-7 mb-4 mb-lg-0">
                 <?php if ($dom_galeria && !empty($dom_galeria)) : ?>
-                    <div class="gallery">
+                    <div class="gallery" data-swiper-gallery>
                         <!-- Główna galeria (duże zdjęcie) -->
                         <div class="swiper house-gallery-slider mb-2">
                             <div class="swiper-wrapper">
@@ -79,7 +79,9 @@ $hero_style = !empty($hero_bg) ? "background-image: url('" . esc_url($hero_bg) .
                                         ?>
                                         <img src="<?php echo esc_url($main_img); ?>" 
                                              alt="<?php echo esc_attr($image['alt'] ?? get_the_title()); ?>" 
-                                             class="img-fluid w-100 rounded">
+                                             class="img-fluid w-100 rounded"
+                                             loading="eager"
+                                             data-no-lazy="1">
                                     </div>
                                 <?php endforeach; ?>
                             </div>
@@ -98,7 +100,9 @@ $hero_style = !empty($hero_bg) ? "background-image: url('" . esc_url($hero_bg) .
                                         ?>
                                         <img src="<?php echo esc_url($thumb_img); ?>" 
                                              alt="<?php echo esc_attr($image['alt'] ?? ''); ?>" 
-                                             class="img-fluid mx-auto rounded">
+                                             class="img-fluid mx-auto rounded"
+                                             loading="eager"
+                                             data-no-lazy="1">
                                     </div>
                                 <?php endforeach; ?>
                             </div>

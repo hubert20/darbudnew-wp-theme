@@ -137,35 +137,53 @@ document.addEventListener("DOMContentLoaded", () => {
   observer.observe(section);
 
   // Galeria domku (house slider z miniaturkami)
-  const houseThumbs = document.querySelector('.house-gallery-thumbs');
-  const houseSlider = document.querySelector('.house-gallery-slider');
+  const houseGallery = document.querySelector('[data-swiper-gallery]');
+  
+  if (houseGallery) {
+    const houseThumbs = houseGallery.querySelector('.house-gallery-thumbs');
+    const houseSlider = houseGallery.querySelector('.house-gallery-slider');
 
-  if (houseThumbs && houseSlider) {
-    // Inicjalizacja miniatur
-    const thumbsSwiper = new Swiper(houseThumbs, {
-      modules: [Navigation],
-      spaceBetween: 10,
-      slidesPerView: 4,
-      freeMode: true,
-      watchSlidesProgress: true,
-      breakpoints: {
-        576: { slidesPerView: 5 },
-        768: { slidesPerView: 6 },
-      },
-    });
+    if (houseSlider) {
+      let thumbsSwiper = null;
+      
+      // Inicjalizacja miniatur (jeśli istnieją)
+      if (houseThumbs) {
+        thumbsSwiper = new Swiper(houseThumbs, {
+          modules: [Navigation],
+          spaceBetween: 10,
+          slidesPerView: 4,
+          freeMode: true,
+          watchSlidesProgress: true,
+          lazy: false,
+          breakpoints: {
+            576: { slidesPerView: 5 },
+            768: { slidesPerView: 6 },
+          },
+        });
+      }
 
-    // Inicjalizacja głównego slidera
-    new Swiper(houseSlider, {
-      modules: [Navigation, Thumbs],
-      spaceBetween: 10,
-      navigation: {
-        nextEl: ".gallery-button__next",
-        prevEl: ".gallery-button__prev",
-      },
-      thumbs: {
-        swiper: thumbsSwiper,
-      },
-    });
+      // Konfiguracja głównego slidera
+      const mainConfig = {
+        modules: [Navigation, Thumbs],
+        spaceBetween: 10,
+        lazy: false,
+        preloadImages: true,
+        navigation: {
+          nextEl: ".gallery-button__next",
+          prevEl: ".gallery-button__prev",
+        },
+      };
+
+      // Dodaj thumbs tylko jeśli istnieją miniatury
+      if (thumbsSwiper) {
+        mainConfig.thumbs = {
+          swiper: thumbsSwiper,
+        };
+      }
+
+      // Inicjalizacja głównego slidera
+      new Swiper(houseSlider, mainConfig);
+    }
   }
 
 });
