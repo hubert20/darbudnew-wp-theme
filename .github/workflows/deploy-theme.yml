@@ -34,7 +34,7 @@ jobs:
           protocol: ftps
           port: 21
           security: strict
-          server-dir: /darbud/wp-content/themes/darbud-wp-theme/
+          server-dir: /darbud/wp-content/themes/darbudnew-wp-theme/
           local-dir: ./
           exclude: |
             **/.git*
