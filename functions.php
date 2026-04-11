@@ -515,3 +515,54 @@ function darbudnew_refresh_customizer_on_category_change() {
 }
 add_action('created_category', 'darbudnew_refresh_customizer_on_category_change');
 add_action('edited_category', 'darbudnew_refresh_customizer_on_category_change');
+
+/**
+ * Automatyczne użycie szablonu single-dom.php dla postów w kategorii "domy-mobilne"
+ */
+function darbudnew_single_template($template) {
+    // Debug - zapisz do logu co się dzieje
+    error_log('Darbudnew template filter running. Current template: ' . $template);
+    
+    if (is_single() && get_post_type() === 'post') {
+        $post = get_post();
+        if ($post) {
+            $categories = get_the_category($post->ID);
+            
+            foreach ($categories as $category) {
+                if ($category->slug === 'domy-mobilne') {
+                    $new_template = get_template_directory() . '/single-dom.php';
+                    if (file_exists($new_template)) {
+                        // error_log('Found domy-mobilne category. Using: ' . $new_template);
+                        return $new_template;
+                    }
+                }
+            }
+        }
+    }
+    return $template;
+}
+// Wyższy priorytet (5) żeby zadziałał przed innymi filtrami
+add_filter('single_template', 'darbudnew_single_template', 5);
+
+/**
+ * Alternatywna metoda przez template_include (bardziej niezawodna)
+ */
+function darbudnew_template_include($template) {
+    if (is_single() && get_post_type() === 'post') {
+        $post = get_post();
+        if ($post) {
+            $categories = get_the_category($post->ID);
+            
+            foreach ($categories as $category) {
+                if ($category->slug === 'domy-mobilne') {
+                    $new_template = get_template_directory() . '/single-dom.php';
+                    if (file_exists($new_template)) {
+                        return $new_template;
+                    }
+                }
+            }
+        }
+    }
+    return $template;
+}
+add_filter('template_include', 'darbudnew_template_include', 99);

@@ -218,3 +218,41 @@ Author URI: http://www.tomedia.pl
 .bg-yellow {
     background-color: #FFD700 !important;
 }
+
+/* ========================================
+   HERO STYLES - dla kategorii i pojedynczych postów
+   ======================================== */
+
+/* Dodaj wysokość i pozycjonowanie dla hero */
+.header-image-defeault {
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* Overlay dla lepszej czytelności tekstu */
+.header-image-defeault::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+/* Treść hero nad overlay */
+.header-image-defeault .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsywna wysokość hero */
+@media (max-width: 768px) {
+    .header-image-defeault {
+        min-height: 250px;
+    }
+}
