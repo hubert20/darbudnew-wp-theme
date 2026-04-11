@@ -97,8 +97,8 @@ $hero_style = !empty($bg_header_image) ? "background-image: url('" . esc_url($bg
                                     </div>
                                 <?php endif; ?>
                                 <div class="mobile-house-card__overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
-                                    <span class="mobile-house-card__btn d-inline-block mb-2">
-                                        <span>Zobacz szczegóły <i class="fa fa-arrow-right ms-1"></i></span>
+                                    <span class="mobile-house-card__btn">
+                                        Zobacz<br>ofertę
                                     </span>
                                 </div>
                             </div>

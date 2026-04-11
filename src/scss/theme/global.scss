@@ -1143,6 +1143,114 @@
     }
 }
 
+// ========================================
+// MOBILE HOUSE CARDS - dla listingów domków
+// ========================================
+
+.mobile-houses-wrap .row {
+    display: flex;
+    flex-wrap: wrap;
+    
+    > [class*="col-"] {
+        display: flex;
+    }
+}
+
+.mobile-house-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+        .mobile-house-card__image img {
+            transform: scale(1.05);
+        }
+
+        .mobile-house-card__overlay {
+            opacity: 1;
+        }
+
+        .mobile-house-card__btn {
+            transform: translateY(0);
+        }
+
+        .mobile-house-card__title {
+            color: $green;
+        }
+    }
+
+    &__image {
+        overflow: hidden;
+        border-radius: 8px 8px 0 0;
+
+        img {
+            transition: transform 0.4s ease;
+            height: 275px;
+            object-fit: cover;
+        }
+    }
+
+    &__placeholder {
+        min-height: 275px;
+    }
+
+    &__overlay {
+        background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__btn {
+        background: $green;
+        color: #fff;
+        padding: 10px;
+        border-radius: 50%;
+        font-weight: 600;
+        font-size: 0.75rem;
+        line-height: 1.1;
+        text-align: center;
+        transform: translateY(20px);
+        transition: transform 0.3s ease, background 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 85px;
+        height: 85px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        margin: auto;
+        
+        &:hover {
+            background: darken($green, 10%);
+        }
+    }
+
+    &__content {
+        border-radius: 0 0 8px 8px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        transition: color 0.3s ease;
+    }
+
+    &__specs {
+        line-height: 1.4;
+        flex: 1;
+        min-height: 24px;
+    }
+}
+
 .bg-bottom-form,
 .box-cat-bottom-form {
     background-image: url("https://darbud.com.pl/wp-content/uploads/2026/04/domy-mobilne-form-bg.jpg");

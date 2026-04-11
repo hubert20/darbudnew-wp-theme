@@ -101,8 +101,8 @@ $hero_style = !empty($bg_header_image) ? "background-image: url('" . esc_url($bg
                                     </div>
                                 <?php endif; ?>
                                 <div class="mobile-house-card__overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
-                                    <span class="mobile-house-card__btn d-inline-block mb-2">
-                                        <span>Zobacz szczegóły <i class="fa fa-arrow-right ms-1"></i></span>
+                                    <span class="mobile-house-card__btn">
+                                        Zobacz<br>ofertę
                                     </span>
                                 </div>
                             </div>
@@ -160,7 +160,7 @@ $hero_style = !empty($bg_header_image) ? "background-image: url('" . esc_url($bg
     </div>
 </section>
 
-<section class="py-4 py-lg-5 bg-black">
+<section class="py-4 py-lg-5 box-cat-bottom-form">
     <div class="container">
         <h2 class="subtitle playfair-petch-font text-center standard-title-4 fw-bolder mb-3 mb-lg-4 position-relative text-yellow">
             <span class="d-inline-block icon-text icon-text--yellow px-4">Zainteresowała Cię nasza oferta?</span>
