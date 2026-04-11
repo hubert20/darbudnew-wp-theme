@@ -11,17 +11,47 @@ get_header();
 // Pobierz dane kategorii
 $category = get_queried_object();
 $category_name = $category->name;
+$category_slug = $category->slug;
 $category_description = category_description();
 
-// Opcjonalnie: pobierz obraz z ACF dla kategorii (jeśli masz ACF dla taxonomii)
+// Pobierz zdjęcie tła - kolejność:
+// 1. ACF dla kategorii (jeśli masz ACF Pro)
+// 2. Customizer (ustawienie per kategoria)
+// 3. Obrazek pierwszego posta w kategorii
+// 4. Domyślne tło z Customizera
+
 $bg_header_image = '';
+
+// Opcja 1: ACF dla kategorii (wymaga ACF Pro)
 if (function_exists('get_field')) {
     $bg_header_image = get_field('kategoria_zdjecie', $category);
 }
+
+// Opcja 2: Customizer - zdjęcie dla konkretnej kategorii
+if (empty($bg_header_image)) {
+    $bg_header_image = get_theme_mod("category_bg_{$category_slug}");
+}
+
+// Opcja 3: Obrazek pierwszego posta
+if (empty($bg_header_image) && have_posts()) {
+    the_post();
+    if (has_post_thumbnail()) {
+        $bg_header_image = get_the_post_thumbnail_url(null, 'full');
+    }
+    rewind_posts();
+}
+
+// Opcja 4: Domyślne tło z Customizera
+if (empty($bg_header_image)) {
+    $bg_header_image = get_theme_mod('category_default_bg');
+}
+
+// Fallback - pusty string jeśli nic nie znaleziono
+$hero_style = !empty($bg_header_image) ? "background-image: url('" . esc_url($bg_header_image) . "');" : "background-color: #333;"
 ?>
 
 <!-- Hero top -->
-<section class="d-flex flex-column align-items-center justify-content-center header-image-defeault" style="background-image: url('<?php echo $bg_header_image ? esc_url($bg_header_image) : ''; ?>')">
+<section class="d-flex flex-column align-items-center justify-content-center header-image-defeault" style="<?php echo $hero_style; ?>">
     <div class="container">
         <h1 class="playfair-petch-font standard-title-3 fw-bold text-center text-white header-def-title ls-2">
             <span class="d-inline-block icon-text icon-text--white px-4">

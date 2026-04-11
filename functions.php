@@ -435,3 +435,58 @@ function register_domy_post_type() {
     // register_post_type('dom', $args);
 }
 add_action('init', 'register_domy_post_type', 0);
+
+/**
+ * Customizer - ustawienia dla kategorii (tło hero)
+ */
+function darbudnew_customize_register($wp_customize) {
+    // Sekcja: Tła kategorii
+    $wp_customize->add_section('category_hero_settings', [
+        'title' => __('Tła kategorii (Hero)', 'darbudnew-wp-theme'),
+        'description' => __('Ustaw zdjęcia w tle dla archiwów kategorii.', 'darbudnew-wp-theme'),
+        'priority' => 90,
+    ]);
+
+    // Domyślne tło dla wszystkich kategorii
+    $wp_customize->add_setting('category_default_bg', [
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ]);
+    
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'category_default_bg', [
+        'label' => __('Domyślne tło kategorii', 'darbudnew-wp-theme'),
+        'description' => __('Tło wyświetlane gdy kategoria nie ma własnego zdjęcia.', 'darbudnew-wp-theme'),
+        'section' => 'category_hero_settings',
+        'settings' => 'category_default_bg',
+    ]));
+
+    // Pobierz wszystkie kategorie
+    $categories = get_categories(['hide_empty' => false]);
+    
+    // Dodaj ustawienie dla każdej kategorii
+    foreach ($categories as $category) {
+        $setting_id = "category_bg_{$category->slug}";
+        
+        $wp_customize->add_setting($setting_id, [
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ]);
+        
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $setting_id, [
+            'label' => sprintf(__('Tło: %s', 'darbudnew-wp-theme'), $category->name),
+            'description' => sprintf(__('Slug: %s', 'darbudnew-wp-theme'), $category->slug),
+            'section' => 'category_hero_settings',
+            'settings' => $setting_id,
+        ]));
+    }
+}
+add_action('customize_register', 'darbudnew_customize_register');
+
+/**
+ * Odśwież ustawienia Customizera po dodaniu nowej kategorii
+ */
+function darbudnew_refresh_customizer_on_category_change() {
+    // Usuń transients czy inne cache jeśli potrzeba
+}
+add_action('created_category', 'darbudnew_refresh_customizer_on_category_change');
+add_action('edited_category', 'darbudnew_refresh_customizer_on_category_change');
