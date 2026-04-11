@@ -47,7 +47,7 @@ endwhile;
                     $house_specs = get_field('dom_specyfikacja');
             ?>
                     <div class="col-lg-4 col-md-6">
-                        <a href="<?php echo esc_url(get_permalink()); ?>" class="mobile-house-card text-decoration-none d-block position-relative overflow-hidden" title="<?php echo esc_attr(get_the_title()); ?>">
+                        <a href="<?php echo esc_url(get_permalink()); ?>" class="mobile-house-card text-decoration-none d-flex position-relative overflow-hidden" title="<?php echo esc_attr(get_the_title()); ?>">
                             <div class="mobile-house-card__image position-relative">
                                 <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('cat-width', ['class' => 'img-fluid w-100']); ?>

@@ -74,7 +74,7 @@ endwhile;
                     $post_count = $category->count;
             ?>
                     <div class="col-lg-4 col-md-6">
-                        <a href="<?php echo esc_url(get_category_link($category->term_id)); ?>" class="category-card text-decoration-none d-block position-relative overflow-hidden" title="<?php echo esc_attr($category->name); ?>">
+                        <a href="<?php echo esc_url(get_category_link($category->term_id)); ?>" class="category-card text-decoration-none d-flex position-relative overflow-hidden" title="<?php echo esc_attr($category->name); ?>">
                             <div class="category-card__image position-relative">
                                 <?php if ($cat_img_url) : 
                                     $cat_img_id = attachment_url_to_postid($cat_img_url);
@@ -93,7 +93,7 @@ endwhile;
                                     </div>
                                 <?php endif; ?>
                                 <div class="category-card__overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
-                                    <span class="category-card__btn d-inline-block mb-2">
+                                    <span class="category-card__btn mb-2">
                                         <span>Zobacz ofertę <i class="fa fa-arrow-right ms-1"></i></span>
                                     </span>
                                 </div>
