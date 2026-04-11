@@ -140,16 +140,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const houseGallery = document.querySelector('[data-swiper-gallery]');
   
   if (houseGallery) {
+    console.log('House gallery found');
     const houseThumbs = houseGallery.querySelector('.house-gallery-thumbs');
     const houseSlider = houseGallery.querySelector('.house-gallery-slider');
 
     if (houseSlider) {
+      console.log('House slider found, initializing...');
       let thumbsSwiper = null;
       
       // Inicjalizacja miniatur (jeśli istnieją)
       if (houseThumbs) {
+        console.log('House thumbs found, initializing thumbs swiper...');
         thumbsSwiper = new Swiper(houseThumbs, {
-          modules: [Navigation, Thumbs],
+          modules: [Navigation],
           spaceBetween: 10,
           slidesPerView: 4,
           freeMode: true,
@@ -166,6 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
             768: { slidesPerView: 6 },
           },
         });
+        console.log('Thumbs swiper initialized:', thumbsSwiper);
       }
 
       // Konfiguracja głównego slidera
@@ -185,10 +189,12 @@ document.addEventListener("DOMContentLoaded", () => {
         mainConfig.thumbs = {
           swiper: thumbsSwiper,
         };
+        console.log('Thumbs added to main config');
       }
 
       // Inicjalizacja głównego slidera
-      new Swiper(houseSlider, mainConfig);
+      const mainSwiper = new Swiper(houseSlider, mainConfig);
+      console.log('Main swiper initialized:', mainSwiper);
     }
   }
 

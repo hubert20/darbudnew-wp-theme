@@ -65,7 +65,6 @@ $hero_style = !empty($bg_header_image) ? "background-image: url('" . esc_url($bg
         ?>
     </div>
 </section>
-TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
 <?php if ($category_description) : ?>
 <section class="py-4 bg-light">
     <div class="container">
