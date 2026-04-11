@@ -65,59 +65,46 @@ $hero_style = !empty($hero_bg) ? "background-image: url('" . esc_url($hero_bg) .
 <section class="py-4 py-lg-5 single-house-wrap">
     <div class="container">
         <div class="row">
-            <!-- Lewa kolumna - Galeria -->
+            <!-- Lewa kolumna - Galeria ze Swiperem -->
             <div class="col-lg-7 mb-4 mb-lg-0">
                 <?php if ($dom_galeria && !empty($dom_galeria)) : ?>
-                    <!-- Główne zdjęcie -->
-                    <div class="house-gallery-main mb-3 position-relative">
-                        <a href="<?php echo esc_url($dom_galeria[0]['url']); ?>" data-fancybox="gallery" data-caption="<?php echo esc_attr($dom_galeria[0]['caption'] ?? get_the_title()); ?>">
-                            <?php 
-                            // Użyj dedykowanego rozmiaru lub large jako fallback
-                            $main_img = !empty($dom_galeria[0]['sizes']['house-gallery']) ? $dom_galeria[0]['sizes']['house-gallery'] : $dom_galeria[0]['sizes']['large'];
-                            ?>
-                            <img src="<?php echo esc_url($main_img); ?>" 
-                                 alt="<?php echo esc_attr($dom_galeria[0]['alt'] ?? get_the_title()); ?>" 
-                                 class="img-fluid w-100 rounded"
-                                 loading="lazy">
-                        </a>
-                        <div class="house-gallery__zoom position-absolute top-50 start-50 translate-middle">
-                            <i class="fa fa-search-plus text-white" style="font-size: 2rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);"></i>
-                        </div>
-                    </div>
-                    
-                    <!-- Miniatury -->
-                    <?php if (count($dom_galeria) > 1) : ?>
-                    <div class="house-gallery-thumbs row g-2">
-                        <?php foreach ($dom_galeria as $index => $image) : 
-                            if ($index === 0) continue; // Pomijamy pierwsze (główne)
-                        ?>
-                            <div class="col-4 col-sm-3">
-                                <a href="<?php echo esc_url($image['url']); ?>" data-fancybox="gallery" data-caption="<?php echo esc_attr($image['caption'] ?? ''); ?>" class="d-block position-relative">
-                                    <?php
-                                    // Użyj dedykowanego rozmiaru lub thumbnail jako fallback
-                                    $thumb_img = !empty($image['sizes']['house-thumb']) ? $image['sizes']['house-thumb'] : $image['sizes']['thumbnail'];
-                                    ?>
-                                    <img src="<?php echo esc_url($thumb_img); ?>" 
-                                         alt="<?php echo esc_attr($image['alt'] ?? ''); ?>" 
-                                         class="img-fluid w-100 rounded hover-opacity">
-                                    <?php if ($index === 3 && count($dom_galeria) > 4) : ?>
-                                        <div class="house-gallery__more position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 rounded d-flex align-items-center justify-content-center">
-                                            <span class="text-white fw-bold">+<?php echo count($dom_galeria) - 4; ?></span>
-                                        </div>
-                                    <?php endif; ?>
-                                </a>
+                    <div class="gallery">
+                        <!-- Główna galeria (duże zdjęcie) -->
+                        <div class="swiper house-gallery-slider mb-2">
+                            <div class="swiper-wrapper">
+                                <?php foreach ($dom_galeria as $image) : ?>
+                                    <div class="swiper-slide">
+                                        <?php 
+                                        $main_img = !empty($image['sizes']['house-gallery']) ? $image['sizes']['house-gallery'] : $image['sizes']['large'];
+                                        ?>
+                                        <img src="<?php echo esc_url($main_img); ?>" 
+                                             alt="<?php echo esc_attr($image['alt'] ?? get_the_title()); ?>" 
+                                             class="img-fluid w-100 rounded">
+                                    </div>
+                                <?php endforeach; ?>
                             </div>
-                            <?php if ($index === 3) break; // Pokazujemy max 4 miniatury (bez pierwszego) ?>
-                        <?php endforeach; ?>
+                            <div class="swiper-button-prev gallery-button__prev"></div>
+                            <div class="swiper-button-next gallery-button__next"></div>
+                        </div>
                         
-                        <!-- Ukryte linki do pozostałych zdjęć dla fancybox -->
-                        <?php foreach ($dom_galeria as $index => $image) : 
-                            if ($index <= 3) continue;
-                        ?>
-                            <a href="<?php echo esc_url($image['url']); ?>" data-fancybox="gallery" data-caption="<?php echo esc_attr($image['caption'] ?? ''); ?>" class="d-none"></a>
-                        <?php endforeach; ?>
+                        <!-- Miniatury - przewijane (thumbsSlider) -->
+                        <?php if (count($dom_galeria) > 1) : ?>
+                        <div thumbsSlider="" class="swiper house-gallery-thumbs">
+                            <div class="swiper-wrapper">
+                                <?php foreach ($dom_galeria as $image) : ?>
+                                    <div class="swiper-slide d-flex justify-content-center">
+                                        <?php
+                                        $thumb_img = !empty($image['sizes']['house-thumb']) ? $image['sizes']['house-thumb'] : $image['sizes']['thumbnail'];
+                                        ?>
+                                        <img src="<?php echo esc_url($thumb_img); ?>" 
+                                             alt="<?php echo esc_attr($image['alt'] ?? ''); ?>" 
+                                             class="img-fluid mx-auto rounded">
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                        <?php endif; ?>
                     </div>
-                    <?php endif; ?>
                 <?php elseif (has_post_thumbnail()) : ?>
                     <div class="house-featured-image">
                         <?php the_post_thumbnail('large', ['class' => 'img-fluid w-100 rounded']); ?>
