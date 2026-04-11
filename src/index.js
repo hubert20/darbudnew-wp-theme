@@ -149,12 +149,13 @@ document.addEventListener("DOMContentLoaded", () => {
       // Inicjalizacja miniatur (jeśli istnieją)
       if (houseThumbs) {
         thumbsSwiper = new Swiper(houseThumbs, {
-          modules: [Navigation],
+          modules: [Navigation, Thumbs],
           spaceBetween: 10,
           slidesPerView: 4,
           freeMode: true,
           watchSlidesProgress: true,
           lazy: false,
+          slideToClickedSlide: true,
           breakpoints: {
             576: { slidesPerView: 5 },
             768: { slidesPerView: 6 },
