@@ -199,7 +199,7 @@ $hero_style = !empty($hero_bg) ? "background-image: url('" . esc_url($hero_bg) .
 
                     <!-- CTA -->
                     <div class="d-grid gap-2">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#offerformModal" data-house="<?php echo esc_attr(get_the_title()); ?>" class="btn btn-outline-dark">
+                        <a href="#form-bottom"  data-house="<?php echo esc_attr(get_the_title()); ?>" class="btn btn-outline-dark">
                             ZAPYTAJ O OFERTĘ <i class="fa fa-envelope ms-1"></i>
                         </a>
                     </div>
@@ -248,7 +248,7 @@ $hero_style = !empty($hero_bg) ? "background-image: url('" . esc_url($hero_bg) .
     </div>
 </section>
 
-<section class="py-4 py-lg-5 bg-bottom-form">
+<section class="py-4 py-lg-5 bg-bottom-form" id="form-bottom">
     <div class="container">
         <h2 class="subtitle playfair-petch-font text-center standard-title-4 fw-bolder mb-3 mb-lg-4 position-relative text-yellow">
             <span class="text-white px-4">Masz pytania o ten domek?</span>
