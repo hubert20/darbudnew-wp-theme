@@ -71,9 +71,14 @@ $hero_style = !empty($hero_bg) ? "background-image: url('" . esc_url($hero_bg) .
                     <!-- Główne zdjęcie -->
                     <div class="house-gallery-main mb-3 position-relative">
                         <a href="<?php echo esc_url($dom_galeria[0]['url']); ?>" data-fancybox="gallery" data-caption="<?php echo esc_attr($dom_galeria[0]['caption'] ?? get_the_title()); ?>">
-                            <img src="<?php echo esc_url($dom_galeria[0]['sizes']['large']); ?>" 
+                            <?php 
+                            // Użyj dedykowanego rozmiaru lub large jako fallback
+                            $main_img = !empty($dom_galeria[0]['sizes']['house-gallery']) ? $dom_galeria[0]['sizes']['house-gallery'] : $dom_galeria[0]['sizes']['large'];
+                            ?>
+                            <img src="<?php echo esc_url($main_img); ?>" 
                                  alt="<?php echo esc_attr($dom_galeria[0]['alt'] ?? get_the_title()); ?>" 
-                                 class="img-fluid w-100 rounded">
+                                 class="img-fluid w-100 rounded"
+                                 loading="lazy">
                         </a>
                         <div class="house-gallery__zoom position-absolute top-50 start-50 translate-middle">
                             <i class="fa fa-search-plus text-white" style="font-size: 2rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);"></i>
@@ -88,7 +93,11 @@ $hero_style = !empty($hero_bg) ? "background-image: url('" . esc_url($hero_bg) .
                         ?>
                             <div class="col-4 col-sm-3">
                                 <a href="<?php echo esc_url($image['url']); ?>" data-fancybox="gallery" data-caption="<?php echo esc_attr($image['caption'] ?? ''); ?>" class="d-block position-relative">
-                                    <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" 
+                                    <?php
+                                    // Użyj dedykowanego rozmiaru lub thumbnail jako fallback
+                                    $thumb_img = !empty($image['sizes']['house-thumb']) ? $image['sizes']['house-thumb'] : $image['sizes']['thumbnail'];
+                                    ?>
+                                    <img src="<?php echo esc_url($thumb_img); ?>" 
                                          alt="<?php echo esc_attr($image['alt'] ?? ''); ?>" 
                                          class="img-fluid w-100 rounded hover-opacity">
                                     <?php if ($index === 3 && count($dom_galeria) > 4) : ?>
