@@ -2,12 +2,13 @@ require("bootstrap");
 import { Modal } from 'bootstrap';
 
 import Swiper from "swiper";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Thumbs } from "swiper/modules";
 import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/thumbs";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -134,5 +135,37 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   observer.observe(section);
+
+  // Galeria domku (house slider z miniaturkami)
+  const houseThumbs = document.querySelector('.house-gallery-thumbs');
+  const houseSlider = document.querySelector('.house-gallery-slider');
+
+  if (houseThumbs && houseSlider) {
+    // Inicjalizacja miniatur
+    const thumbsSwiper = new Swiper(houseThumbs, {
+      modules: [Navigation],
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesProgress: true,
+      breakpoints: {
+        576: { slidesPerView: 5 },
+        768: { slidesPerView: 6 },
+      },
+    });
+
+    // Inicjalizacja głównego slidera
+    new Swiper(houseSlider, {
+      modules: [Navigation, Thumbs],
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".gallery-button__next",
+        prevEl: ".gallery-button__prev",
+      },
+      thumbs: {
+        swiper: thumbsSwiper,
+      },
+    });
+  }
 
 });
