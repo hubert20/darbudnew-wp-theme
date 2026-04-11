@@ -14,9 +14,40 @@ $dom_skład = get_field('dom_sklad_oferty');
 $dom_cena = get_field('dom_cena');
 $dom_wymiary = get_field('dom_wymiary');
 
+// Pobierz zdjęcie tła dla hero - kolejność:
+// 1. Dedykowane pole ACF dla hero
+// 2. Pierwsze zdjęcie z galerii
+// 3. Obrazek wyróżniający
+// 4. Domyślne tło z Customizera
+
+$hero_bg = '';
+
+// Opcja 1: Dedykowane pole ACF dla tła hero
+if (function_exists('get_field')) {
+    $hero_bg = get_field('dom_hero_bg');
+}
+
+// Opcja 2: Pierwsze zdjęcie z galerii
+if (empty($hero_bg) && $dom_galeria && !empty($dom_galeria[0])) {
+    $hero_bg = $dom_galeria[0]['url'];
+}
+
+// Opcja 3: Obrazek wyróżniający
+if (empty($hero_bg) && has_post_thumbnail()) {
+    $hero_bg = get_the_post_thumbnail_url(null, 'full');
+}
+
+// Opcja 4: Domyślne tło z Customizera (jeśli dodasz takie ustawienie)
+if (empty($hero_bg)) {
+    $hero_bg = get_theme_mod('single_house_default_bg');
+}
+
+// Fallback - kolor tła jeśli brak zdjęcia
+$hero_style = !empty($hero_bg) ? "background-image: url('" . esc_url($hero_bg) . "');" : "background-color: #333;";
+
 ?>
 
-<section class="d-flex flex-column align-items-center justify-content-center header-image-defeault" style="background-image: url('<?php echo esc_url(get_the_post_thumbnail_url(null, 'full')); ?>')">
+<section class="d-flex flex-column align-items-center justify-content-center header-image-defeault" style="<?php echo $hero_style; ?>">
     <div class="container">
         <h1 class="playfair-petch-font standard-title-3 fw-bold text-center text-white header-def-title ls-2">
             <span class="d-inline-block icon-text icon-text--white px-4">

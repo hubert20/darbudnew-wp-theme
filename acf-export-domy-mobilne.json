@@ -4,6 +4,30 @@
         "title": "Domy - Szczegóły",
         "fields": [
             {
+                "key": "field_hero_bg",
+                "label": "Zdjęcie w tle (Hero)",
+                "name": "dom_hero_bg",
+                "type": "image",
+                "instructions": "Dedykowane zdjęcie na górę strony (hero). Jeśli nie dodasz, użyje się pierwszego zdjęcia z galerii lub obrazka wyróżniającego.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "preview_size": "medium",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
                 "key": "field_galeria",
                 "label": "Galeria zdjęć",
                 "name": "dom_galeria",

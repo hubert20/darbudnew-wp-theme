@@ -460,6 +460,31 @@ function darbudnew_customize_register($wp_customize) {
         'settings' => 'category_default_bg',
     ]));
 
+    // Separator
+    $wp_customize->add_setting('separator_single_house', [
+        'default' => '',
+        'sanitize_callback' => 'wp_filter_nohtml_kses',
+    ]);
+    
+    $wp_customize->add_control('separator_single_house', [
+        'label' => __('--- Pojedynczy domek ---', 'darbudnew-wp-theme'),
+        'type' => 'hidden',
+        'section' => 'category_hero_settings',
+    ]);
+
+    // Domyślne tło dla pojedynczych domków
+    $wp_customize->add_setting('single_house_default_bg', [
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ]);
+    
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'single_house_default_bg', [
+        'label' => __('Domyślne tło pojedynczego domku', 'darbudnew-wp-theme'),
+        'description' => __('Tło wyświetlane gdy domek nie ma zdjęcia hero, galerii ani obrazka wyróżniającego.', 'darbudnew-wp-theme'),
+        'section' => 'category_hero_settings',
+        'settings' => 'single_house_default_bg',
+    ]));
+
     // Pobierz wszystkie kategorie
     $categories = get_categories(['hide_empty' => false]);
     
