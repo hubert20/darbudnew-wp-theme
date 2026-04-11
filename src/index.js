@@ -11,6 +11,9 @@ import "swiper/css/pagination";
 import "swiper/css/thumbs";
 
 document.addEventListener("DOMContentLoaded", () => {
+  
+  // Video source variable (used by modal)
+  let videoSrc;
 
   // Slider produktów
   if (document.querySelector('.my-slider')) {
@@ -67,76 +70,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Modal Video
-  // Declare a variable to store the video source
-  let videoSrc;
-
-  // Add click event listener to all elements with class "video-btn"
-  document.querySelectorAll('.video-btn').forEach(button => {
-    button.addEventListener('click', () => {
-      // Get the video source from the data-src attribute
-      videoSrc = button.dataset.src;
-      console.log(videoSrc);
-    });
-  });
-
-  // Add event listener for when the modal is opened
-  document.getElementById('videoModal').addEventListener('shown.bs.modal', () => {
-    // Update the video source with autoplay and other options
-    document.getElementById('video').src = videoSrc + "?modestbranding=1&rel=0&controls=1&showinfo=0&html5=1&autoplay=1";
-  });
-
-  // Add event listener for when the modal is closed
-  document.getElementById('videoModal').addEventListener('hide.bs.modal', () => {
-    // Stop the video by resetting the source
-    document.getElementById('video').src = videoSrc;
-  });
-
-  //Counter
-  const section = document.querySelector('.main-technology');
-  const counterEl = document.getElementById('experience-counter');
-
-  if (!section || !counterEl) return;
-
-  const targetValue = parseInt(counterEl.textContent, 10);
-  let hasAnimated = false;
-
-  const animateCounter = () => {
-    let current = 0;
-    const duration = 1500; // ms
-    const stepTime = 30;
-    const increment = Math.ceil(targetValue / (duration / stepTime));
-
-    const timer = setInterval(() => {
-      current += increment;
-
-      if (current >= targetValue) {
-        counterEl.textContent = targetValue;
-        clearInterval(timer);
-      } else {
-        counterEl.textContent = current;
-      }
-    }, stepTime);
-  };
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !hasAnimated) {
-          hasAnimated = true;
-          animateCounter();
-          observer.disconnect();
-        }
+  // Modal Video - only if elements exist
+  const videoModal = document.getElementById('videoModal');
+  const videoEl = document.getElementById('video');
+  
+  if (videoModal && videoEl) {
+    // Add click event listener to all elements with class "video-btn"
+    document.querySelectorAll('.video-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        // Get the video source from the data-src attribute
+        videoSrc = button.dataset.src;
+        console.log(videoSrc);
       });
-    },
-    {
-      threshold: 0.4 // ile sekcji ma być widoczne
-    }
-  );
+    });
 
-  observer.observe(section);
+    // Add event listener for when the modal is opened
+    videoModal.addEventListener('shown.bs.modal', () => {
+      // Update the video source with autoplay and other options
+      videoEl.src = videoSrc + "?modestbranding=1&rel=0&controls=1&showinfo=0&html5=1&autoplay=1";
+    });
 
-  // Galeria domku (house slider z miniaturkami)
+    // Add event listener for when the modal is closed
+    videoModal.addEventListener('hide.bs.modal', () => {
+      // Stop the video by resetting the source
+      videoEl.src = videoSrc;
+    });
+  }
+
+  // Galeria domku (house slider z miniaturkami) - MUSI BYĆ PRZED COUNTER!
   const houseGallery = document.querySelector('[data-swiper-gallery]');
   
   if (houseGallery) {
@@ -196,6 +157,50 @@ document.addEventListener("DOMContentLoaded", () => {
       const mainSwiper = new Swiper(houseSlider, mainConfig);
       console.log('Main swiper initialized:', mainSwiper);
     }
+  }
+
+  //Counter - tylko jeśli elementy istnieją
+  const section = document.querySelector('.main-technology');
+  const counterEl = document.getElementById('experience-counter');
+
+  if (section && counterEl) {
+    const targetValue = parseInt(counterEl.textContent, 10);
+    let hasAnimated = false;
+
+    const animateCounter = () => {
+      let current = 0;
+      const duration = 1500; // ms
+      const stepTime = 30;
+      const increment = Math.ceil(targetValue / (duration / stepTime));
+
+      const timer = setInterval(() => {
+        current += increment;
+
+        if (current >= targetValue) {
+          counterEl.textContent = targetValue;
+          clearInterval(timer);
+        } else {
+          counterEl.textContent = current;
+        }
+      }, stepTime);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !hasAnimated) {
+            hasAnimated = true;
+            animateCounter();
+            observer.disconnect();
+          }
+        });
+      },
+      {
+        threshold: 0.4 // ile sekcji ma być widoczne
+      }
+    );
+
+    observer.observe(section);
   }
 
 });
