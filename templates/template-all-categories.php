@@ -134,11 +134,11 @@ endwhile;
         <h2 class="subtitle playfair-petch-font text-center standard-title-4 fw-bolder mb-3 mb-lg-4 position-relative text-yellow">
             <span class="d-inline-block icon-text icon-text--yellow px-4">Zainteresowała Cię nasza oferta?</span>
         </h2>
-        <div class="row justify-content-center">
-            <div class="col-10 col-lg-3 d-grid">
-                <a data-category="form-all-categories" data-bs-toggle="modal" data-bs-target="#offerformModal" class="btn btn--style-2">
-                    ZAPYTAJ O OFERTĘ <i class="fa fa-check-square-o"></i>
-                </a>
+        <div class="row justify-content-center align-items-end">
+            <div class="col-lg-5 ps-lg-0">
+                <div class="p-4 bg-white contact-form-box">
+                    <?php echo apply_shortcodes('[contact-form-7 id="3524678" title="Formularz kontaktowy"]'); ?>
+                </div>
             </div>
         </div>
     </div>
