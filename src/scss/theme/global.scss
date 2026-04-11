@@ -1025,6 +1025,16 @@
 // KATEGORIE - KARTY OFERT
 // ========================================
 
+// Wyrównanie boxów w wierszu
+.all-categories-wrap .row {
+    display: flex;
+    flex-wrap: wrap;
+    
+    > [class*="col-"] {
+        display: flex;
+    }
+}
+
 .category-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 8px;
@@ -1072,6 +1082,9 @@
         background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
         opacity: 0;
         transition: opacity 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     &__btn {
@@ -1091,6 +1104,7 @@
         width: 70px;
         height: 70px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        margin: auto;
         
         &:hover {
             background: darken($green, 10%);
