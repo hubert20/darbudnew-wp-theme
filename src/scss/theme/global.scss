@@ -993,3 +993,88 @@
         height: 60px;
     }
 }
+
+// ========================================
+// KATEGORIE - KARTY OFERT
+// ========================================
+
+.category-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+        .category-card__image img {
+            transform: scale(1.05);
+        }
+
+        .category-card__overlay {
+            opacity: 1;
+        }
+
+        .category-card__btn {
+            transform: translateY(0);
+        }
+
+        .category-card__title {
+            color: $green;
+        }
+    }
+
+    &__image {
+        overflow: hidden;
+        border-radius: 8px 8px 0 0;
+
+        img {
+            transition: transform 0.4s ease;
+            height: 275px;
+            object-fit: cover;
+        }
+    }
+
+    &__placeholder {
+        min-height: 275px;
+    }
+
+    &__overlay {
+        background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    &__btn {
+        background: #FFD700;
+        color: #000;
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+    }
+
+    &__content {
+        border-radius: 0 0 8px 8px;
+    }
+
+    &__title {
+        transition: color 0.3s ease;
+    }
+
+    &__desc {
+        line-height: 1.4;
+    }
+
+    &__count {
+        font-size: 0.85rem;
+    }
+}
+
+// No categories message
+.no-categories-message {
+    i {
+        display: block;
+    }
+}

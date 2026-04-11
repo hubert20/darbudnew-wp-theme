@@ -574,3 +574,26 @@ function darbudnew_template_include($template) {
     return $template;
 }
 add_filter('template_include', 'darbudnew_template_include', 99);
+
+/**
+ * Automatyczna strona /oferta/ z listą wszystkich kategorii
+ */
+function darbudnew_add_oferta_rewrite() {
+    add_rewrite_rule('^oferta/?$', 'index.php?darbud_oferta=1', 'top');
+    add_rewrite_tag('%darbud_oferta%', '([^&]+)');
+}
+add_action('init', 'darbudnew_add_oferta_rewrite', 10);
+
+/**
+ * Użyj szablonu template-all-categories.php dla /oferta/
+ */
+function darbudnew_oferta_template($template) {
+    if (get_query_var('darbud_oferta')) {
+        $oferta_template = get_template_directory() . '/templates/template-all-categories.php';
+        if (file_exists($oferta_template)) {
+            return $oferta_template;
+        }
+    }
+    return $template;
+}
+add_filter('template_include', 'darbudnew_oferta_template', 100);
