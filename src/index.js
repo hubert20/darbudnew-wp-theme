@@ -153,9 +153,14 @@ document.addEventListener("DOMContentLoaded", () => {
           spaceBetween: 10,
           slidesPerView: 4,
           freeMode: true,
+          grabCursor: true,
           watchSlidesProgress: true,
           lazy: false,
           slideToClickedSlide: true,
+          navigation: {
+            nextEl: ".thumbs-button__next",
+            prevEl: ".thumbs-button__prev",
+          },
           breakpoints: {
             576: { slidesPerView: 5 },
             768: { slidesPerView: 6 },

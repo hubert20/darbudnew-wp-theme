@@ -91,7 +91,7 @@ $hero_style = !empty($hero_bg) ? "background-image: url('" . esc_url($hero_bg) .
                         
                         <!-- Miniatury - przewijane (thumbsSlider) -->
                         <?php if (count($dom_galeria) > 1) : ?>
-                        <div thumbsSlider="" class="swiper house-gallery-thumbs">
+                        <div thumbsSlider="" class="swiper house-gallery-thumbs position-relative">
                             <div class="swiper-wrapper">
                                 <?php foreach ($dom_galeria as $image) : ?>
                                     <div class="swiper-slide d-flex justify-content-center">
@@ -106,6 +106,8 @@ $hero_style = !empty($hero_bg) ? "background-image: url('" . esc_url($hero_bg) .
                                     </div>
                                 <?php endforeach; ?>
                             </div>
+                            <div class="swiper-button-prev thumbs-button__prev"></div>
+                            <div class="swiper-button-next thumbs-button__next"></div>
                         </div>
                         <?php endif; ?>
                     </div>
