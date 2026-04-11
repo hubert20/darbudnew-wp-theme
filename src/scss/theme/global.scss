@@ -961,6 +961,18 @@
     height: 100%;
 }
 
+.house-categories {
+    .badge {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+        font-weight: 500;
+        
+        &:hover {
+            background-color: darken($green, 10%) !important;
+        }
+    }
+}
+
 .house-price {
     border: 2px solid $green;
 

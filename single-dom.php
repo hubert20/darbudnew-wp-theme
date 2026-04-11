@@ -121,9 +121,22 @@ $hero_style = !empty($hero_bg) ? "background-image: url('" . esc_url($hero_bg) .
             <!-- Prawa kolumna - Szczegóły -->
             <div class="col-lg-5">
                 <div class="house-details-card bg-light p-4 rounded">
-                    <h2 class="house-details__title playfair-petch-font standard-title-4 mb-4 text-dark">
+                    <h2 class="house-details__title playfair-petch-font standard-title-4 mb-2 text-dark">
                         <?php echo esc_html(get_the_title()); ?>
                     </h2>
+                    
+                    <!-- Kategorie -->
+                    <?php
+                    $categories = get_the_category();
+                    if (!empty($categories)) : ?>
+                    <div class="house-categories mb-4">
+                        <?php foreach ($categories as $cat) : ?>
+                            <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="badge bg-success text-white text-decoration-none me-1">
+                                <?php echo esc_html($cat->name); ?>
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
+                    <?php endif; ?>
                     
                     <!-- Specyfikacja -->
                     <?php if ($dom_specyfikacja) : ?>
@@ -221,8 +234,8 @@ $hero_style = !empty($hero_bg) ? "background-image: url('" . esc_url($hero_bg) .
                             $tekst = $item['element'] ?? '';
                             if (empty($tekst)) continue;
                         ?>
-                            <div class="col-md-6 col-lg-4">
-                                <div class="d-flex align-items-center p-3 bg-white rounded shadow-sm">
+                            <div class="col-md-6 col-lg-4 d-flex">
+                                <div class="d-flex align-items-center p-3 bg-white rounded shadow-sm flex-grow-1">
                                     <i class="fa <?php echo esc_attr($ikona); ?> text-green me-3" style="font-size: 1.5rem;"></i>
                                     <span><?php echo esc_html($tekst); ?></span>
                                 </div>
