@@ -1072,14 +1072,24 @@
     }
 
     &__btn {
-        background: #FFD700;
-        color: #000;
-        padding: 8px 16px;
-        border-radius: 4px;
+        background: $green;
+        color: #fff;
+        padding: 12px;
+        border-radius: 50%;
         font-weight: 600;
         font-size: 0.9rem;
         transform: translateY(20px);
-        transition: transform 0.3s ease;
+        transition: transform 0.3s ease, background 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        
+        &:hover {
+            background: darken($green, 10%);
+        }
     }
 
     &__content {
