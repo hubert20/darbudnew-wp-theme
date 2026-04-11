@@ -66,15 +66,15 @@ $hero_style = !empty($bg_header_image) ? "background-image: url('" . esc_url($bg
     </div>
 </section>
 <?php if ($category_description) : ?>
-<section class="py-4 bg-light">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <?php echo $category_description; ?>
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <?php echo $category_description; ?>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 <?php endif; ?>
 
 <section class="py-lg-5 py-4 mobile-houses-wrap px-4">
@@ -115,10 +115,10 @@ $hero_style = !empty($bg_header_image) ? "background-image: url('" . esc_url($bg
                             </div>
                         </a>
                     </div>
-            <?php 
+                <?php
                 endwhile;
             else :
-            ?>
+                ?>
                 <div class="col-12 text-center py-5">
                     <div class="no-offers-message p-5 bg-light rounded">
                         <i class="fa fa-home text-muted mb-3" style="font-size: 4rem;"></i>
@@ -131,41 +131,41 @@ $hero_style = !empty($bg_header_image) ? "background-image: url('" . esc_url($bg
                 </div>
             <?php endif; ?>
         </div>
-        
+
         <!-- Paginacja -->
         <?php if ($wp_query->max_num_pages > 1) : ?>
-        <div class="row mt-5">
-            <div class="col-12">
-                <nav class="pagination-wrap d-flex justify-content-center">
-                    <?php
-                    echo paginate_links(array(
-                        'base' => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
-                        'format' => '?paged=%#%',
-                        'current' => max(1, get_query_var('paged')),
-                        'total' => $wp_query->max_num_pages,
-                        'prev_text' => '<i class="fa fa-chevron-left"></i> Poprzednia',
-                        'next_text' => 'Następna <i class="fa fa-chevron-right"></i>',
-                        'mid_size' => 2,
-                        'type' => 'list'
-                    ));
-                    ?>
-                </nav>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <nav class="pagination-wrap d-flex justify-content-center">
+                        <?php
+                        echo paginate_links(array(
+                            'base' => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
+                            'format' => '?paged=%#%',
+                            'current' => max(1, get_query_var('paged')),
+                            'total' => $wp_query->max_num_pages,
+                            'prev_text' => '<i class="fa fa-chevron-left"></i> Poprzednia',
+                            'next_text' => 'Następna <i class="fa fa-chevron-right"></i>',
+                            'mid_size' => 2,
+                            'type' => 'list'
+                        ));
+                        ?>
+                    </nav>
+                </div>
             </div>
-        </div>
         <?php endif; ?>
     </div>
 </section>
 
-<section class="py-4 py-lg-5 bg-black">
+<section class="py-4 py-lg-5 box-cat-bottom-form">
     <div class="container">
         <h2 class="subtitle playfair-petch-font text-center standard-title-4 fw-bolder mb-3 mb-lg-4 position-relative text-yellow">
             <span class="d-inline-block icon-text icon-text--yellow px-4">Zainteresowała Cię nasza oferta?</span>
         </h2>
-        <div class="row justify-content-center">
-            <div class="col-10 col-lg-3 d-grid">
-                <a data-category="form-mobile-houses" data-bs-toggle="modal" data-bs-target="#offerformModal" class="btn btn--style-2">
-                    ZAPYTAJ O OFERTĘ <i class="fa fa-check-square-o"></i>
-                </a>
+        <div class="row justify-content-center align-items-end">
+            <div class="col-lg-5 ps-lg-0">
+                <div class="p-4 bg-white contact-form-box">
+                    <?php echo apply_shortcodes('[contact-form-7 id="3524678" title="Formularz kontaktowy"]'); ?>
+                </div>
             </div>
         </div>
     </div>
