@@ -728,3 +728,239 @@
         top: 0;
     }
 }
+
+// ========================================
+// DOMY MOBILNE - STYLE
+// ========================================
+
+// Hero section
+.header-image-defeault {
+    min-height: 360px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 0;
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    @include media-breakpoint-down(md) {
+        min-height: 250px;
+    }
+}
+
+// Gallery Swiper
+.house-gallery-slider {
+    border-radius: 8px;
+    overflow: hidden;
+
+    .swiper-slide img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: #fff !important;
+        background: rgba(0,0,0,0.5);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        transition: background 0.3s ease;
+
+        &:hover {
+            background: rgba(40,167,69,0.8);
+        }
+
+        &::after {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+}
+
+// Gallery thumbnails
+.house-gallery-thumbs {
+    margin-top: 10px;
+    padding: 5px 0;
+
+    .swiper-slide {
+        width: 100px;
+        height: 75px;
+        opacity: 0.6;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+        border-radius: 4px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+
+    .swiper-slide-thumb-active {
+        opacity: 1;
+        border: 2px solid $green;
+    }
+}
+
+// Mobile house cards
+.mobile-house-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+        .mobile-house-card__image img {
+            transform: scale(1.05);
+        }
+
+        .mobile-house-card__overlay {
+            opacity: 1;
+        }
+
+        .mobile-house-card__btn {
+            transform: translateY(0);
+        }
+
+        .mobile-house-card__title {
+            color: $green;
+        }
+    }
+
+    &__image {
+        overflow: hidden;
+        border-radius: 8px 8px 0 0;
+
+        img {
+            transition: transform 0.4s ease;
+            height: 275px;
+            object-fit: cover;
+        }
+    }
+
+    &__overlay {
+        background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    &__btn {
+        background: #FFD700;
+        color: #000;
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+    }
+
+    &__content {
+        border-radius: 0 0 8px 8px;
+    }
+
+    &__title {
+        transition: color 0.3s ease;
+    }
+}
+
+// No offers message
+.no-offers-message {
+    i {
+        display: block;
+    }
+}
+
+// Pagination
+.pagination-wrap {
+    .page-numbers {
+        display: inline-block;
+        padding: 8px 16px;
+        margin: 0 4px;
+        border: 1px solid #dee2e6;
+        border-radius: 4px;
+        color: $green;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: $green;
+            color: #fff;
+            border-color: $green;
+        }
+
+        &.current {
+            background: $green;
+            color: #fff;
+            border-color: $green;
+        }
+    }
+
+    .dots {
+        border: none;
+        pointer-events: none;
+    }
+}
+
+// House details
+.house-details-card {
+    border: 1px solid #e9ecef;
+    height: 100%;
+}
+
+.house-price {
+    border: 2px solid $green;
+
+    &__value {
+        color: $green;
+    }
+}
+
+.house-includes {
+    border: 1px solid #e9ecef;
+
+    .bg-white {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+    }
+}
+
+// Responsive
+@include media-breakpoint-down(md) {
+    .house-gallery-slider .swiper-slide img {
+        height: 300px;
+    }
+
+    .house-gallery-thumbs .swiper-slide {
+        width: 80px;
+        height: 60px;
+    }
+}
