@@ -85,12 +85,21 @@ $hero_style = !empty($bg_header_image) ? "background-image: url('" . esc_url($bg
             if (have_posts()) :
                 while (have_posts()) : the_post();
                     $house_specs = get_field('dom_specyfikacja');
+                    $dom_galeria = get_field('dom_galeria');
+                    
+                    // Pobierz zdjęcie: 1. Thumbnail, 2. Pierwsze z galerii ACF
+                    $house_image = '';
+                    if (has_post_thumbnail()) {
+                        $house_image = get_the_post_thumbnail_url(null, 'cat-width');
+                    } elseif ($dom_galeria && !empty($dom_galeria[0])) {
+                        $house_image = $dom_galeria[0]['sizes']['cat-width'] ?? $dom_galeria[0]['url'];
+                    }
             ?>
                     <div class="col-lg-4 col-md-6">
                         <a href="<?php echo esc_url(get_permalink()); ?>" class="mobile-house-card text-decoration-none position-relative overflow-hidden d-flex" title="<?php echo esc_attr(get_the_title()); ?>">
                             <div class="mobile-house-card__image position-relative">
-                                <?php if (has_post_thumbnail()) : ?>
-                                    <?php the_post_thumbnail('cat-width', ['class' => 'img-fluid w-100']); ?>
+                                <?php if (!empty($house_image)) : ?>
+                                    <img src="<?php echo esc_url($house_image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="img-fluid w-100">
                                 <?php else : ?>
                                     <div class="mobile-house-card__placeholder bg-light d-flex align-items-center justify-content-center" style="height: 275px;">
                                         <i class="fa fa-home text-muted" style="font-size: 3rem;"></i>
