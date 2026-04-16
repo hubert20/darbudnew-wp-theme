@@ -10,7 +10,7 @@
                     "label": "Hero - Tło",
                     "name": "hero_tlo",
                     "type": "image",
-                    "instructions": "Obraz w tle sekcji hero. Zalecane: 1920x500px. Jeśli puste, użyje się wyróżnionego obrazka.",
+                    "instructions": "Obraz w tle sekcji hero (zalecane: 1920x500px). Jeśli puste, użyje się wyróżnionego obrazka strony.",
                     "required": 0,
                     "return_format": "array",
                     "preview_size": "large",
@@ -21,19 +21,9 @@
                     "label": "Hero - Tytuł",
                     "name": "hero_tytul",
                     "type": "text",
-                    "instructions": "Główny tytuł na hero. Jeśli pusty - użyje się tytułu strony.",
-                    "default_value": "Transport i dostawa",
+                    "instructions": "Tytuł wyświetlany na hero. Jeśli pusty - użyje się tytułu strony.",
+                    "default_value": "",
                     "required": 0
-                },
-                {
-                    "key": "field_hero_podtytul_transport",
-                    "label": "Hero - Podtytuł",
-                    "name": "hero_podtytul",
-                    "type": "textarea",
-                    "instructions": "Tekst pod tytułem. Można użyć nowej linii (Enter) dla podziału.",
-                    "default_value": "Bezpiecznie dostarczamy nasze realizacje na miejsce inwestycji.",
-                    "required": 0,
-                    "rows": 2
                 }
             ],
             "location": [
@@ -55,7 +45,7 @@
                     "label": "Hero - Tło",
                     "name": "hero_tlo",
                     "type": "image",
-                    "instructions": "Obraz w tle sekcji hero. Zalecane: 1920x500px. Jeśli puste, użyje się wyróżnionego obrazka.",
+                    "instructions": "Obraz w tle sekcji hero (zalecane: 1920x500px). Jeśli puste, użyje się wyróżnionego obrazka strony.",
                     "required": 0,
                     "return_format": "array",
                     "preview_size": "large",
@@ -66,19 +56,9 @@
                     "label": "Hero - Tytuł",
                     "name": "hero_tytul",
                     "type": "text",
-                    "instructions": "Główny tytuł na hero. Jeśli pusty - użyje się tytułu strony.",
-                    "default_value": "O nas",
+                    "instructions": "Tytuł wyświetlany na hero. Jeśli pusty - użyje się tytułu strony.",
+                    "default_value": "",
                     "required": 0
-                },
-                {
-                    "key": "field_hero_podtytul_about",
-                    "label": "Hero - Podtytuł",
-                    "name": "hero_podtytul",
-                    "type": "textarea",
-                    "instructions": "Tekst pod tytułem. Można użyć nowej linii (Enter) dla podziału.",
-                    "default_value": "Nowoczesne domy sprawdzone technologie\ni indywidualne podejście do każdego projektu",
-                    "required": 0,
-                    "rows": 2
                 }
             ],
             "location": [

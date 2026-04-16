@@ -8,35 +8,32 @@ get_header();
 // HERO - nowe pola ACF
 $hero_tlo = get_field('hero_tlo');
 $hero_tytul = get_field('hero_tytul') ?: get_the_title();
-$hero_podtytul = get_field('hero_podtytul') ?: 'Bezpiecznie dostarczamy nasze realizacje na miejsce inwestycji';
 
 // Pobierz pozostałe pola ACF
 $etapy_tytul = get_field('etapy_transportu_tytul') ?: 'Transport i dostawa';
 $boxy = get_field('boxy');
 
+// Ustaw tło hero
+$hero_bg = '';
+if ($hero_tlo) {
+    $hero_bg = is_array($hero_tlo) ? $hero_tlo['url'] : $hero_tlo;
+} elseif (has_post_thumbnail()) {
+    $hero_bg = get_the_post_thumbnail_url(null, 'full');
+}
+
 ?>
 
-<!-- Hero Section - z dedykowanymi polami ACF -->
-<section class="page-hero" style="background-image: url('<?php 
-    if ($hero_tlo) {
-        echo esc_url(is_array($hero_tlo) ? $hero_tlo['url'] : $hero_tlo);
-    } elseif (has_post_thumbnail()) {
-        echo esc_url(get_the_post_thumbnail_url(null, 'full'));
-    } else {
-        echo get_stylesheet_directory_uri() . '/assets/images/transport-hero.jpg';
-    }
-?>');">
-    <div class="page-hero__overlay"></div>
-    <div class="page-hero__content">
-        <div class="container">
-            <h1 class="page-hero__title"><?php echo esc_html($hero_tytul); ?></h1>
-            <?php if ($hero_podtytul) : ?>
-            <p class="page-hero__subtitle"><?php echo nl2br(esc_html($hero_podtytul)); ?></p>
-            <?php endif; ?>
-            <a href="#transport-content" class="page-hero__btn">
-                <i class="fa fa-arrow-down"></i>
-            </a>
-        </div>
+<!-- Hero Section - z tymi samymi klasami co header-image-defeault -->
+<section class="d-flex flex-column align-items-center justify-content-center header-image-defeault" <?php if ($hero_bg) echo 'style="background-image: url(\'' . esc_url($hero_bg) . '\');"'; ?>>
+    <div class="container">
+        <h1 class="playfair-display-600 standard-title-6 text-center text-white header-def-title">
+            <?php echo esc_html($hero_tytul); ?>
+        </h1>
+        <?php
+        if (function_exists('yoast_breadcrumb')) {
+            yoast_breadcrumb('<p id="breadcrumbs" class="mb-0 breadcrumbs text-center chakra-petch-font">', '</p>');
+        }
+        ?>
     </div>
 </section>
 
