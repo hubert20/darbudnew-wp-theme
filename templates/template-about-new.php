@@ -5,34 +5,46 @@ if (!defined('ABSPATH')) exit;
 
 get_header();
 
-// Pobierz pola ACF
+// HERO - nowe pola ACF
+$hero_tlo = get_field('hero_tlo');
+$hero_tytul = get_field('hero_tytul') ?: get_the_title();
+$hero_podtytul = get_field('hero_podtytul') ?: 'Nowoczesne domy sprawdzone technologie\ni indywidualne podejście do każdego projektu';
+
+// Pobierz pozostałe pola ACF
 $boxy = get_field('boxy');
 $zaufanie_title = get_field('zaufanie_title') ?: '';
-$zaufanie = get_field('zaufanie');
 
 // Banner bottom
 $banner = get_field('banner_bottom');
 
 ?>
 
-<!-- Hero Section - tło z głównego obrazka wpisu -->
-<?php if (has_post_thumbnail()) : ?>
-<section class="about-hero" style="background-image: url('<?php echo esc_url(get_the_post_thumbnail_url(null, 'full')); ?>');">
-    <div class="about-hero__overlay"></div>
-    <div class="about-hero__content">
+<!-- Hero Section - z dedykowanymi polami ACF -->
+<section class="page-hero" style="background-image: url('<?php 
+    if ($hero_tlo) {
+        echo esc_url(is_array($hero_tlo) ? $hero_tlo['url'] : $hero_tlo);
+    } elseif (has_post_thumbnail()) {
+        echo esc_url(get_the_post_thumbnail_url(null, 'full'));
+    } else {
+        echo get_stylesheet_directory_uri() . '/assets/images/about-hero.jpg';
+    }
+?>');">
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content">
         <div class="container">
-            <h1 class="about-hero__title"><?php the_title(); ?></h1>
-            <p class="about-hero__subtitle">Nowoczesne domy sprawdzone technologie<br>i indywidualne podejście do każdego projektu</p>
-            <a href="#o-nas" class="about-hero__btn">
-                <i class="fa fa-arrow-down"></i> Przewiń
+            <h1 class="page-hero__title"><?php echo esc_html($hero_tytul); ?></h1>
+            <?php if ($hero_podtytul) : ?>
+            <p class="page-hero__subtitle"><?php echo nl2br(esc_html($hero_podtytul)); ?></p>
+            <?php endif; ?>
+            <a href="#o-nas-content" class="page-hero__btn">
+                <i class="fa fa-arrow-down"></i>
             </a>
         </div>
     </div>
 </section>
-<?php endif; ?>
 
 <!-- O Nas Section -->
-<section id="o-nas" class="about-content py-5 <?php echo !has_post_thumbnail() ? 'pt-0' : ''; ?>">
+<section id="o-nas-content" class="about-content py-5">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0">

@@ -5,29 +5,46 @@ if (!defined('ABSPATH')) exit;
 
 get_header();
 
-// Pobierz pola ACF
+// HERO - nowe pola ACF
+$hero_tlo = get_field('hero_tlo');
+$hero_tytul = get_field('hero_tytul') ?: get_the_title();
+$hero_podtytul = get_field('hero_podtytul') ?: 'Bezpiecznie dostarczamy nasze realizacje na miejsce inwestycji';
+
+// Pobierz pozostałe pola ACF
 $etapy_tytul = get_field('etapy_transportu_tytul') ?: 'Transport i dostawa';
 $boxy = get_field('boxy');
 
 ?>
 
-<!-- Hero Section - tło z głównego obrazka wpisu -->
-<?php if (has_post_thumbnail()) : ?>
-<section class="transport-hero" style="background-image: url('<?php echo esc_url(get_the_post_thumbnail_url(null, 'full')); ?>');">
-    <div class="transport-hero__overlay"></div>
+<!-- Hero Section - z dedykowanymi polami ACF -->
+<section class="page-hero" style="background-image: url('<?php 
+    if ($hero_tlo) {
+        echo esc_url(is_array($hero_tlo) ? $hero_tlo['url'] : $hero_tlo);
+    } elseif (has_post_thumbnail()) {
+        echo esc_url(get_the_post_thumbnail_url(null, 'full'));
+    } else {
+        echo get_stylesheet_directory_uri() . '/assets/images/transport-hero.jpg';
+    }
+?>');">
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content">
+        <div class="container">
+            <h1 class="page-hero__title"><?php echo esc_html($hero_tytul); ?></h1>
+            <?php if ($hero_podtytul) : ?>
+            <p class="page-hero__subtitle"><?php echo nl2br(esc_html($hero_podtytul)); ?></p>
+            <?php endif; ?>
+            <a href="#transport-content" class="page-hero__btn">
+                <i class="fa fa-arrow-down"></i>
+            </a>
+        </div>
+    </div>
 </section>
-<?php endif; ?>
 
 <!-- Main Content Section -->
-<section class="transport-content py-5 <?php echo !has_post_thumbnail() ? 'pt-0' : ''; ?>">
+<section id="transport-content" class="transport-content py-5">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10">
-                <!-- Nagłówek -->
-                <div class="transport-content__header mb-4">
-                    <h1 class="transport-content__title"><?php echo esc_html(get_the_title()); ?></h1>
-                    <p class="transport-content__subtitle">Bezpiecznie dostarczamy nasze realizacje<br>na miejsce inwestycji.</p>
-                </div>
 
                 <!-- Treść ogólna z edytora -->
                 <div class="transport-content__text mb-5">
