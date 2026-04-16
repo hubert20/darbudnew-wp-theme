@@ -359,3 +359,582 @@ Author URI: http://www.tomedia.pl
     font-size: 20px;
     font-weight: bold;
 }
+
+/* ========================================
+   TRANSPORT TEMPLATE STYLES
+   ======================================== */
+
+/* Hero Section */
+.transport-hero {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.transport-hero__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+@media (max-width: 768px) {
+    .transport-hero {
+        height: 250px;
+    }
+}
+
+/* Content Section */
+.transport-content {
+    background-color: #fff;
+    margin-top: -50px;
+    position: relative;
+    z-index: 2;
+}
+
+.transport-content__header {
+    text-align: left;
+}
+
+.transport-content__title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.transport-content__subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.transport-content__text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.transport-content__text p {
+    margin-bottom: 1rem;
+}
+
+/* Transport Boxes */
+.transport-boxes {
+    margin-top: 2rem;
+}
+
+.transport-box {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: #fff;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transport-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.transport-box__icon {
+    font-size: 2.5rem;
+    color: #7cb342;
+    margin-bottom: 1rem;
+}
+
+.transport-box__icon i {
+    display: inline-block;
+}
+
+.transport-box__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.transport-box__desc {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Info Box (Green) */
+.transport-info-box {
+    display: flex;
+    align-items: flex-start;
+    background: linear-gradient(135deg, #7cb342 0%, #558b2f 100%);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    color: #fff;
+    margin-top: 2rem;
+}
+
+.transport-info-box__icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.transport-info-box__icon i {
+    color: #fff;
+}
+
+.transport-info-box__content {
+    flex: 1;
+}
+
+.transport-info-box__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.transport-info-box__text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+    color: rgba(255,255,255,0.95);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .transport-content__title {
+        font-size: 1.75rem;
+    }
+    
+    .transport-content__subtitle {
+        font-size: 1rem;
+    }
+    
+    .transport-box {
+        padding: 1rem 0.75rem;
+    }
+    
+    .transport-box__icon {
+        font-size: 2rem;
+    }
+    
+    .transport-box__title {
+        font-size: 1rem;
+    }
+    
+    .transport-box__desc {
+        font-size: 0.8rem;
+    }
+    
+    .transport-info-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .transport-info-box__icon {
+        margin-right: 0;
+        margin-bottom: 0.75rem;
+    }
+    
+    .transport-info-box__title {
+        font-size: 1.1rem;
+    }
+    
+    .transport-info-box__text {
+        font-size: 0.9rem;
+    }
+}
+
+/* ========================================
+   ABOUT TEMPLATE STYLES - O NAS
+   ======================================== */
+
+/* Hero Section */
+.about-hero {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+}
+
+.about-hero__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+}
+
+.about-hero__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.about-hero__subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+}
+
+.about-hero__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #7cb342;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.about-hero__btn:hover {
+    background: #558b2f;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* O Nas Content */
+.about-content {
+    background-color: #fff;
+}
+
+.about-content__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.about-content__text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.about-content__text p {
+    margin-bottom: 1rem;
+}
+
+.about-content__image img {
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+/* About Boxes */
+.about-boxes {
+    background-color: #f8f9fa;
+}
+
+.about-box {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.about-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+.about-box__icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1rem;
+    background: linear-gradient(135deg, #7cb342 0%, #558b2f 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    color: #fff;
+}
+
+.about-box__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.75rem;
+}
+
+.about-box__desc {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* CTA Section */
+.about-cta {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.about-cta__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+}
+
+.about-cta__content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+.about-cta__title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.about-cta__text {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+}
+
+.about-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #7cb342;
+    color: #fff;
+    padding: 0.875rem 1.75rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.about-cta__btn:hover {
+    background: #558b2f;
+    color: #fff;
+    transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .about-hero {
+        height: 400px;
+    }
+    
+    .about-hero__title {
+        font-size: 2rem;
+    }
+    
+    .about-cta {
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        height: 350px;
+    }
+    
+    .about-hero__title {
+        font-size: 1.75rem;
+    }
+    
+    .about-hero__subtitle {
+        font-size: 1rem;
+    }
+    
+    .about-content__title {
+        font-size: 1.5rem;
+    }
+    
+    .about-box {
+        padding: 1.5rem 1rem;
+    }
+    
+    .about-box__icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .about-box__title {
+        font-size: 1rem;
+    }
+    
+    .about-cta {
+        height: auto;
+        padding: 3rem 0;
+    }
+    
+    .about-cta__overlay {
+        background: rgba(0,0,0,0.6);
+    }
+    
+    .about-cta__title {
+        font-size: 1.5rem;
+    }
+}
+
+/* ========================================
+   IKONKI W BOXY (OBRAZKI)
+   ======================================== */
+
+/* Styl dla ikonek jako obrazków */
+.transport-box__icon-img,
+.about-box__icon-img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.about-box__icon-img {
+    width: 40px;
+    height: 40px;
+}
+
+/* ========================================
+   TRANSPORT BANNER BOTTOM
+   ======================================== */
+
+.transport-banner {
+    position: relative;
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.transport-banner__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.2) 100%);
+}
+
+.transport-banner__content {
+    position: relative;
+    z-index: 2;
+    padding: 2.5rem;
+    color: #fff;
+}
+
+.transport-banner__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.transport-banner__text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    max-width: 450px;
+}
+
+.transport-banner__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #7cb342;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.transport-banner__btn:hover {
+    background: #558b2f;
+    color: #fff;
+    transform: translateX(5px);
+}
+
+/* Tytuł sekcji etapów transportu */
+.transport-section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Tytuł główny dla sekcji boxów */
+.about-boxes__main-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .transport-banner {
+        min-height: 250px;
+    }
+    
+    .transport-banner__content {
+        padding: 1.5rem;
+    }
+    
+    .transport-banner__title {
+        font-size: 1.4rem;
+    }
+    
+    .transport-banner__text {
+        font-size: 0.9rem;
+    }
+    
+    .transport-section-title {
+        font-size: 1.4rem;
+    }
+    
+    .about-boxes__main-title {
+        font-size: 1.6rem;
+    }
+    
+    .transport-box__icon-img,
+    .about-box__icon-img {
+        width: 36px;
+        height: 36px;
+    }
+}

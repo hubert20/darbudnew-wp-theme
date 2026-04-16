@@ -1,0 +1,235 @@
+{
+    "title": "Strony Transport i O Nas",
+    "fields": [
+        {
+            "key": "group_transport",
+            "title": "Strona Transport",
+            "fields": [
+                {
+                    "key": "field_transport_hero_image",
+                    "label": "Obraz w tle (Hero)",
+                    "name": "transport_hero_image",
+                    "type": "image",
+                    "instructions": "Zalecane wymiary: 1920x400px",
+                    "required": 0,
+                    "return_format": "url",
+                    "preview_size": "medium",
+                    "library": "all"
+                },
+                {
+                    "key": "field_transport_content",
+                    "label": "Treść strony",
+                    "name": "transport_content",
+                    "type": "wysiwyg",
+                    "instructions": "Główna treść strony Transport (opis usługi)",
+                    "required": 0,
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "default_value": "<p>Zapewniamy kompleksowy transport naszych realizacji na miejsce inwestycji – bezpiecznie, sprawnie i zgodnie z ustalonym harmonogramem.</p><p>Każdy transport planujemy indywidualnie, uwzględniając warunki dojazdu, specyfikę projektu oraz lokalizację klienta. Dzięki temu jesteśmy w stanie dobrać optymalne rozwiązanie zarówno pod względem logistycznym, jak i kosztowym.</p><p>W przypadku dalszych realizacji współpracujemy z zaufanymi firmami transportowymi działającymi w pobliżu miejsca inwestycji. Pozwala to skrócić czas realizacji oraz zoptymalizować koszty transportu.</p><p>Na miejscu zapewniamy wsparcie przy rozładunku oraz ustawieniu konstrukcji, tak aby cały proces przebiegł sprawnie i bezproblemowo.</p>"
+                }
+            ],
+            "location": [
+                [
+                    {
+                        "param": "page_template",
+                        "operator": "==",
+                        "value": "templates/template-transport.php"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "group_about",
+            "title": "Strona O Nas",
+            "fields": [
+                {
+                    "key": "field_about_hero_image",
+                    "label": "Obraz Hero",
+                    "name": "about_hero_image",
+                    "type": "image",
+                    "instructions": "Duży obraz na górze strony (zalecane: 1920x500px)",
+                    "required": 0,
+                    "return_format": "url",
+                    "preview_size": "large",
+                    "library": "all"
+                },
+                {
+                    "key": "field_about_hero_title",
+                    "label": "Tytuł w Hero",
+                    "name": "about_hero_title",
+                    "type": "text",
+                    "instructions": "Główny tytuł na obrazie",
+                    "default_value": "Budujemy z pasją od lat",
+                    "required": 0
+                },
+                {
+                    "key": "field_about_hero_subtitle",
+                    "label": "Podtytuł w Hero",
+                    "name": "about_hero_subtitle",
+                    "type": "textarea",
+                    "instructions": "Tekst pod tytułem (można użyć HTML <br> dla nowej linii)",
+                    "default_value": "Nowoczesne domy sprawdzone technologie<br>i indywidualne podejście do każdego projektu",
+                    "required": 0,
+                    "rows": 2
+                },
+                {
+                    "key": "field_about_section_title",
+                    "label": "Tytuł sekcji O Nas",
+                    "name": "about_section_title",
+                    "type": "text",
+                    "instructions": "Nagłówek nad tekstem opisowym",
+                    "default_value": "Kim jesteśmy?",
+                    "required": 0
+                },
+                {
+                    "key": "field_about_text",
+                    "label": "Treść O Nas",
+                    "name": "about_text",
+                    "type": "wysiwyg",
+                    "instructions": "Główny opis firmy",
+                    "required": 0,
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "default_value": "<p>Specjalizujemy się w budowie domów energooszczędnych, które łączą nowoczesne technologie z tradycyjnymi wartościami. Nasze realizacje to miejsca, gdzie komfort spotyka się z ekologią.</p><p>Od początku działalności postawiliśmy na innowacyjność i jakość. Każdy projekt traktujemy indywidualnie, dostosowując rozwiązania do potrzeb klienta i specyfiki terenu. Dzięki temu tworzymy domy, które są nie tylko piękne, ale przede wszystkim funkcjonalne.</p><p>Nasz zespół to doświadczeni specjaliści z pasją do architektury i budownictwa. Dbamy o każdy detal – od pierwszego szkicu po finalny montaż. Wybieramy najlepsze materiały i sprawdzone technologie, aby nasze domy służyły przez lata.</p>"
+                },
+                {
+                    "key": "field_about_image",
+                    "label": "Zdjęcie O Nas",
+                    "name": "about_image",
+                    "type": "image",
+                    "instructions": "Zdjęcie wyświetlane po prawej stronie tekstu",
+                    "required": 0,
+                    "return_format": "url",
+                    "preview_size": "medium",
+                    "library": "all"
+                },
+                {
+                    "key": "field_box1_title",
+                    "label": "Box 1 - Tytuł",
+                    "name": "box1_title",
+                    "type": "text",
+                    "default_value": "Projektowanie",
+                    "required": 0
+                },
+                {
+                    "key": "field_box1_desc",
+                    "label": "Box 1 - Opis",
+                    "name": "box1_desc",
+                    "type": "textarea",
+                    "default_value": "Tworzymy unikalne projekty dostosowane do Twoich potrzeb i wizji wymarzonego domu.",
+                    "rows": 2,
+                    "required": 0
+                },
+                {
+                    "key": "field_box2_title",
+                    "label": "Box 2 - Tytuł",
+                    "name": "box2_title",
+                    "type": "text",
+                    "default_value": "Indywidualne podejście",
+                    "required": 0
+                },
+                {
+                    "key": "field_box2_desc",
+                    "label": "Box 2 - Opis",
+                    "name": "box2_desc",
+                    "type": "textarea",
+                    "default_value": "Każdy dom jest inny – dlatego każdemu klientowi poświęcamy pełną uwagę.",
+                    "rows": 2,
+                    "required": 0
+                },
+                {
+                    "key": "field_box3_title",
+                    "label": "Box 3 - Tytuł",
+                    "name": "box3_title",
+                    "type": "text",
+                    "default_value": "Sprawna realizacja",
+                    "required": 0
+                },
+                {
+                    "key": "field_box3_desc",
+                    "label": "Box 3 - Opis",
+                    "name": "box3_desc",
+                    "type": "textarea",
+                    "default_value": "Działamy szybko i profesjonalnie, szanując Twój czas i budżet.",
+                    "rows": 2,
+                    "required": 0
+                },
+                {
+                    "key": "field_box4_title",
+                    "label": "Box 4 - Tytuł",
+                    "name": "box4_title",
+                    "type": "text",
+                    "default_value": "Kompleksowa obsługa",
+                    "required": 0
+                },
+                {
+                    "key": "field_box4_desc",
+                    "label": "Box 4 - Opis",
+                    "name": "box4_desc",
+                    "type": "textarea",
+                    "default_value": "Od projektu po montaż – zajmujemy się wszystkim, byś mógł cieszyć się nowym domem.",
+                    "rows": 2,
+                    "required": 0
+                },
+                {
+                    "key": "field_about_cta_title",
+                    "label": "CTA - Tytuł",
+                    "name": "about_cta_title",
+                    "type": "text",
+                    "instructions": "Tytuł sekcji na dole strony (np. Transport i dostawa)",
+                    "default_value": "Transport i dostawa",
+                    "required": 0
+                },
+                {
+                    "key": "field_about_cta_text",
+                    "label": "CTA - Tekst",
+                    "name": "about_cta_text",
+                    "type": "textarea",
+                    "instructions": "Tekst w sekcji CTA",
+                    "default_value": "Budujemy nie tylko domy – dbamy o to, aby w Twoje ręce trafiły gotowe rozwiązania. Kompleksowa obsługa – blisko Ciebie.",
+                    "rows": 3,
+                    "required": 0
+                },
+                {
+                    "key": "field_about_cta_button_text",
+                    "label": "CTA - Tekst przycisku",
+                    "name": "about_cta_button_text",
+                    "type": "text",
+                    "default_value": "Dowiedz się więcej",
+                    "required": 0
+                },
+                {
+                    "key": "field_about_cta_link",
+                    "label": "CTA - Link",
+                    "name": "about_cta_link",
+                    "type": "url",
+                    "instructions": "Adres URL przycisku",
+                    "default_value": "/transport/",
+                    "required": 0
+                },
+                {
+                    "key": "field_about_cta_image",
+                    "label": "CTA - Obraz w tle",
+                    "name": "about_cta_image",
+                    "type": "image",
+                    "instructions": "Tło sekcji CTA (zalecane: 1920x400px)",
+                    "required": 0,
+                    "return_format": "url",
+                    "preview_size": "large",
+                    "library": "all"
+                }
+            ],
+            "location": [
+                [
+                    {
+                        "param": "page_template",
+                        "operator": "==",
+                        "value": "templates/template-about-new.php"
+                    }
+                ]
+            ]
+        }
+    ]
+}

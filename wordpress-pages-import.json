@@ -1,0 +1,40 @@
+{
+    "version": "1.0",
+    "pages": [
+        {
+            "title": "Transport",
+            "slug": "transport",
+            "template": "templates/template-transport.php",
+            "status": "publish",
+            "content": "Zapewniamy kompleksowy transport naszych realizacji na miejsce inwestycji – bezpiecznie, sprawnie i zgodnie z ustalonym harmonogramem.\n\nKażdy transport planujemy indywidualnie, uwzględniając warunki dojazdu, specyfikę projektu oraz lokalizację klienta. Dzięki temu jesteśmy w stanie dobrać optymalne rozwiązanie zarówno pod względem logistycznym, jak i kosztowym.\n\nW przypadku dalszych realizacji współpracujemy z zaufanymi firmami transportowymi działającymi w pobliżu miejsca inwestycji. Pozwala to skrócić czas realizacji oraz zoptymalizować koszty transportu.\n\nNa miejscu zapewniamy wsparcie przy rozładunku oraz ustawieniu konstrukcji, tak aby cały proces przebiegł sprawnie i bezproblemowo.",
+            "meta": {
+                "_wp_page_template": "templates/template-transport.php"
+            }
+        },
+        {
+            "title": "O Nas",
+            "slug": "o-nas",
+            "template": "templates/template-about-new.php",
+            "status": "publish",
+            "content": "",
+            "meta": {
+                "_wp_page_template": "templates/template-about-new.php",
+                "about_hero_title": "Budujemy z pasją od lat",
+                "about_hero_subtitle": "Nowoczesne domy sprawdzone technologie<br>i indywidualne podejście do każdego projektu",
+                "about_section_title": "Kim jesteśmy?",
+                "box1_title": "Projektowanie",
+                "box1_desc": "Tworzymy unikalne projekty dostosowane do Twoich potrzeb i wizji wymarzonego domu.",
+                "box2_title": "Indywidualne podejście",
+                "box2_desc": "Każdy dom jest inny – dlatego każdemu klientowi poświęcamy pełną uwagę.",
+                "box3_title": "Sprawna realizacja",
+                "box3_desc": "Działamy szybko i profesjonalnie, szanując Twój czas i budżet.",
+                "box4_title": "Kompleksowa obsługa",
+                "box4_desc": "Od projektu po montaż – zajmujemy się wszystkim, byś mógł cieszyć się nowym domem.",
+                "about_cta_title": "Transport i dostawa",
+                "about_cta_text": "Budujemy nie tylko domy – dbamy o to, aby w Twoje ręce trafiły gotowe rozwiązania. Kompleksowa obsługa – blisko Ciebie.",
+                "about_cta_button_text": "Dowiedz się więcej",
+                "about_cta_link": "/transport/"
+            }
+        }
+    ]
+}
