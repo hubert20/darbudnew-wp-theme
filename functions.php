@@ -33,7 +33,6 @@ function wp_darbudnew_scripts()
 
   // JS (dist/main.bundle.js – ładowany tylko jeśli istnieje)
   $script_path = $theme_dir . '/dist/main.bundle.js';
-  $script_path = $theme_dir . '/dist/main.bundle.js';
   if (file_exists($script_path)) {
     wp_enqueue_script(
       'wp-darbudnew-js',
