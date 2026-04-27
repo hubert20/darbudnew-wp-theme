@@ -29,6 +29,9 @@
     <?php get_template_part('footer-widget'); ?>
 </footer>
 
+<!-- Mapka -->
+ <?php echo do_shortcode('[contact_map]'); ?>
+
 <?php wp_footer(); ?>
 </body>
 
