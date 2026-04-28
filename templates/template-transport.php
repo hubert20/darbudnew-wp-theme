@@ -26,7 +26,7 @@ if ($hero_tlo) {
 <!-- Hero Section - z tymi samymi klasami co header-image-defeault -->
 <section class="d-flex flex-column align-items-center justify-content-center header-image-defeault" <?php if ($hero_bg) echo 'style="background-image: url(\'' . esc_url($hero_bg) . '\');"'; ?>>
     <div class="container">
-        <h1 class="playfair-display-600 standard-title-6 text-center text-white header-def-title">
+        <h1 class="playfair-petch-font standard-title-3 fw-bold text-center text-white header-def-title ls-2">
             <?php echo esc_html($hero_tytul); ?>
         </h1>
         <?php
